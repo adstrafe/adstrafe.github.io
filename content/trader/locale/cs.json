@@ -1,0 +1,134 @@
+{
+	"attack": {
+		"NONE": "Žádný útok",
+		"LUNGE": "Kopanec do koulí",
+		"FIREBALL": "Ohnivá koule",
+		"SUNDER": "Natrhnutá prdel"
+	},
+	"attribute": {
+		"AGILITY": "Obratnost",
+		"INTELLECT": "Intelekt",
+		"STAMINA": "Výdrž",
+		"STRENGTH": "Síla",
+		"PHYSICAL_DEFENSE": "Obrana",
+		"MAGIC_DEFENSE": "Magická obrana"
+	},
+	"entity": {
+		"WARRIOR": "Válečník",
+		"MAGE": "Čáryfuk",
+		"GATHERING_BUSH": "Bezový keř",
+		"STONER": "Kameňák",
+		"TREE_GUY": "Dřevák",
+		"SKELETON": "Kostlivec",
+		"IRON_GOLEM": "Železný golem",
+		"CARVER": "Řezbář",
+		"BLACKSMITH": "Kovář",
+		"HERBALIST": "Bylinkář",
+		"COCA_LEAVES": "Koka"
+	},
+	"item": {
+		"BONE": "Kost",
+		"SKULL": "Lebka",
+		"BROKEN_BOW": "Poničený luk",
+		"WOODEN_LOG": "Dřevěná kláda",
+		"STONE": "Kámen",
+		"BERRY": "Bobule",
+		"SWORD": "Meč",
+		"STAFF": "Hůl",
+		"CHAIN_HOOD": "Kroužková kápě",
+		"CHAIN_VEST": "Kroužková vesta",
+		"CHAIN_LEGGINGS": "Kroužkové nohavice",
+		"APPRENTICE_RING": "Nováčkův prsten",
+		"HEALTH_POTION": "Lektvař života",
+		"COCA_LEAVES": "Listy koky",
+		"COCAINE": "Kokain"
+	},
+	"quest": {
+		"GATHERING_1": {
+			"name": "Borůvkový keř",
+			"desc": "Sběr všelijakých bobulí"
+		},
+		"GATHERING_2": {
+			"name": "Listy koky",
+			"desc": "Výlet do Kolumbie"
+		},
+		"STONER": {
+			"name": "Kameňák",
+			"desc": "Modrý pramen"
+		},
+		"TREE_GUY": {
+			"name": "Dřevák",
+			"desc": "Jak Baťa s dřevákama"
+		},
+		"SKELETON": {
+			"name": "Kostík",
+			"desc": "Strašidelná kost"
+		},
+		"IRON_GOLEM": {
+			"name": "Železný Golem",
+			"desc": "Útok na Pearl Harbor"
+		}
+	},
+	"ui": {
+		"label": {
+			"hp": "HP",
+			"recruit-crafter": "Najmout řemeslníka",
+			"recruit-hero": "Najmout hrdinu",
+			"rotation": "Rotace",
+			"start-quest": "Začít výpravu",
+			"end-quest": "Sebrat kořist",
+			"start-task": "Vyrobit",
+			"end-task": "Sebrat předmět",
+			"stats": "Atributy",
+			"versus": "VS.",
+			"xp": "XP",
+			"revive": "Oživit",
+			"plus": "+",
+			"minus": "-",
+			"minimum": "min",
+			"maximum": "max"
+		},
+		"title": {
+			"crafters": "Řemeslníci",
+			"craft-item": "Vyrobit: {item}",
+			"inventory": "Inventář",
+			"shop": "Obchod",
+			"heroes": "Hrdinové",
+			"hero-equip-item": "Vyzbrojit hrdinu",
+			"recruit-crafter": "Najmout řemeslníka",
+			"recruit-hero": "Najmout hrdinu",
+			"quest-select": "Výpravy",
+			"quest-start": "Vyrazit na výpravu",
+			"hero-death": "Tvůj hrdina zemřel",
+			"quest-loot": "Kořist",
+			"recipes": "Recepty",
+			"hero-heal": "Vyléčit hrdinu",
+			"equipment": "Vybavení"
+		},
+		"route": {
+			"CRAFTERS": "Řemeslníci",
+			"INVENTORY": "Inventář",
+			"SHOP": "Obchod",
+			"HEROES": "Hrdinové"
+		},
+		"hero-state": {
+			"died": "Hrdina zemřel",
+			"quest-pending": "Na výpravě",
+			"quest-ready": "Výprava dokončena"
+		},
+		"crafter-state": {
+			"IDLE": "Odpočívá",
+			"CRAFT_PENDING": "Pracuje",
+			"CRAFT_READY": "Práce dokončena"
+		},
+		"message": {
+			"no-items": "Nemáš žádný item pro tento slot."
+		},
+		"time": {
+			"days": "{remaining}d",
+			"hours": "{remaining}h",
+			"minutes": "{remaining}m",
+			"seconds": "{remaining}s"
+		}
+	}
+}

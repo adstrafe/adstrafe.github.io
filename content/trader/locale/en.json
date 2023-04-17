@@ -1,0 +1,134 @@
+{
+	"attack": {
+		"NONE": "None",
+		"LUNGE": "Lunge",
+		"FIREBALL": "Fireball",
+		"SUNDER": "Sunder"
+	},
+	"attribute": {
+		"AGILITY": "Agility",
+		"INTELLECT": "Intellect",
+		"STAMINA": "Stamina",
+		"STRENGTH": "Strength",
+		"PHYSICAL_DEFENSE": "Physical Defense",
+		"MAGIC_DEFENSE": "Magic Defense"
+	},
+	"entity": {
+		"WARRIOR": "Warrior",
+		"MAGE": "Mage",
+		"GATHERING_BUSH": "Berry Bush",
+		"STONER": "Stoner",
+		"TREE_GUY": "Tree Guy",
+		"SKELETON": "Skeleton",
+		"IRON_GOLEM": "Iron Golem",
+		"CARVER": "Woodcarver",
+		"BLACKSMITH": "Blacksmith",
+		"HERBALIST": "Herbalist",
+		"COCA_PLANT": "Coca Plant"
+	},
+	"item": {
+		"BONE": "Bone",
+		"SKULL": "Skull",
+		"BROKEN_BOW": "Broken Bow",
+		"WOODEN_LOG": "Wooden Log",
+		"STONE": "Stone",
+		"BERRY": "Berry",
+		"SWORD": "Sword",
+		"STAFF": "Staff",
+		"CHAIN_HOOD": "Chain Hood",
+		"CHAIN_VEST": "Chain Vest",
+		"CHAIN_LEGGINGS": "Chain Leggings",
+		"APPRENTICE_RING": "Apprentice Ring",
+		"HEALTH_POTION": "Health Potion",
+		"COCA_LEAVES": "Coca Leaves",
+		"COCAINE": "Cocaine"
+	},
+	"quest": {
+		"GATHERING_1": {
+			"name": "Shrubbage Abuse",
+			"desc": "Inflation? Never heard of it."
+		},
+		"GATHERING_2": {
+			"name": "Coca Leaves",
+			"desc": "A trip to Colombia."
+		},
+		"STONER": {
+			"name": "Stoner",
+			"desc": "420"
+		},
+		"TREE_GUY": {
+			"name": "Tree Guy",
+			"desc": "Sponsored by IKEA"
+		},
+		"SKELETON": {
+			"name": "Boner",
+			"desc": "Spooky scary skeletons"
+		},
+		"IRON_GOLEM": {
+			"name": "Iron Golem",
+			"desc": "Attack on Pearl Harbor"
+		}
+	},
+	"ui": {
+		"label": {
+			"hp": "HP",
+			"recruit-crafter": "Recruit a Crafter",
+			"recruit-hero": "Recruit a Hero",
+			"rotation": "Rotation",
+			"start-quest": "Start the Quest",
+			"end-quest": "Pick up Loot",
+			"start-task": "Craft",
+			"end-task": "Pick up Item",
+			"stats": "Attributes",
+			"versus": "VS.",
+			"xp": "XP",
+			"revive": "Revive",
+			"plus": "+",
+			"minus": "-",
+			"minimum": "min",
+			"maximum": "max"
+		},
+		"title": {
+			"crafters": "Crafters",
+			"craft-item": "Craft: {item}",
+			"inventory": "Inventory",
+			"shop": "Shop",
+			"heroes": "Heroes",
+			"hero-equip-item": "Equip item for",
+			"recruit-crafter": "Recruit a Crafter",
+			"recruit-hero": "Recruit a Hero",
+			"quest-select": "Quests",
+			"quest-start": "Start Quest",
+			"hero-death": "Your hero died",
+			"quest-loot": "Loot",
+			"recipes": "Recipes",
+			"hero-heal": "Heal Hero",
+			"equipment": "Equipment"
+		},
+		"route": {
+			"CRAFTERS": "Crafters",
+			"INVENTORY": "Inventory",
+			"SHOP": "Shop",
+			"HEROES": "Heroes"
+		},
+		"hero-state": {
+			"died": "Hero died",
+			"quest-pending": "On a quest",
+			"quest-ready": "Quest complete"
+		},
+		"crafter-state": {
+			"IDLE": "Resting",
+			"CRAFT_PENDING": "Working",
+			"CRAFT_READY": "Item ready"
+		},
+		"message": {
+			"no-items": "You don't have any items for this slot."
+		},
+		"time": {
+			"days": "{remaining}d",
+			"hours": "{remaining}h",
+			"minutes": "{remaining}m",
+			"seconds": "{remaining}s"
+		}
+	}
+}
