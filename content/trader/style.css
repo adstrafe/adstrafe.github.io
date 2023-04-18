@@ -390,6 +390,9 @@ body {
 	margin: 0;
 	font: inherit;
 	color: inherit;
+
+	/* disable unwanted gestures */
+	touch-action: pan-y;
 }
 
 input, button {
