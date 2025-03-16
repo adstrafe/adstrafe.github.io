@@ -1,0 +1,7 @@
+.banner {
+	color: var(--accent-color);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

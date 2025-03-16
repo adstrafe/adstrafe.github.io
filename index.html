@@ -1,19 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>
-            Maturita hosting
-        </title>
-    </head>
-    <body>
-        <h1>Vojtěch Lahuta Projekty</h1>
-        <hr>
-        <ul>
-            <li>
-                <a href="./content/trader/">Webová hra Merchant</a>
-                <a href="./content/wdw/">WDW</a>
-            </li>
-        </ul>
-    </body>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="./svg/vojtizen-logo-cutout.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="./index.css">
+	<link rel="stylesheet" href="./global.css">
+	<title>Vojtěch Lahuta</title>
+</head>
+
+<body>
+	<main>
+		<canvas id="backgroundCanvas"></canvas>
+		<nav class="navigation">
+			<a href="./index.html" class="navigation-link">
+				<img src="./svg/vojtizen-logo.svg" alt="logoAlt" class="navigation__logo" />
+			</a>
+			<div class="navigation__items">
+				<a href="./pages/timeline/timeline.html" class="navigation__link">Timeline</a>
+				<a href="./pages/projects/projects.html" class="navigation__link">Projects</a>
+				<a href="./pages/contact/contact.html" class="navigation__link">Contact</a>
+				<a href="./pages/blog/blog.html" class="navigation__link">Blog</a>
+			</div>
+		</nav>
+		<section class="intro">
+			<div id="intro-container">
+				<object data="./svg/vojtizen-logo.svg" type="image/svg+xml" class="intro-container__logo"></object>
+				<div class="intro-container-text">
+					<h1 class="intro-container-text__header">
+						Vojtěch Lahuta
+					</h1>
+					<p class="intro-container-text__text">
+						Aspiring TypeScript developer.
+					</p>
+				</div>
+			</div>
+			<a href="#about">
+				<img src="./svg/arrow.svg" alt="arrow.svg" class="intro-container__polygon" />
+			</a>
+		</section>
+		<section class="about card" id="about">
+			<div class="about-container scroll-animation">
+				<div class="about-container__text-area">
+					<h1 class="about-container__text-area__heading">
+						About me
+					</h1>
+					<p class="about-container__text-area__text">
+						Hey there! I’m Vojta, a developer by day, fighter by night, and also a uni student. I’ve always
+						loved solving problems—whether it’s debugging code or figuring out the best way to land a kick.
+					</p>
+					<p class="about-container__text-area__text">
+						I work with TypeScript, Next.js, and backend systems, focusing on building smooth, efficient web
+						apps. But for me, coding isn’t just about writing lines of code—it’s about truly understanding
+						how things work under the hood. I don’t just write code that works; I make sure I know why it
+						works.
+					</p>
+					<p class="about-container__text-area__text">
+						Beyond coding, I’m all about growth, challenges, and new experiences. If I’m not at my desk,
+						you’ll probably find me training Muay Thai or planning my next adventure.
+					</p>
+					<a href="./pages/timeline/timeline.html" class="about-container__text-area__button">Timeline</a>
+				</div>
+				<object data="svg/desk_pc.svg" type="image/svg+xml" class="about-container__image"></object>
+			</div>
+		</section>
+		<section class="projects card">
+			<div class="projects-container scroll-animation">
+				<object data="svg/monitor.svg" type="image/svg+xml" class="projects-container__article__image"></object>
+				<article class="projects-container__article">
+					<h1 class="projects-container__heading">
+						My work
+					</h1>
+					<p class="projects-container__article__text">
+						As mentioned earlier.. I specialize in TypeScript, building web applications that are efficient,
+						scalable, and
+						maintainable. While I started in backend development, I recently shifted toward frontend, though
+						I
+						still enjoy working on both sides of the stack.
+					</p>
+					<p class="projects-container__article__text">
+						Right now, I’m focused on a large-scale e-commerce UI for managing orders and logistics,
+						communicating with an API that i wrote myself. This is a unfinished project from work that I
+						thought would be a pity to throw in the bin since this project was shut down. I kinda adopted it
+						as my personal project.
+					</p>
+					<p class="projects-container__article__text">
+						If you're curious about what I've built, check out the Projects page—you might find something
+						interesting.
+					</p>
+					<a href="./pages/projects/projects.html" class="projects-container__article__button">View
+						projects</a>
+				</article>
+			</div>
+		</section>
+		<section class="contact-me card">
+			<div class="contact-me__form-container scroll-animation">
+				<div class="form-container">
+					<h1 class="heading">Contact me</h1>
+					<form class="form">
+						<div class="form-name-group">
+							<input type="text" placeholder="First name" maxlength="25" required />
+							<input type="text" placeholder="Last name" maxlength="25" required />
+						</div>
+						<input type="text" class="form__subject" placeholder="Description" maxlength="75" required />
+						<textarea placeholder="Hey..." class="form__text" maxlength="5000" required></textarea>
+						<button type="submit" class="form__button">
+							Send
+						</button>
+					</form>
+				</div>
+				<div class="contact-me__socials">
+					<a href="https://www.facebook.com/VojtechLahuta/" target="_blank">
+						<img src="./svg/socials/facebook.svg" alt="facebook.svg" width=50 height=50 />
+					</a>
+					<a href="https://github.com/adstrafe/" target="_blank">
+						<img src="./svg/socials/github.svg" alt="github.svg" width=50 height=50 />
+					</a>
+					<a href="https://www.linkedin.com/in/vojt%C4%9Bch-lahuta/" target="_blank">
+						<img src="./svg/socials/linkedin.svg" alt="linkedin.svg" width=50 height=50 />
+					</a>
+				</div>
+				<div id="success-message" style="display: none;">Thank you for your message!</div>
+				<div id="error-message" style="display: none;">Oops, something went wrong. Please try again.</div>
+			</div>
+		</section>
+	</main>
+	<script src="./backgroundRenderer.js" type="text/javascript"></script>
+	<script src="./scrollAnimation.js" type="text/javascript"></script>
+	<script src="./formSubmission.js" type="text/javascript"></script>
+</body>
+
 </html>
