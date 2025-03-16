@@ -2,20 +2,32 @@ document.querySelector('.form').addEventListener('submit', async function (e) {
 	e.preventDefault();
 
 	const formData = new FormData(this);
-	const response = await fetch('https://formspree.io/f/movevelz', {
-		method: 'POST',
-		body: formData
-	});
+	try {
+		const response = await fetch('https://formspree.io/f/movevelz', {
+			method: 'POST',
+			body: formData,
+			headers: { 'Accept': 'application/json' }
+		});
 
-	if (response.status !== 200) {
-		const error = await response.json();
-		console.error(error);
-		document.getElementById('error-message').style.display = 'block';
-		document.getElementById('success-message').style.display = 'none';
+		if (!response.ok) {
+			showMessage('Error sending email. Please try contacting me directly.');
+		}
+		else {
+			showMessage('Thank you for your message.');
+		}
+
+		this.reset();
+	} catch (err) {
+		showMessage('Network error. Please check your connection.');
 	}
-
-	console.log('????');
-	document.getElementById('success-message').style.display = 'block';
-	document.getElementById('error-message').style.display = 'none';
-	this.reset();
 });
+
+function showMessage(message) {
+	const messageDiv = document.getElementById('form-fetch-message');
+	messageDiv.textContent = message;
+	messageDiv.style.opacity = '1';
+
+	setTimeout(() => {
+		messageDiv.style.opacity = '0';
+	}, 3000);
+}
