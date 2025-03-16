@@ -78,6 +78,11 @@
 	transition-duration: 0.1s;
 }
 
+.contact__link > img {
+	height: 50px;
+	width: 50px;
+}
+
 #contact__message {
 	margin: 1rem 0;
 	height: 2rem;
@@ -96,6 +101,7 @@
 
 @media only screen and (max-width: 800px) {
 	.contact__container {
+		margin-top: var(--theme__gap-5);
 		width: 90vw;
 		max-width: none;
 		display: flex;

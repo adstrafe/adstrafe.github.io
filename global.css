@@ -69,6 +69,11 @@ body {
 	transition-duration: 0.1s;
 }
 
+.navigation__link--active {
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
 .navigation__logo {
 	width: 2.5rem;
 }
@@ -102,7 +107,21 @@ body {
 	grid-template-columns: repeat(4, auto);
 }
 
+.navigation__home {
+	display: none;
+}
+
 @media only screen and (max-width: 800px) {
+	.navigation__logo {
+		display: none;
+	}
+
+	.navigation__home {
+		display: block;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+
 	.navigation {
 		grid-template-columns: 1fr;
 	}
@@ -160,13 +179,6 @@ body {
 		transform: translateY(-8px) rotate(-45deg);
 	}
 }
-
-@media only screen and (max-width: 425px) {
-	.navigation__logo {
-		display: none;
-	}
-}
-
 
 /* #endregion */
 
