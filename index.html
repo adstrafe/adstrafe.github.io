@@ -1,135 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="./svg/vojtizen-logo-cutout.svg" type="image/svg+xml">
-	<link rel="stylesheet" href="./index.css">
-	<link rel="stylesheet" href="./global.css">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="TypeScript developer, Muay Thai enthusiast. Explore my projects, blog, or get in contact." />
 	<title>Vojtěch Lahuta</title>
-</head>
 
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" />
+	<link rel="stylesheet" href="/global.css" />
+	<link rel="stylesheet" href="/index.css" />
+	<link rel="icon" href="/media/logo-cutout.svg" type="image/svg+xml" />
+
+	<link rel="prefetch" href="/blog/" />
+	<link rel="prefetch" href="/contact/" />
+	<link rel="prefetch" href="/projects/" />
+	<link rel="prefetch" href="/achievements/" />
+</head>
 <body>
+	<canvas id="background-canvas" class="scroll scroll--fade scroll--later-50 scroll--length-50"></canvas>
 	<main>
-		<canvas id="backgroundCanvas"></canvas>
 		<nav class="navigation">
-			<a href="./index.html" class="navigation-link">
-				<img src="./svg/vojtizen-logo.svg" alt="logoAlt" class="navigation__logo" />
+			<a href="/" class="navigation__link">
+				<img src="/media/logo-flat.svg" alt="VL" class="navigation__logo" />
 			</a>
-			<div class="navigation__items">
-				<a href="./pages/timeline/timeline.html" class="navigation__link">Timeline</a>
-				<a href="./pages/projects/projects.html" class="navigation__link">Projects</a>
-				<a href="./pages/contact/contact.html" class="navigation__link">Contact</a>
-				<a href="./pages/blog/blog.html" class="navigation__link">Blog</a>
-			</div>
+			<a href="/achievements/" class="navigation__link">Achievements</a>
+			<a href="/projects/" class="navigation__link">Projects</a>
+			<a href="/contact/" class="navigation__link">Contact</a>
+			<a href="/blog/" class="navigation__link">Blog</a>
 		</nav>
-		<section class="intro">
-			<div id="intro-container">
-				<object data="./svg/vojtizen-logo.svg" type="image/svg+xml" class="intro-container__logo"></object>
-				<div class="intro-container-text">
-					<h1 class="intro-container-text__header">
-						Vojtěch Lahuta
-					</h1>
-					<p class="intro-container-text__text">
-						Aspiring TypeScript developer.
-					</p>
-				</div>
-			</div>
-			<a href="#about">
-				<img src="./svg/arrow.svg" alt="arrow.svg" class="intro-container__polygon" />
+		<section id="intro" class="card intro">
+			<object data="/media/logo.svg" type="image/svg+xml" class="intro__logo" alt="VL"></object>
+			<h1 class="intro__title">
+				Vojtěch Lahuta
+			</h1>
+			<p class="intro__subtitle">
+				aspiring TypeScript developer
+			</p>
+			<a href="#about" class="intro__arrow-wrapper">
+				<img src="/media/arrow.svg" alt="Arrow" class="intro__arrow" />
 			</a>
 		</section>
-		<section class="about card" id="about">
-			<div class="about-container scroll-animation">
-				<div class="about-container__text-area">
-					<h1 class="about-container__text-area__heading">
-						About me
-					</h1>
-					<p class="about-container__text-area__text">
-						Hey there! I’m Vojta, a developer by day, fighter by night, and also a uni student. I’ve always
-						loved solving problems—whether it’s debugging code or figuring out the best way to land a kick.
-					</p>
-					<p class="about-container__text-area__text">
-						I work with TypeScript, Next.js, and backend systems, focusing on building smooth, efficient web
-						apps. But for me, coding isn’t just about writing lines of code—it’s about truly understanding
-						how things work under the hood. I don’t just write code that works; I make sure I know why it
-						works.
-					</p>
-					<p class="about-container__text-area__text">
-						Beyond coding, I’m all about growth, challenges, and new experiences. If I’m not at my desk,
-						you’ll probably find me training Muay Thai or planning my next adventure.
-					</p>
-					<a href="./pages/timeline/timeline.html" class="about-container__text-area__button">Timeline</a>
-				</div>
-				<object data="svg/desk_pc.svg" type="image/svg+xml" class="about-container__image"></object>
+		<section id="about" class="card about scroll scroll--appear scroll--earlier-65 scroll--length-50">
+			<div class="about__container">
+				<h2 class="about__title">
+					About Me
+				</h2>
+				<p class="about__paragraph">
+					Hey there! I’m Vojta, a developer by day, fighter by night. I’ve always
+					loved solving problems—whether debugging code, or figuring out the best way to land a kick.
+				</p>
+				<p class="about__paragraph">
+					I mostly work with TypeScript and Next.js, focusing on building smooth, efficient web apps.
+					For me, coding isn’t just about writing lines of code—it’s about truly understanding
+					how things work under the hood. I don’t just write code that works; I make sure I know why it works.
+				</p>
+				<p class="about__paragraph">
+					Beyond coding, I’m all about growth, challenges, and new experiences. If I’m not at my desk,
+					you’ll probably find me training Muay Thai or planning my next adventure.
+				</p>
+				<a class="about__link button" href="/achievements/index.html">My Achievements</a>
+				<object data="/media/office.svg" type="image/svg+xml" class="about__illustration" alt="Office"></object>
 			</div>
 		</section>
-		<section class="projects card">
-			<div class="projects-container scroll-animation">
-				<object data="svg/monitor.svg" type="image/svg+xml" class="projects-container__article__image"></object>
-				<article class="projects-container__article">
-					<h1 class="projects-container__heading">
-						My work
-					</h1>
-					<p class="projects-container__article__text">
-						As mentioned earlier.. I specialize in TypeScript, building web applications that are efficient,
-						scalable, and
-						maintainable. While I started in backend development, I recently shifted toward frontend, though
-						I
-						still enjoy working on both sides of the stack.
-					</p>
-					<p class="projects-container__article__text">
-						Right now, I’m focused on a large-scale e-commerce UI for managing orders and logistics,
-						communicating with an API that i wrote myself. This is a unfinished project from work that I
-						thought would be a pity to throw in the bin since this project was shut down. I kinda adopted it
-						as my personal project.
-					</p>
-					<p class="projects-container__article__text">
-						If you're curious about what I've built, check out the Projects page—you might find something
-						interesting.
-					</p>
-					<a href="./pages/projects/projects.html" class="projects-container__article__button">View
-						projects</a>
-				</article>
+		<section id="projects" class="card projects scroll scroll--appear scroll--earlier-65 scroll--length-50">
+			<div class="projects__container">
+				<object data="/media/desktop.svg" type="image/svg+xml" class="projects__illustration" alt="Desktop"></object>
+				<h2 class="projects__title">
+					My work
+				</h2>
+				<p class="projects__paragraph">
+					I specialize in TypeScript, building efficient web applications, scalable, and maintainable.
+					While I started in backend development, I recently shifted toward frontend, though
+					I still enjoy working on both sides of the stack.
+				</p>
+				<p class="projects__paragraph">
+					If you're curious about what I've built, check out the Projects page—you might find something
+					interesting.
+				</p>
+				<p class="projects__paragraph">
+					I also take on website projects. If you need one built, contact me through the contact form below.
+				</p>
+				<a class="projects__link button" href="/projects">My Projects</a>
 			</div>
 		</section>
-		<section class="contact-me card">
-			<div class="contact-me__form-container scroll-animation">
-				<div class="form-container">
-					<h1 class="heading">Contact me</h1>
-					<form class="form">
-						<div class="form-name-group">
-							<input type="text" name="first_name" placeholder="First name" maxlength="25" required />
-							<input type="text" name="last_name" placeholder="Last name" maxlength="25" required />
-						</div>
-						<input type="text" class="form__subject" name="subject" placeholder="Description" maxlength="75"
-							required />
-						<textarea name="message" class="form__text" placeholder="Hey..." maxlength="5000"
-							required></textarea>
-						<button type="submit" class="form__button">
-							Send
-						</button>
-					</form>
-				</div>
-				<div id="form-fetch-message"></div>
-				<div class="contact-me__socials">
-					<a href="https://www.facebook.com/VojtechLahuta/" target="_blank">
-						<img src="./svg/socials/facebook.svg" alt="facebook.svg" width=50 height=50 />
+		<section id="contact" class="card contact scroll scroll--appear scroll--earlier-65 scroll--length-50">
+			<form class="contact__container" id="contact__form">
+				<h2 class="contact__title">Contact Me</h2>
+				<input class="contact__field contact__hl" type="text" name="name" placeholder="Name" maxlength="50" required />
+				<input class="contact__field contact__hr" type="email" name="email" placeholder="E-mail" maxlength="100" required />
+				<input class="contact__field" type="text" name="subject" placeholder="Subject" maxlength="75" required />
+				<textarea class="contact__field contact__field--area" name="message" placeholder="Hello..." maxlength="5000" required></textarea>
+				<button type="submit" class="contact__submit button">Send</button>
+			</form>
+			<div id="contact__message"></div>
+			<div class="contact__socials">
+				<a class="contact__link" href="https://www.facebook.com/VojtechLahuta/" target="_blank">
+					<img src="/media/facebook.svg" alt="Facebook" />
+				</a>
+				<a class="contact__link" href="https://github.com/adstrafe/" target="_blank">
+					<img src="/media/github.svg" alt="GitHub" />
+				</a>
+				<a class="contact__link" href="https://www.linkedin.com/in/vojt%C4%9Bch-lahuta/" target="_blank">
+					<img src="/media/linkedin.svg" alt="LinkedIn" />
+				</a>
+			</div>
+			<div class="icon-credits__container">
+				<p class="icon-credits__text">
+					Icons by
+					<a href="https://icons8.com" target="_blank" class="icon-credits__link">
+						Icons8.com
 					</a>
-					<a href="https://github.com/adstrafe/" target="_blank">
-						<img src="./svg/socials/github.svg" alt="github.svg" width=50 height=50 />
-					</a>
-					<a href="https://www.linkedin.com/in/vojt%C4%9Bch-lahuta/" target="_blank">
-						<img src="./svg/socials/linkedin.svg" alt="linkedin.svg" width=50 height=50 />
-					</a>
-				</div>
+				</p>
 			</div>
 		</section>
 	</main>
-	<script src="./backgroundRenderer.js" type="text/javascript"></script>
-	<script src="./scrollAnimation.js" type="text/javascript"></script>
-	<script src="./formSubmission.js" type="text/javascript"></script>
+	<script type="text/javascript" src="/app.js"></script>
 </body>
-
 </html>

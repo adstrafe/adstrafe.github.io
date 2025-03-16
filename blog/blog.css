@@ -1,7 +1,12 @@
 .banner {
-	color: var(--accent-color);
+	color: var(--theme__color-accent);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	height: 100vh;
+}
+
+.message {
+	font-size: 2rem;
 }

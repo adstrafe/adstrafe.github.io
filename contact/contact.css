@@ -1,108 +1,5 @@
-/* #region Intro */
-
-.intro {
-	position: relative;
-	text-align: center;
-	gap: var(--theme__gap-4);
-}
-
-.intro__logo {
-	width: 15vw;
-	margin-bottom: var(--theme__gap-4);
-}
-
-.intro__title {
-	font-size: 3rem;
-}
-
-.intro__arrow-wrapper {
-	position: absolute;
-	bottom: var(--theme__gap-5);
-	outline: none;
-}
-
-.intro__arrow {
-	width: 1.5rem;
-	transition: transform 0.3s ease;
-	cursor: pointer;
-}
-
-.intro__arrow-wrapper:hover .intro__arrow,
-.intro__arrow-wrapper:focus .intro__arrow {
-	transform: translate3d(0, 0.5rem, 0);
-}
-
-/* #endregion */
-
-/* #region About Me */
-
-.about {
-	font-size: 1.5rem;
-}
-
-.about__container {
-	display: grid;
-	grid-template-columns: minmax(min-content, 35vw) 35vw;
-	grid-template-rows: repeat(5, auto);
-	grid-auto-flow: row;
-	gap: var(--theme__gap-3);
-}
-
-.about__title {
-	font-size: 3rem;
-	color: var(--theme__color-accent);
-	margin-bottom: var(--theme__gap-4);
-}
-
-.about__illustration {
-	width: 70%;
-	align-self: center;
-	justify-self: end;
-	grid-area: 1 / 2 / 6 / 3;
-}
-
-.about__link {
-	margin-top: var(--theme__gap-4);
-}
-
-/* #endregion */
-
-/* #region My Work */
-
-.projects {
-	font-size: 1.5rem;
-}
-
-.projects__container {
-	display: grid;
-	grid-template-columns: 35vw minmax(min-content, 35vw);
-	grid-template-rows: repeat(5, auto);
-	grid-auto-flow: row;
-	gap: var(--theme__gap-3);
-}
-
-.projects__title {
-	font-size: 3rem;
-	color: var(--theme__color-accent);
-	margin-bottom: var(--theme__gap-4);
-}
-
-.projects__illustration {
-	width: 70%;
-	align-self: center;
-	justify-self: start;
-	grid-area: 1 / 1 / 6 / 2;
-}
-
-.projects__link {
-	margin-top: var(--theme__gap-4);
-}
-
-/* #endregion */
-
-/* #region Contact */
-
 .contact {
+	background: rgb(from var(--theme__color-back) R G B / 30%);
 	font-size: 1.5rem;
 }
 
@@ -173,7 +70,7 @@
 
 .contact__link {
 	text-decoration: none;
-	transition: opacity linear;
+	transition: opacity 0.3s linear;
 }
 
 .contact__link:hover {
@@ -196,8 +93,6 @@
 	opacity: 1;
 	transform: translateY(0);
 }
-
-/* #endregion */
 
 /* #region credits */
 .icon-credits__container {
