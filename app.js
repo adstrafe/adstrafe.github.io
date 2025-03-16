@@ -239,3 +239,15 @@ function createProgram(gl, vertexSrc, fragmentSrc) {
 })();
 
 //#endregion
+
+//#region Hamburger menu
+(()=> {
+	const toggleButton = document.querySelector('.navigation__toggle');
+	const links = document.querySelector('.navigation__links');
+	
+	toggleButton.addEventListener('click', () => {
+		links.classList.toggle('navigation__links--open'); // Toggle the menu visibility
+		toggleButton.classList.toggle('open'); // Toggle the hamburger animation
+	});
+})();
+//#endregion

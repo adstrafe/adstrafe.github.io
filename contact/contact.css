@@ -94,6 +94,31 @@
 	transform: translateY(0);
 }
 
+@media only screen and (max-width: 800px) {
+	.contact__container {
+		width: 90vw;
+		max-width: none;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.contact__title {
+		font-size: 2rem;
+		text-align: center;
+		margin-bottom: var(--theme__gap-3);
+	}
+
+	.contact__field,
+	.contact__submit {
+		width: 100%;
+	}
+
+	.contact__socials {
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+}
+
 /* #region credits */
 .icon-credits__container {
 	margin: .5rem 0;

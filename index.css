@@ -1,5 +1,4 @@
 /* #region Intro */
-
 .intro {
 	position: relative;
 	text-align: center;
@@ -32,6 +31,29 @@
 	transform: translate3d(0, 0.5rem, 0);
 }
 
+@media only screen and (max-width: 800px) {
+	.intro {
+		padding: var(--theme__gap-2);
+	}
+
+	.intro__logo {
+		width: 60vw;
+	}
+
+	.intro__title {
+		font-size: 2rem;
+		line-height: 1.3;
+		margin-bottom: var(--theme__gap-2);
+	}
+
+	.intro__arrow-wrapper {
+		bottom: var(--theme__gap-4);
+	}
+
+	.intro__arrow {
+		width: 1.5rem;
+	}
+}
 /* #endregion */
 
 /* #region About Me */
@@ -65,6 +87,30 @@
 	margin-top: var(--theme__gap-4);
 }
 
+@media only screen and (max-width: 800px) {
+	.about__title {
+		text-align: center;
+		font-size: 2.2rem;
+		margin-bottom: var(--theme__gap-2);
+	}
+
+	.about__container {
+		padding: var(--theme__gap-5);
+		text-align: center;
+		grid-template-columns: 1fr;
+		gap: var(--theme__gap-3);
+	}
+
+	.about__illustration {
+		display: none;
+	}
+
+	.about__link {
+		margin-top: var(--theme__gap-2);
+		text-align: center;
+	}
+}
+
 /* #endregion */
 
 /* #region My Work */
@@ -96,6 +142,29 @@
 
 .projects__link {
 	margin-top: var(--theme__gap-4);
+}
+
+@media only screen and (max-width: 800px) {
+	.projects__title {
+		text-align: center;
+		font-size: 2.5rem;
+		margin-bottom: var(--theme__gap-3);
+	}
+
+	.projects__container {
+		padding: var(--theme__gap-5);
+		text-align: center;
+		grid-template-columns: 1fr;
+		gap: var(--theme__gap-3);
+	}
+
+	.projects__illustration {
+		display: none;
+	}
+
+	.projects__link {
+		margin-top: var(--theme__gap-2);
+	}
 }
 
 /* #endregion */
@@ -195,6 +264,31 @@
 #contact__message.visible {
 	opacity: 1;
 	transform: translateY(0);
+}
+
+@media only screen and (max-width: 800px) {
+	.contact__container {
+		width: 90vw;
+		max-width: none;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.contact__title {
+		font-size: 2rem;
+		text-align: center;
+		margin-bottom: var(--theme__gap-3);
+	}
+
+	.contact__field,
+	.contact__submit {
+		width: 100%;
+	}
+
+	.contact__socials {
+		justify-content: center;
+		flex-wrap: wrap;
+	}
 }
 
 /* #endregion */
