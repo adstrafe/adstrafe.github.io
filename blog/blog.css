@@ -13,7 +13,6 @@
 
 @media only screen and (max-width: 800px) {
 	.banner {
-		height: 50vh;
 		padding: 0 1rem;
 		text-align: center;
 	}

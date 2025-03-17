@@ -29,8 +29,8 @@ a {
 	border: 1px solid rgb(from var(--theme__color-fore) R G B / 30%);
 	background: rgb(from var(--theme__color-back) R G B / 50%);
 	border-radius: 3px;
-	width: 100%; /* Adjust to fit within grid */
-	max-width: 500px; /* Prevents stretching */
+	width: 100%;
+	max-width: 500px;
 	height: 500px;
 	text-align: center;
 	color: var(--theme__color-accent);
@@ -70,30 +70,30 @@ a {
 }
 
 @media only screen and (max-width: 1200px) {
-    .projects__container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
-    }
+	.projects__container {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 @media only screen and (max-width: 800px) {
-    .projects {
-        margin-top: 6rem; /* Adjust margin for smaller screens */
-    }
+	.projects {
+		margin-top: 8rem;
+	}
 
-    .projects__container {
-        grid-template-columns: 1fr; /* 1 column on smaller screens */
-        width: 100%;
-        max-width: 500px; /* Limit width for better centering */
-    }
+	.projects__container {
+		grid-template-columns: 1fr;
+		max-width: 500px;
+	}
 
-    .projects__card {
-        width: 100%; /* Allow flexibility */
-        padding: 2rem;
-        font-size: 1.5rem;
-        gap: 2rem;
-    }
+	.projects__card {
+		width: auto;
+		padding: 2rem;
+		max-width: 400px;
+		font-size: 1.5rem;
+		gap: 2rem;
+	}
 
-    .projects__technologies > img {
-        height: 40px; /* Reduce icon size */
-    }
+	.projects__technologies > img {
+		height: 40px;
+	}
 }

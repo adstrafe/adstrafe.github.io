@@ -112,6 +112,7 @@ body {
 }
 
 @media only screen and (max-width: 800px) {
+	#navigation__logo__link,
 	.navigation__logo {
 		display: none;
 	}
@@ -145,6 +146,7 @@ body {
 
 	.navigation__toggle {
 		display: flex;
+		float: right;
 	}
 
 	.navigation__link {
@@ -168,7 +170,7 @@ body {
 	}
 
 	.navigation__toggle.open span:nth-child(1) {
-		transform: translateY(8px) rotate(45deg);
+		transform: translateY(9px) rotate(45deg);
 	}
 	
 	.navigation__toggle.open span:nth-child(2) {
@@ -176,7 +178,7 @@ body {
 	}
 	
 	.navigation__toggle.open span:nth-child(3) {
-		transform: translateY(-8px) rotate(-45deg);
+		transform: translateY(-9px) rotate(-45deg);
 	}
 }
 
