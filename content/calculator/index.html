@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./index.css">
+	<title>Calculator</title>
+</head>
+<body>
+	<input id="hidden" type="hidden" />
+	<div class="calculator-container">
+		<input
+			type="text"
+			id="input-field"
+			disabled
+		/>
+		<div class="grid">
+			<button
+				class="number-button"
+				onclick="addInput(7)"
+			>
+				7
+			</button>
+			<button
+				class="number-button"
+				onclick="addInput(8)"
+			>
+				8
+			</button>
+			<button
+				class="number-button"
+				onclick="addInput(9)"
+			>
+				9
+			</button>
+			<button
+				class="operator-button"
+				onclick="addInput('/')"
+			>
+				÷
+			</button>
+			<button
+				class="number-button"
+				onclick="addInput(4)"
+			>
+				4
+			</button>
+			<button
+				class="number-button"
+				onclick="addInput(5)"
+			>
+				5
+			</button>
+			<button
+				class="number-button"
+				onclick="addInput(6)"
+			>
+				6
+			</button>
+			<button
+				class="operator-button"
+				onclick="addInput('*')"
+			>
+				x
+			</button>
+			<button
+				class="number-button"
+				onclick="addInput(1)"
+			>
+				1
+			</button>
+			<button
+				class="number-button"
+				onclick="addInput(2)"
+			>
+				2
+			</button>
+			<button
+				class="number-button"
+				onclick="addInput(3)"
+			>
+				3
+			</button>
+			<button
+				class="operator-button"
+				onclick="addInput('-')"
+			>
+				-
+			</button>
+			<button
+				id="delete"
+				class="number-button"
+				onclick="removeInput()"
+			>
+				DEL
+			</button>
+			<button
+				class="number-button"
+				onclick="addInput(0)"
+			>
+				0
+			</button>
+			<button
+				class="number-button"
+				onclick="addInput('.')"
+			>
+				.
+			</button>
+			<button
+				class="operator-button"
+				onclick="addInput('+')"
+			>
+				+
+			</button>
+			<button
+				id="evaluate"
+				class="operator-button"
+				onclick="evaluateEx()"
+			>
+				=
+			</button>
+		</div>
+	</div>
+	<script src="./app.js" type="text/javascript"></script>
+</body>
+</html>
