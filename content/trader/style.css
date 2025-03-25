@@ -156,6 +156,10 @@
 	font-size: 2rem;
 }
 
+.hero-equip-item__currently-equipped {
+	text-align: left;
+}
+
 .progress-bar {
 	position: relative;
 	overflow: clip;
@@ -188,6 +192,14 @@
 	align-items: center;
 	gap: var(--gap-m);
 }
+
+.stats-grid__container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	justify-content: center;
+}
+
 
 .crafting-recipe__controls {
 	display: grid;
