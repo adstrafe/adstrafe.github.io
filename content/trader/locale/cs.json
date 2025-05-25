@@ -1,9 +1,29 @@
 {
 	"attack": {
-		"NONE": "Žádný útok",
-		"LUNGE": "Kopanec do koulí",
-		"FIREBALL": "Ohnivá koule",
-		"SUNDER": "Natrhnutá prdel"
+		"NONE": {
+			"name": "Žádný útok",
+			"desc": "Nedělá nic..."
+		},
+		"LUNGE": {
+			"name": "Bodnutí",
+			"desc": "Inspirováno Anglií"
+		},
+		"FIREBALL": {
+			"name": "Ohnivá koule",
+			"desc": "Propeče protivníka na medium rare"
+		},
+		"SUNDER": {
+			"name": "Rozbití",
+			"desc": "Rozluč se s tou parádní zbrojí"
+		}
+	},
+	"effect": {
+		"IGNITE": {
+			"name": "Zapálení"
+		},
+		"SUNDER": {
+			"name": "Zničení brnění"
+		}
 	},
 	"attribute": {
 		"AGILITY": "Obratnost",
@@ -27,6 +47,7 @@
 		"COCA_LEAVES": "Koka"
 	},
 	"item": {
+		"NONE": "Prázdné",
 		"BONE": "Kost",
 		"SKULL": "Lebka",
 		"BROKEN_BOW": "Poničený luk",
@@ -96,6 +117,7 @@
 			"shop": "Obchod",
 			"heroes": "Hrdinové",
 			"hero-equip-item": "Vyzbrojit hrdinu",
+			"hero-rotation-select": "Vybrat schopnost pro",
 			"recruit-crafter": "Najmout řemeslníka",
 			"recruit-hero": "Najmout hrdinu",
 			"quest-select": "Výpravy",
@@ -104,7 +126,8 @@
 			"quest-loot": "Kořist",
 			"recipes": "Recepty",
 			"hero-heal": "Vyléčit hrdinu",
-			"equipment": "Vybavení"
+			"equipment": "Vybavení",
+			"currently-equipped": "Nasazeno"
 		},
 		"route": {
 			"CRAFTERS": "Řemeslníci",
@@ -116,6 +139,10 @@
 			"died": "Hrdina zemřel",
 			"quest-pending": "Na výpravě",
 			"quest-ready": "Výprava dokončena"
+		},
+		"hero-rotation-edit": {
+			"scales": "Závisí na: ",
+			"applies": "Způsobí: "
 		},
 		"crafter-state": {
 			"IDLE": "Odpočívá",

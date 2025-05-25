@@ -1,9 +1,29 @@
 {
 	"attack": {
-		"NONE": "None",
-		"LUNGE": "Lunge",
-		"FIREBALL": "Fireball",
-		"SUNDER": "Sunder"
+		"NONE": {
+			"name": "None",
+			"desc": "Does nothing..."
+		},
+		"LUNGE": {
+			"name": "Lunge",
+			"desc": "Inspired by England"
+		},
+		"FIREBALL": {
+			"name": "Fireball",
+			"desc": "Roasts the enemy to a perfect medium rare"
+		},
+		"SUNDER": {
+			"name": "Sunder",
+			"desc": "Say bye bye to your shiny armor"
+		}
+	},
+	"effect": {
+		"IGNITE": {
+			"name": "Ignite"
+		},
+		"SUNDER": {
+			"name": "Sunder"
+		}
 	},
 	"attribute": {
 		"AGILITY": "Agility",
@@ -27,6 +47,7 @@
 		"COCA_PLANT": "Coca Plant"
 	},
 	"item": {
+		"NONE": "None",
 		"BONE": "Bone",
 		"SKULL": "Skull",
 		"BROKEN_BOW": "Broken Bow",
@@ -96,6 +117,7 @@
 			"shop": "Shop",
 			"heroes": "Heroes",
 			"hero-equip-item": "Equip item for",
+			"hero-rotation-select": "Select ability for",
 			"recruit-crafter": "Recruit a Crafter",
 			"recruit-hero": "Recruit a Hero",
 			"quest-select": "Quests",
@@ -104,7 +126,8 @@
 			"quest-loot": "Loot",
 			"recipes": "Recipes",
 			"hero-heal": "Heal Hero",
-			"equipment": "Equipment"
+			"equipment": "Equipment",
+			"currently-equipped": "Currently equipped"
 		},
 		"route": {
 			"CRAFTERS": "Crafters",
@@ -116,6 +139,10 @@
 			"died": "Hero died",
 			"quest-pending": "On a quest",
 			"quest-ready": "Quest complete"
+		},
+		"hero-rotation-edit": {
+			"scales": "Scales with: ",
+			"applies": "Applies: "
 		},
 		"crafter-state": {
 			"IDLE": "Resting",
