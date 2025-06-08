@@ -474,6 +474,7 @@ h1 {
 	width: 30%;
 	background-color: #1a1a1a;
 	display: flex;
+	align-items: center;
 	flex-direction: column;
 	justify-content: center;
 	box-sizing: border-box;
