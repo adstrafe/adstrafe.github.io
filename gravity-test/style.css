@@ -105,6 +105,7 @@ h1 {
 	bottom: 5px;
 	border: 1px solid #d2691e;
 	border-radius: 2px;
+	transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 /* START REGION CONTACT */
@@ -290,8 +291,9 @@ h1 {
 	cursor: pointer;
 	flex-direction: column;
 	justify-content: space-between;
-	transition: all .4s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 	transform-origin: center;
+	transform: translateY(0) scale(1);
 }
 
 .carousel-card:hover {
@@ -309,12 +311,6 @@ h1 {
 	transition: all .2s ease-out;
 }
 
-.carousel-card:hover::before {
-	border-color: #fff;
-	transform: scale(1.02);
-	transition: all .4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .carousel-card::before {
 	content: '';
 	position: absolute;
@@ -325,7 +321,13 @@ h1 {
 	border: 1px solid #d2691e;
 	border-radius: 2px;
 	pointer-events: none;
-	transition: all .4s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	transform: scale(1);
+}
+
+.carousel-card:hover::before {
+	border-color: #fff;
+	transform: scale(1.02);
 }
 
 .carousel-card h3 {
@@ -443,25 +445,88 @@ h1 {
 /* START REGION LOCATION */
 .location {
 	display: flex;
+	padding: 0;
 	flex-direction: row;
-	justify-content: right;
-	background: linear-gradient(180deg, rgb(0, 0, 0) 0%, #00000000 20%), url('img/location.jpg');
-	background-size: cover;
-	background-position: 90% center;
-	background-repeat: no-repeat;
 	min-height: 100vh;
+	position: relative;
+}
+
+.location-image {
+	width: 70%;
+	height: 100vh;
+	background: url('img/location.jpg');
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+.location-image::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100px;
+	height: 100%;
+	background: linear-gradient(to right, transparent, #1a1a1a);
+}
+
+.location-content {
+	width: 30%;
+	background-color: #1a1a1a;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	box-sizing: border-box;
+	padding: 40px;
 }
 
 .card {
 	font-family: "Cinzel", serif;
-	font-size: 24px;
+	font-size: 20px;
 	margin-bottom: 40px;
-	margin-top: 70px;
 	display: flex;
 	flex-direction: column;
-	padding: 20px 20px;
-	background-color: #b6b6b6c8;
-	max-width: 30vw;
+	padding: 30px;
+	background-color: #575757;
+	border: 1px solid #d2691e;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.card p {
+	margin: 0;
+}
+
+/* Mobile Styles for Location */
+@media screen and (max-width: 768px) {
+	.location {
+		flex-direction: column;
+		min-height: auto;
+	}
+
+	.location-image {
+		width: 100%;
+		height: 300px;
+	}
+
+	.location-image::after {
+		display: none;
+	}
+
+	.location-content {
+		width: 100%;
+		padding: 20px;
+	}
+
+	.card {
+		margin-bottom: 20px;
+		font-size: 16px;
+		padding: 20px;
+	}
+
+	.card p {
+		font-size: 14px;
+	}
 }
 /* END REGION LOCATION */
 
@@ -561,7 +626,7 @@ h1 {
 
 	.studio-svg {
 		width: 80%;
-		margin-bottom: 2.vh;
+		margin-bottom: 2.5rem;
 	}
 
 	.reservation-link {
@@ -606,13 +671,5 @@ h1 {
 		max-width: 90vw;
 		font-size: 18px;
 		padding: 15px;
-	}
-}
-
-/* Fix for location section on mobile */
-@media screen and (max-width: 768px) {
-	.location {
-		justify-content: center;
-		background-position: center;
 	}
 }
