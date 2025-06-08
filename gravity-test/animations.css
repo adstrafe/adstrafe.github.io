@@ -1,0 +1,141 @@
+/* Gravity-themed Scroll Animations */
+
+/* Initial Load Animation */
+.logo-svg {
+    opacity: 0;
+    transform: scale(0.9) translateY(-30px);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+.logo-container.loaded .logo-svg {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.studio-svg {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) 0.6s;
+}
+
+.logo-container.loaded .studio-svg {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+/* Initial load animation for reservation link */
+.reservation-link {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1) 0.9s,
+                transform 1s cubic-bezier(0.4, 0, 0.2, 1) 0.9s;
+    transform-origin: center;
+}
+
+.logo-container.loaded .reservation-link {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+/* Override transition for hover state */
+.reservation-link:hover {
+    transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Base animation properties */
+.animate-on-scroll {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Gravity Pull Down */
+.gravity-pull {
+    transform: translateY(-50px) scale(0.95);
+}
+
+.gravity-pull.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Gravity Wave */
+.gravity-wave {
+    transform: translateY(30px) scale(0.98);
+}
+
+.gravity-wave.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Space-time Distortion */
+.space-distort {
+    transform: perspective(1000px) rotateX(10deg) scale(0.95);
+}
+
+.space-distort.visible {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0) scale(1);
+}
+
+/* Orbital Entry */
+.orbital-entry {
+    transform: translateX(-50px) rotate(-5deg) scale(0.95);
+}
+
+.orbital-entry.visible {
+    opacity: 1;
+    transform: translateX(0) rotate(0) scale(1);
+}
+
+/* Staggered animations for multiple elements */
+.stagger-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stagger-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Apply animations to specific elements */
+.text-grid > h1 {
+    composes: animate-on-scroll gravity-pull;
+}
+
+.contacts-paragraph p {
+    composes: animate-on-scroll gravity-wave;
+}
+
+.contact-grid > div {
+    composes: animate-on-scroll space-distort;
+}
+
+.services-header {
+    composes: animate-on-scroll orbital-entry;
+}
+
+.about > h1 {
+    composes: animate-on-scroll gravity-pull;
+}
+
+.about > p {
+    composes: animate-on-scroll gravity-wave;
+}
+
+.card {
+    composes: animate-on-scroll space-distort;
+}
+
+/* Staggered animations for contact grid */
+.contact-grid > div:nth-child(1) { transition-delay: 0.1s; }
+.contact-grid > div:nth-child(2) { transition-delay: 0.2s; }
+.contact-grid > div:nth-child(3) { transition-delay: 0.3s; }
+.contact-grid > div:nth-child(4) { transition-delay: 0.4s; }
+
+/* Staggered animations for about paragraphs */
+.about > p:nth-child(2) { transition-delay: 0.2s; }
+.about > p:nth-child(3) { transition-delay: 0.4s; }
+.about > p:nth-child(4) { transition-delay: 0.6s; } 

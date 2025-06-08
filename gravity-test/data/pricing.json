@@ -1,0 +1,73 @@
+{
+	"haircuts": [
+		{
+			"title": "Klasický střih",
+			"description": "Servis, střih nůžky/strojkem, mýti, styling.",
+			"price": "670 Kč"
+		},
+		{
+			"title": "Dětský střih",
+			"description": "Od 6-12let",
+			"price": "450 Kč"
+		},
+		{
+			"title": "Klasický střih (dlouhé vlasy)",
+			"description": "Servis, střih nůžkami/strojkem, mytí, styling.",
+			"price": "670 Kč"
+		},
+		{
+			"title": "Holení hlavy břitvou",
+			"description": "Servis, hot towel, holení, péče po holení.",
+			"price": "420 Kč"
+		},
+		{
+			"title": "Holení hlavy basic strojkem",
+			"description": "Servis, holení hlavy strojkem o 1-3 velikostech.",
+			"price": "300 Kč"
+		},
+		{
+			"title": "Holení hlavy fade strojkem",
+			"description": "Servis, propracovaný střih strojkem, styling.",
+			"price": "450 Kč"
+		}
+	],
+	"beard": [
+		{
+			"title": "Klasický střih a beardtrim",
+			"description": "Servis, střih nůžky/strojek, hot towel, holení, péče po holení, mytí, styling.",
+			"price": "970 Kč"
+		},
+		{
+			"title": "Klasický střih a úprava vousů strojkem",
+			"description": "Servis, střih nůžky/strojek, holení vousů strojkem, mytí, styling.",
+			"price": "850 Kč"
+		},
+		{
+			"title": "Beardtrim",
+			"description": "Servis, úprava vousů strojkem, hot towel, holení, péče po holení.",
+			"price": "520 Kč"
+		}
+	],
+	"other": [
+		{
+			"title": "Masáž hlavy",
+			"description": "Servis, mytí, peeling, masáž, styling.",
+			"price": "320 Kč"
+		},
+		{
+			"title": "Čištění pleti",
+			"description": "Servis, peeling, maska, masáž, zklidňující krém.",
+			"price": "220 Kč"
+		},
+		{
+			"title": "Depilace",
+			"price": "50 Kč"
+		},
+		{
+			"title": "Komplet služeb",
+			"description": "Servis, střih nůžky/strojkem, hot towel, holení, péče po holení, čištění pleti, mytí, masáž, styling.",
+			"price": "1570 Kč"
+		}
+	]
+}
+
