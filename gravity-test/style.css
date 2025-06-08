@@ -246,7 +246,7 @@ h1 {
 	width: 100%;
 	margin-bottom: 20px;
 	position: relative;
-	overflow: hidden; /* Added to clip excess cards and prevent horizontal scrolling */
+	overflow: hidden;
 }
 
 .carousel-container::before,
@@ -348,6 +348,77 @@ h1 {
 	font-weight: bold;
 	font-size: 18px;
 	color: #d2691e;
+}
+
+/* Mobile carousel styles */
+@media screen and (max-width: 768px) {
+	.carousel-container {
+		overflow: hidden;
+		position: relative;
+	}
+
+	.carousel-container::before,
+	.carousel-container::after {
+		display: none; /* Remove gradients on mobile */
+	}
+
+	.carousel-track {
+		flex-direction: column;
+		align-items: center;
+		transition: transform 0.5s ease-in-out; /* Smooth transition for card changes */
+	}
+
+	.carousel-card {
+		width: 90%;
+		max-width: 300px;
+		opacity: 0; /* Hide all cards by default */
+		position: absolute; /* Stack cards */
+		transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+	}
+
+	.carousel-card.active {
+		opacity: 1; /* Show active card */
+		position: relative;
+		transform: translateY(0);
+	}
+
+	.carousel-nav {
+		display: flex;
+		justify-content: space-between;
+		position: absolute;
+		top: 50%;
+		width: calc(100% + 40px); /* Extend beyond card width */
+		left: -20px; /* Center the extended width */
+		transform: translateY(-50%);
+		padding: 0 20px;
+		box-sizing: border-box;
+	}
+
+	.carousel-nav-button {
+		background-color: rgba(0, 0, 0, 0.7);
+		color: #d2691e;
+		border: 1px solid #d2691e;
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		font-size: 24px;
+		line-height: 40px;
+		transition: background-color 0.3s, transform 0.3s;
+	}
+
+	.carousel-nav-button:hover {
+		background-color: #d2691e;
+		color: #000;
+		transform: scale(1.1);
+	}
+
+	.carousel-nav-button:active {
+		transform: scale(0.95);
+	}
 }
 /* END REGION SERVICES */
 
@@ -462,7 +533,6 @@ h1 {
 	}
 
 	.carousel-card {
-		width: 260px;
 		min-height: 180px;
 	}
 
@@ -491,7 +561,7 @@ h1 {
 
 	.studio-svg {
 		width: 80%;
-		margin-bottom: 2.5rem;
+		margin-bottom: 2.vh;
 	}
 
 	.reservation-link {
@@ -515,7 +585,6 @@ h1 {
 	}
 
 	.carousel-card {
-		width: 220px;
 		min-height: 160px;
 		padding: 15px;
 	}
@@ -540,14 +609,6 @@ h1 {
 	}
 }
 
-/* Fix for carousel container shadows on mobile */
-@media screen and (max-width: 768px) {
-	.carousel-container::before,
-	.carousel-container::after {
-		width: 50px;
-	}
-}
-
 /* Fix for location section on mobile */
 @media screen and (max-width: 768px) {
 	.location {
@@ -555,4 +616,3 @@ h1 {
 		background-position: center;
 	}
 }
-
