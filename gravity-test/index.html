@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="animations.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="img/icon.svg" type="image/x-icon">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
 		rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
 	<section class="logo-container">
 		<img src="img/logo.svg" alt="logo" class="logo-svg" />
 		<img src="img/studio.svg" alt="studio" class="studio-svg" />
-		<a href="#" class="reservation-link">
+		<a href="#reservation" class="reservation-link">
 			Rezervuj si termín
 		</a>
 	</section>
@@ -81,14 +81,39 @@
 			Zakládáme si na tom, aby každá návštěva znamenala špičkový a jedinečný střih, který vyniká kvalitou a precizností.
 		</p>
 		<p>
-			Naším cílem je nabídnout víc než jen kvalitní střih – chceme, aby každá návštěva byla jedinečným zážitkem, kde se potkává pohodlí a osobní přístup.Vidíme v tom prostor, kde klient není jen další zákazník, ale součást komunity.
+			Naším cílem je poskytnout více než jen skvělý střih – chceme, aby každá návštěva byla nezapomenutelným zážitkem plným pohodlí a osobního přístupu. Vytváříme prostor, kde klient není pouze zákazníkem, ale stává se součástí naší komunity.
 		</p>
+	</section>
+	<section class="reservation" id="reservation">
+		<h1 class="reservation-header">Rezervuj si svůj čas</h1>
+		<div class="reservation-container">
+			<div class="menu-tabs">
+				<button class="tab active" data-tab="haircuts">Střihy</button>
+				<button class="tab" data-tab="beard">Vousy</button>
+				<button class="tab" data-tab="other">Další služby</button>
+			</div>
+			<div class="menu-content">
+				<div class="tab-content active" id="haircuts-content" onclick="showCuts">
+					<!-- Haircut services will be populated here via JS -->
+				</div>
+				<div class="tab-content" id="beard-content">
+					<!-- Beard services will be populated here via JS -->
+				</div>
+				<div class="tab-content" id="other-content">
+					<!-- Other services will be populated here via JS -->
+				</div>
+			</div>
+			<div class="reservation-cta">
+				<p>Vyber službu a rezervuj si termín přímo online.</p>
+				<a class="reservation-link-reservation" id="reserve-now">Rezervovat nyní</a>
+			</div>
+		</div>
 	</section>
 	<section class="location">
 		<div class="location-image"></div>
 		<div class="location-content">
 			<div class="card">
-				<p><strong>ŠALINA:</strong> 1, 10</p>
+				<p><strong>ŠALINA:</strong> 1, 6, 10</p>
 				<p><strong>ZASTÁVKA:</strong> ANTONÍNSKÁ</p>
 			</div>
 			<div class="card">

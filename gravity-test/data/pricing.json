@@ -3,70 +3,89 @@
 		{
 			"title": "Klasický střih",
 			"description": "Servis, střih nůžky/strojkem, mýti, styling.",
-			"price": "670 Kč"
+			"price": "670 Kč",
+			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/klasicky-strih-49218;viewMode=day",
+			"enabled": true
 		},
 		{
 			"title": "Dětský střih",
 			"description": "Od 6-12let",
-			"price": "450 Kč"
+			"price": "450 Kč",
+			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/detsky-strih-49219;viewMode=day",
+			"enabled": true
 		},
 		{
 			"title": "Klasický střih (dlouhé vlasy)",
 			"description": "Servis, střih nůžkami/strojkem, mytí, styling.",
-			"price": "670 Kč"
+			"price": "670 Kč",
+			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/klasicky-strih-dlouhe-vlasy-49220;viewMode=day",
+			"enabled": true
 		},
 		{
 			"title": "Holení hlavy břitvou",
 			"description": "Servis, hot towel, holení, péče po holení.",
-			"price": "420 Kč"
+			"price": "420 Kč",
+			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/holeni-hlavy-britvou-49221;viewMode=day",
+			"enabled": false
 		},
 		{
 			"title": "Holení hlavy basic strojkem",
 			"description": "Servis, holení hlavy strojkem o 1-3 velikostech.",
-			"price": "300 Kč"
+			"price": "300 Kč",
+			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/holeni-hlavy-strojkem-basic-49222;viewMode=day",
+			"enabled": true
 		},
 		{
 			"title": "Holení hlavy fade strojkem",
 			"description": "Servis, propracovaný střih strojkem, styling.",
-			"price": "450 Kč"
+			"price": "450 Kč",
+			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/holeni-hlavy-strojkem-fade-49223;viewMode=day",
+			"enabled": true
 		}
 	],
 	"beard": [
 		{
 			"title": "Klasický střih a beardtrim",
 			"description": "Servis, střih nůžky/strojek, hot towel, holení, péče po holení, mytí, styling.",
-			"price": "970 Kč"
+			"price": "970 Kč",
+			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/klasicky-strih-a-beardtrim-49228;viewMode=day",
+			"enabled": true
 		},
 		{
 			"title": "Klasický střih a úprava vousů strojkem",
 			"description": "Servis, střih nůžky/strojek, holení vousů strojkem, mytí, styling.",
-			"price": "850 Kč"
+			"price": "850 Kč",
+			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/klasicky-strih-a-uprava-vousu-strojkem-49229;viewMode=day",
+			"enabled": false
 		},
 		{
 			"title": "Beardtrim",
 			"description": "Servis, úprava vousů strojkem, hot towel, holení, péče po holení.",
-			"price": "520 Kč"
+			"price": "520 Kč",
+			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/beardtrim-49230;viewMode=day",
+			"enabled": true
 		}
 	],
 	"other": [
 		{
 			"title": "Masáž hlavy",
 			"description": "Servis, mytí, peeling, masáž, styling.",
-			"price": "320 Kč"
+			"price": "320 Kč",
+			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/masaz-hlavy-49225;viewMode=day",
+			"enabled": true
 		},
 		{
 			"title": "Čištění pleti",
 			"description": "Servis, peeling, maska, masáž, zklidňující krém.",
-			"price": "220 Kč"
+			"price": "220 Kč",
+			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/cisteni-pleti-49226;viewMode=day",
+			"enabled": true
 		},
 		{
 			"title": "Depilace",
-			"price": "50 Kč"
-		},
-		{
-			"title": "Komplet služeb",
-			"description": "Servis, střih nůžky/strojkem, hot towel, holení, péče po holení, čištění pleti, mytí, masáž, styling.",
-			"price": "1570 Kč"
+			"price": "50 Kč",
+			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/depilace-49227;viewMode=day",
+			"enabled": false
 		}
 	]
 }
