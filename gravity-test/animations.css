@@ -37,11 +37,6 @@
     transform: scale(1) translateY(0);
 }
 
-/* Override transition for hover state */
-.reservation-link:hover {
-    transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
 /* Base animation properties */
 .animate-on-scroll {
     opacity: 0;
