@@ -54,7 +54,7 @@
 			"price": "450 Kč",
 			"url_lucie": "https://gravity-barbers-studio.reenio.cz/cs/resource/detsky-strih-gravity-barbers-brno-lucie-sebestova-102667;viewMode=day",
 			"url_david": "https://gravity-barbers-studio.reenio.cz/cs/resource/detsky-strih-gravity-barbers-brno-david-tyl-102666;viewMode=day",
-			"enabled": true
+			"enabled": false
 		}
 	],
 	"beard": [
@@ -64,6 +64,14 @@
 			"price": "970 Kč",
 			"url_lucie": "https://gravity-barbers-studio.reenio.cz/cs/resource/klasicky-strih-a-beardtrim-gravity-barbers-brno-lucie-sebestova-102684;viewMode=day",
 			"url_david": "https://gravity-barbers-studio.reenio.cz/cs/resource/klasicky-strih-a-beardtrim-gravity-barbers-brno-david-tyl-102683;viewMode=day",
+			"enabled": true
+		},
+		{
+			"title": "Úprava vousů strojkem",
+			"description": "Servis, úprava vousů strojkem",
+			"price": "270 Kč",
+			"url_lucie": "https://gravity-barbers-studio.reenio.cz/cs/resource/uprava-vousu-strojkem-gravity-barbers-brno-lucie-sebestova-102843;viewMode=day",
+			"url_david": "https://gravity-barbers-studio.reenio.cz/cs/resource/uprava-vousu-strojkem-gravity-barbers-brno-david-tyl-102842;viewMode=day",
 			"enabled": true
 		},
 		{
@@ -103,7 +111,7 @@
 		{
 			"title": "Depilace",
 			"price": "50 Kč",
-			"url_lucie": "",
+			"url_lucie": "https://gravity-barbers-studio.reenio.cz/cs/resource/depilace-gravity-barbers-brno-lucie-sebestova-102682;viewMode=day",
 			"url_david": "https://gravity-barbers-studio.reenio.cz/cs/resource/depilace-gravity-barbers-brno-david-tyl-102681;viewMode=day",
 			"enabled": false
 		}
