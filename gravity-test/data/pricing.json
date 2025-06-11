@@ -4,42 +4,56 @@
 			"title": "Klasický střih",
 			"description": "Servis, střih nůžky/strojkem, mýti, styling.",
 			"price": "670 Kč",
-			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/klasicky-strih-49218;viewMode=day",
-			"enabled": true
-		},
-		{
-			"title": "Dětský střih",
-			"description": "Od 6-12let",
-			"price": "450 Kč",
-			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/detsky-strih-49219;viewMode=day",
+			"url_lucie": "https://gravity-barbers-studio.reenio.cz/cs/resource/klasicky-strih-gravity-barbers-brno-lucie-sebestova-102664;viewMode=day",
+			"url_david": "https://gravity-barbers-studio.reenio.cz/cs/resource/klasicky-strih-gravity-barbers-brno-david-tyl-102665;viewMode=day",
 			"enabled": true
 		},
 		{
 			"title": "Klasický střih (dlouhé vlasy)",
 			"description": "Servis, střih nůžkami/strojkem, mytí, styling.",
 			"price": "670 Kč",
-			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/klasicky-strih-dlouhe-vlasy-49220;viewMode=day",
+			"url_lucie": "https://gravity-barbers-studio.reenio.cz/cs/resource/klasicky-strih-dlouhe-vlasy-gravity-barbers-brno-lucie-sebestova-102669;viewMode=day",
+			"url_david": "https://gravity-barbers-studio.reenio.cz/cs/resource/klasicky-strih-dlouhe-vlasy-gravity-barbers-brno-david-tyl-102668;viewMode=day",
+			"enabled": true
+		},
+		{
+			"title": "Gravity Servis",
+			"description": "Servis, střih nůžky/strojkem, holení/úprava vousů,hot towel, péče po holení, čištění pleti, masáž, depilace, úprava obočí,mytí, styling.",
+			"price": "1 570 Kč",
+			"url_lucie": "https://gravity-barbers-studio.reenio.cz/cs/resource/gravity-servis-gravity-barbers-brno-lucie-sebestova-102690;viewMode=day",
+			"url_david": "https://gravity-barbers-studio.reenio.cz/cs/resource/gravity-servis-gravity-barbers-brno-david-tyl-102689;viewMode=day",
 			"enabled": true
 		},
 		{
 			"title": "Holení hlavy břitvou",
 			"description": "Servis, hot towel, holení, péče po holení.",
 			"price": "420 Kč",
-			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/holeni-hlavy-britvou-49221;viewMode=day",
+			"url_lucie": "https://gravity-barbers-studio.reenio.cz/cs/resource/holeni-hlavy-britvou-gravity-barbers-brno-lucie-sebestova-102671;viewMode=day",
+			"url_david": "https://gravity-barbers-studio.reenio.cz/cs/resource/holeni-hlavy-britvou-gravity-barbers-brno-david-tyl-102670;viewMode=day",
 			"enabled": false
 		},
 		{
-			"title": "Holení hlavy basic strojkem",
+			"title": "Holení hlavy strojkem - Basic",
 			"description": "Servis, holení hlavy strojkem o 1-3 velikostech.",
 			"price": "300 Kč",
-			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/holeni-hlavy-strojkem-basic-49222;viewMode=day",
+			"url_lucie": "https://gravity-barbers-studio.reenio.cz/cs/resource/holeni-hlavy-strojkem-basic-gravity-barbers-brno-lucie-sebestova-102673;viewMode=day",
+			"url_david": "https://gravity-barbers-studio.reenio.cz/cs/resource/holeni-hlavy-strojkem-basic-gravity-barbers-brno-david-tyl-102672;viewMode=day",
 			"enabled": true
 		},
 		{
-			"title": "Holení hlavy fade strojkem",
+			"title": "Holení hlavy strojkem - Fade",
 			"description": "Servis, propracovaný střih strojkem, styling.",
 			"price": "450 Kč",
-			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/holeni-hlavy-strojkem-fade-49223;viewMode=day",
+			"url_lucie": "https://gravity-barbers-studio.reenio.cz/cs/resource/holeni-hlavy-strojkem-fade-gravity-barbers-brno-lucie-sebestova-102676;viewMode=day",
+			"url_david": "https://gravity-barbers-studio.reenio.cz/cs/resource/holeni-hlavy-strojkem-fade-gravity-barbers-brno-david-tyl-102674;viewMode=day",
+			"enabled": true
+		},
+		{
+			"title": "Dětský střih",
+			"description": "Od 6-12let",
+			"price": "450 Kč",
+			"url_lucie": "https://gravity-barbers-studio.reenio.cz/cs/resource/detsky-strih-gravity-barbers-brno-lucie-sebestova-102667;viewMode=day",
+			"url_david": "https://gravity-barbers-studio.reenio.cz/cs/resource/detsky-strih-gravity-barbers-brno-david-tyl-102666;viewMode=day",
 			"enabled": true
 		}
 	],
@@ -48,21 +62,24 @@
 			"title": "Klasický střih a beardtrim",
 			"description": "Servis, střih nůžky/strojek, hot towel, holení, péče po holení, mytí, styling.",
 			"price": "970 Kč",
-			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/klasicky-strih-a-beardtrim-49228;viewMode=day",
+			"url_lucie": "https://gravity-barbers-studio.reenio.cz/cs/resource/klasicky-strih-a-beardtrim-gravity-barbers-brno-lucie-sebestova-102684;viewMode=day",
+			"url_david": "https://gravity-barbers-studio.reenio.cz/cs/resource/klasicky-strih-a-beardtrim-gravity-barbers-brno-david-tyl-102683;viewMode=day",
 			"enabled": true
 		},
 		{
 			"title": "Klasický střih a úprava vousů strojkem",
 			"description": "Servis, střih nůžky/strojek, holení vousů strojkem, mytí, styling.",
 			"price": "850 Kč",
-			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/klasicky-strih-a-uprava-vousu-strojkem-49229;viewMode=day",
+			"url_lucie": "https://gravity-barbers-studio.reenio.cz/cs/resource/klasicky-strih-a-uprava-vousu-strojkem-gravity-barbers-brno-lucie-sebestova-102686;viewMode=day",
+			"url_david": "https://gravity-barbers-studio.reenio.cz/cs/resource/klasicky-strih-a-uprava-vousu-strojkem-gravity-barbers-brno-david-tyl-102685;viewMode=day",
 			"enabled": false
 		},
 		{
 			"title": "Beardtrim",
 			"description": "Servis, úprava vousů strojkem, hot towel, holení, péče po holení.",
 			"price": "520 Kč",
-			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/beardtrim-49230;viewMode=day",
+			"url_lucie": "https://gravity-barbers-studio.reenio.cz/cs/resource/beardtrim-gravity-barbers-brno-lucie-sebestova-102688;viewMode=day",
+			"url_david": "https://gravity-barbers-studio.reenio.cz/cs/resource/beardtrim-gravity-barbers-brno-david-tyl-102687;viewMode=day",
 			"enabled": true
 		}
 	],
@@ -71,20 +88,23 @@
 			"title": "Masáž hlavy",
 			"description": "Servis, mytí, peeling, masáž, styling.",
 			"price": "320 Kč",
-			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/masaz-hlavy-49225;viewMode=day",
+			"url_lucie": "https://gravity-barbers-studio.reenio.cz/cs/resource/masaz-hlavy-gravity-barbers-brno-lucie-sebestova-102678;viewMode=day",
+			"url_david": "https://gravity-barbers-studio.reenio.cz/cs/resource/masaz-hlavy-gravity-barbers-brno-david-tyl-102677;viewMode=day",
 			"enabled": true
 		},
 		{
 			"title": "Čištění pleti",
 			"description": "Servis, peeling, maska, masáž, zklidňující krém.",
 			"price": "220 Kč",
-			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/cisteni-pleti-49226;viewMode=day",
+			"url_lucie": "https://gravity-barbers-studio.reenio.cz/cs/resource/cisteni-pleti-gravity-barbers-brno-lucie-sebestova-102679;viewMode=day",
+			"url_david": "https://gravity-barbers-studio.reenio.cz/cs/resource/cisteni-pleti-gravity-barbers-brno-david-tyl-102680;viewMode=day",
 			"enabled": true
 		},
 		{
 			"title": "Depilace",
 			"price": "50 Kč",
-			"url": "https://gravity-barbers-studio.reenio.cz/cs/service/depilace-49227;viewMode=day",
+			"url_lucie": "",
+			"url_david": "https://gravity-barbers-studio.reenio.cz/cs/resource/depilace-gravity-barbers-brno-david-tyl-102681;viewMode=day",
 			"enabled": false
 		}
 	]

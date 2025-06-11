@@ -85,27 +85,37 @@
 		</p>
 	</section>
 	<section class="reservation" id="reservation">
-		<h1 class="reservation-header">Rezervuj si svůj čas</h1>
+		<h1 class="reservation-header">Rezervace</h1>
 		<div class="reservation-container">
-			<div class="menu-tabs">
-				<button class="tab active" data-tab="haircuts">Střihy</button>
-				<button class="tab" data-tab="beard">Vousy</button>
-				<button class="tab" data-tab="other">Další služby</button>
+			<div class="menu-tabs barber-tabs" id="barber-tabs">
+				<div class="tab barber-tab" data-barber="lucie">Lucie</div>
+				<div class="tab barber-tab" data-barber="david">David</div>
 			</div>
 			<div class="menu-content">
-				<div class="tab-content active" id="haircuts-content">
-					<!-- Haircut services will be populated here via JS -->
+				<div class="tab-content barber-content" id="lucie-content">
+					<div class="menu-tabs service-tabs" id="lucie-service-tabs">
+						<div class="tab service-tab" data-category="haircuts">Střihy</div>
+						<div class="tab service-tab" data-category="beard">Vousy</div>
+						<div class="tab service-tab" data-category="other">Ostatní</div>
+					</div>
+					<div class="service-content">
+						<div class="tab-content service-tab-content" id="lucie-haircuts"></div>
+						<div class="tab-content service-tab-content" id="lucie-beard"></div>
+						<div class="tab-content service-tab-content" id="lucie-other"></div>
+					</div>
 				</div>
-				<div class="tab-content" id="beard-content">
-					<!-- Beard services will be populated here via JS -->
+				<div class="tab-content barber-content" id="david-content">
+					<div class="menu-tabs service-tabs" id="david-service-tabs">
+						<div class="tab service-tab" data-category="haircuts">Střihy</div>
+						<div class="tab service-tab" data-category="beard">Vousy</div>
+						<div class="tab service-tab" data-category="other">Ostatní</div>
+					</div>
+					<div class="service-content">
+						<div class="tab-content service-tab-content" id="david-haircuts"></div>
+						<div class="tab-content service-tab-content" id="david-beard"></div>
+						<div class="tab-content service-tab-content" id="david-other"></div>
+					</div>
 				</div>
-				<div class="tab-content" id="other-content">
-					<!-- Other services will be populated here via JS -->
-				</div>
-			</div>
-			<div class="reservation-cta">
-				<p>Vyber službu a rezervuj si termín přímo online.</p>
-				<a class="reservation-link-reservation" id="reserve-now">Rezervovat nyní</a>
 			</div>
 		</div>
 	</section>
@@ -122,7 +132,7 @@
 			</div>
 		</div>
 	</section>
-	<script src="script.js"></script>
-	<script src="animations.js" defer></script>
+	<script src="script.mjs" type="module"></script>
+	<script src="animations.mjs" type="module" defer></script>
 </body>
 </html>

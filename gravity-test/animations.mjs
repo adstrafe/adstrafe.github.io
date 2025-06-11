@@ -1,4 +1,4 @@
-class GravityScrollAnimator {
+export class GravityScrollAnimator {
 	constructor() {
 		this.observerOptions = {
 			root: null,
@@ -37,25 +37,25 @@ class GravityScrollAnimator {
 
 	observeElements() {
 		// Headers with gravity pull effect
-		document.querySelectorAll('.text-grid > h1, .about > h1, .reservation-header').forEach(el => {
+		document.querySelectorAll('.text-grid > h1, .about > h1').forEach(el => {
 			el.classList.add('animate-on-scroll', 'gravity-pull');
 			this.observer.observe(el);
 		});
 
 		// Paragraphs with gravity wave effect
-		document.querySelectorAll('.contacts-paragraph p, .about > p, .reservation-cta p').forEach(el => {
+		document.querySelectorAll('.contacts-paragraph p, .about > p').forEach(el => {
 			el.classList.add('animate-on-scroll', 'gravity-wave');
 			this.observer.observe(el);
 		});
 
 		// Contact grid items with space distortion
-		document.querySelectorAll('.contact-grid > div, .service-card, .reservation-link-reservation').forEach(el => {
+		document.querySelectorAll('.contact-grid > div').forEach(el => {
 			el.classList.add('animate-on-scroll', 'space-distort');
 			this.observer.observe(el);
 		});
 
 		// Services header with orbital entry
-		document.querySelectorAll('.services-header, .tab').forEach(el => {
+		document.querySelectorAll('.services-header').forEach(el => {
 			el.classList.add('animate-on-scroll', 'orbital-entry');
 			this.observer.observe(el);
 		});

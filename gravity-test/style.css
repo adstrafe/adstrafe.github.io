@@ -689,7 +689,6 @@ h1 {
 }
 
 /* START REGION RESERVATION */
-
 .reservation-link-reservation {
 	background-color: #000;
 	color: #fff;
@@ -780,6 +779,10 @@ h1 {
 	margin-bottom: 20px;
 }
 
+.barber-tabs {
+	margin-bottom: 30px;
+}
+
 .tab {
 	padding: 15px 25px;
 	margin: 0 5px;
@@ -790,7 +793,7 @@ h1 {
 	cursor: pointer;
 	font-size: 18px;
 	font-family: "Cinzel", serif;
-	transition: background-color 0.1s ease, color 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease;
+	transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 	transform-origin: center;
 	position: relative;
 	composes: animate-on-scroll stagger-item;
@@ -805,7 +808,7 @@ h1 {
 	bottom: 3px;
 	border: 1px solid #d2691e;
 	border-radius: 2px;
-	transition: border-color 0.1s ease;
+	transition: border-color 0.3s ease;
 }
 
 .tab:hover {
@@ -830,6 +833,39 @@ h1 {
 	transform: scale(0.98);
 	box-shadow: 0 3px 10px rgba(210, 105, 30, 0.4);
 	transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.barber-tab {
+	background-color: #1a1a1a;
+	padding: 20px;
+	border-radius: 5px;
+	width: 200px;
+	text-align: center;
+	font-size: 22px;
+	font-weight: bold;
+	transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.barber-tab:hover {
+	background-color: #d2691e;
+	color: #000;
+	transform: scale(1.02);
+	box-shadow: 0 5px 15px rgba(210, 105, 30, 0.3);
+}
+
+.barber-tab.active {
+	background-color: #d2691e;
+	color: #000;
+	transform: scale(1.02);
+	box-shadow: 0 5px 15px rgba(210, 105, 30, 0.4);
+}
+
+.barber-tab::before {
+	border: 2px solid #d2691e;
+}
+
+.barber-tab.active::before {
+	border-color: #fff;
 }
 
 .tab-content {
@@ -862,7 +898,7 @@ h1 {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	transition: background-color 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease;
+	transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 	transform-origin: center;
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 	composes: animate-on-scroll space-distort;
@@ -878,7 +914,7 @@ h1 {
 	border: 2px solid #d2691e;
 	border-radius: 3px;
 	pointer-events: none;
-	transition: border-color 0.1s ease, transform 0.1s ease;
+	transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
 .service-card:hover {
@@ -897,16 +933,32 @@ h1 {
 }
 
 .service-card.active::before {
-	content: '';
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	right: 5px;
-	bottom: 5px;
 	border: 2px solid #ffffff;
-	border-radius: 3px;
-	pointer-events: none;
-	transition: border-color 0.1s ease, transform 0.1s ease;
+}
+
+.service-content {
+	min-height: auto; /* Allow content to define height */
+	overflow: visible; /* Ensure content isn't clipped */
+	width: 100%; /* Match container width */
+}
+
+.service-tab-content {
+	display: none; /* Hidden by default */
+	min-height: auto; /* Allow content to expand */
+	width: 100%;
+}
+
+.service-tab-content.active {
+	display: block; /* Show when active */
+}
+
+/* Ensure service-card-container contributes to height */
+.service-card-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 30px;
+	justify-items: center;
+	min-height: auto; /* Allow natural height */
 }
 
 .service-card h3 {
@@ -970,9 +1022,11 @@ h1 {
 }
 
 /* Staggered animations for tabs */
-.menu-tabs .tab:nth-child(1) { transition-delay: 0.1s; }
-.menu-tabs .tab:nth-child(2) { transition-delay: 0.2s; }
-.menu-tabs .tab:nth-child(3) { transition-delay: 0.3s; }
+.barber-tabs .tab:nth-child(1) { transition-delay: 0.1s; }
+.barber-tabs .tab:nth-child(2) { transition-delay: 0.2s; }
+.service-tabs .tab:nth-child(1) { transition-delay: 0.1s; }
+.service-tabs .tab:nth-child(2) { transition-delay: 0.2s; }
+.service-tabs .tab:nth-child(3) { transition-delay: 0.3s; }
 
 /* Staggered animations for service cards */
 .service-card-container .service-card:nth-child(1) { transition-delay: 0.1s; }
@@ -1006,6 +1060,9 @@ h1 {
 		align-items: center;
 		margin-bottom: 15px;
 	}
+	.barber-tabs {
+		margin-bottom: 20px;
+	}
 	.tab {
 		width: 90%;
 		max-width: 300px;
@@ -1013,7 +1070,10 @@ h1 {
 		font-size: 16px;
 		padding: 10px 20px;
 	}
-	.menu-content {
+	.barber-tab {
+		width: 80%;
+		max-width: 280px;
+		font-size: 20px;
 		padding: 15px;
 	}
 	.service-card {
@@ -1049,7 +1109,8 @@ h1 {
 		font-size: 14px;
 		padding: 8px 15px;
 	}
-	.menu-content {
+	.barber-tab {
+		font-size: 18px;
 		padding: 10px;
 	}
 	.service-card {
@@ -1075,5 +1136,4 @@ h1 {
 		max-width: 90vw;
 	}
 }
-
 /* END REGION RESERVATION */
