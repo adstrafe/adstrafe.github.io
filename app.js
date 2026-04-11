@@ -91,6 +91,7 @@ function createProgram(gl, vertexSrc, fragmentSrc) {
 
 	if (!gl) {
 		console.error("WebGL2 is not supported.");
+		return;
 	}
 
 	const program = createProgram(gl, vertexShaderSource, fragmentShaderSource);
@@ -240,14 +241,52 @@ function createProgram(gl, vertexSrc, fragmentSrc) {
 
 //#endregion
 
-//#region Hamburger menu
-(()=> {
-	const toggleButton = document.querySelector('.navigation__toggle');
-	const links = document.querySelector('.navigation__links');
-	
-	toggleButton.addEventListener('click', () => {
-		links.classList.toggle('navigation__links--open'); // Toggle the menu visibility
-		toggleButton.classList.toggle('open'); // Toggle the hamburger animation
+//#region Hamburger Menu
+
+(() => {
+	const toggle = document.querySelector('.nav__toggle');
+	const links = document.querySelector('.nav__links');
+	if (!toggle || !links) return;
+
+	toggle.addEventListener('click', () => {
+		links.classList.toggle('nav__links--open');
+		toggle.classList.toggle('open');
 	});
 })();
+
+//#endregion
+
+//#region Nav Scroll — transparent over hero, solid after
+
+(() => {
+	const nav = document.querySelector('.nav');
+	const hero = document.getElementById('hero');
+	if (!nav || !hero) return;
+
+	const observer = new IntersectionObserver(([entry]) => {
+		nav.classList.toggle('nav--solid', !entry.isIntersecting);
+	}, { threshold: 0, rootMargin: '-1px 0px 0px 0px' });
+
+	observer.observe(hero);
+})();
+
+//#endregion
+
+//#region Bento Card Visibility — accent bar reveal
+
+(() => {
+	const cards = document.querySelectorAll('.bento__card');
+	if (cards.length === 0) return;
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('bento__card--visible');
+			}
+		});
+	}, { threshold: 0.3 });
+
+	cards.forEach(card => observer.observe(card));
+})();
+
 //#endregion

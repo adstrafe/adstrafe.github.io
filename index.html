@@ -3,12 +3,12 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="TypeScript developer, Muay Thai enthusiast. Explore my projects, blog, or get in contact." />
+	<meta name="description" content="Vojta Lahuta — Full-Stack TypeScript Developer based in Brno. Custom websites, web apps, and automation." />
 	<title>Vojtěch Lahuta</title>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800;900&display=swap" />
 	<link rel="stylesheet" href="/global.css" />
 	<link rel="stylesheet" href="/index.css" />
 	<link rel="icon" href="/media/logo-cutout.svg" type="image/svg+xml" />
@@ -19,112 +19,138 @@
 	<link rel="prefetch" href="/achievements/" />
 </head>
 <body>
-	<canvas id="background-canvas" class="scroll scroll--fade scroll--later-50 scroll--length-50"></canvas>
-	<main>
-		<nav class="navigation">
-			<a href="/" class="navigation__link" id="navigation__logo__link">
-				<img src="/media/logo-flat.svg" alt="VL" class="navigation__logo" />
-			</a>
-			<div class="navigation__toggle">
-				<span></span>
-				<span></span>
-				<span></span>
+	<canvas id="background-canvas" class="scroll scroll--darken scroll--later-50 scroll--length-50" style="position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;"></canvas>
+
+	<!-- Navigation -->
+	<nav class="nav">
+		<a href="/" class="nav__logo-link">
+			<img src="/media/logo-flat.svg" alt="VL" class="nav__logo" />
+		</a>
+		<div class="nav__toggle">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="nav__links">
+			<a href="/" class="nav__link nav__link--active">Home</a>
+			<a href="/projects/" class="nav__link">Projects</a>
+			<a href="/achievements/" class="nav__link">Experience</a>
+			<a href="/blog/" class="nav__link">Blog</a>
+			<a href="#contact" class="nav__link">Contact</a>
+		</div>
+	</nav>
+
+	<!-- Hero -->
+	<section class="hero" id="hero">
+		<object data="/media/logo.svg" type="image/svg+xml" class="hero__logo" alt="VL"></object>
+		<h1 class="hero__name">Vojtěch Lahuta</h1>
+		<p class="hero__tagline">Full-Stack TypeScript Developer in Brno.<br/>I build websites, web apps, and tools that actually work.</p>
+		<a href="#about" class="hero__arrow-wrapper">
+			<img src="/media/arrow.svg" alt="Arrow" class="hero__arrow" />
+		</a>
+	</section>
+
+	<!-- Bento Grid -->
+	<section class="bento">
+
+		<!-- About -->
+		<div class="bento__card bento__card--span-2 scroll scroll--card-enter scroll--stagger-1 scroll--length-50" id="about">
+			<div class="bento__label">About</div>
+			<h2 class="bento__heading">I build things properly.</h2>
+			<p class="bento__text">Hey, I'm Vojta — a full-stack developer who genuinely enjoys the work. I build web apps, automate things that shouldn't be manual, and obsess over understanding <em>why</em> something works, not just that it works.</p>
+			<p class="bento__text">Every project I build is one I'm proud to put my name on. I treat your product like it's my own — because at the end of the day, it's out there representing both of us.</p>
+		</div>
+
+		<!-- Tech stack -->
+		<div class="bento__card scroll scroll--card-enter scroll--stagger-2 scroll--length-50">
+			<div class="bento__label">Stack</div>
+			<h2 class="bento__heading">Tools I use</h2>
+			<div class="tech-pills">
+				<span class="tech-pill">TypeScript</span>
+				<span class="tech-pill">React</span>
+				<span class="tech-pill">Next.js</span>
+				<span class="tech-pill">Node.js</span>
+				<span class="tech-pill">Svelte</span>
+				<span class="tech-pill">AWS</span>
+				<span class="tech-pill">PostgreSQL</span>
+				<span class="tech-pill">n8n</span>
 			</div>
-			<div class="navigation__links">
-				<a href="/" class="navigation__link--active navigation__home">Home</a> 
-				<a href="/achievements/" class="navigation__link">Achievements</a>
-				<a href="/projects/" class="navigation__link">Projects</a>
-				<a href="/contact/" class="navigation__link">Contact</a>
-				<a href="/blog/" class="navigation__link">Blog</a>
+		</div>
+
+		<!-- Services — summary with tiers -->
+		<div class="bento__card bento__card--span-3 scroll scroll--card-enter scroll--stagger-3 scroll--length-50">
+			<div class="bento__label">Services</div>
+			<h2 class="bento__heading">Websites & Landing Pages</h2>
+			<p class="bento__text">A website that looks good, loads fast, and actually brings in customers. Pick the option that fits your situation.</p>
+			<div class="tiers">
+				<div class="tier">
+					<div class="tier__name">Starter</div>
+					<p class="tier__desc">Template-based site customized to your brand. Fast, affordable, live in no time.</p>
+					<div class="tier__price">5 000 CZK <span>/ from</span></div>
+				</div>
+				<div class="tier">
+					<div class="tier__name">Build</div>
+					<p class="tier__desc">You bring the design, I bring the code. Pixel-perfect, responsive, done right.</p>
+					<div class="tier__price">10 000 CZK <span>/ from</span></div>
+				</div>
+				<div class="tier">
+					<div class="tier__name">Full Package</div>
+					<p class="tier__desc">Design + development from scratch. You come with an idea, I handle everything.</p>
+					<div class="tier__price">20 000 CZK <span>/ from</span></div>
+				</div>
 			</div>
-		</nav>
-		
-		<section id="intro" class="card intro">
-			<object data="/media/logo.svg" type="image/svg+xml" class="intro__logo" alt="VL"></object>
-			<h1 class="intro__title">
-				Vojtěch Lahuta
-			</h1>
-			<p class="intro__subtitle">
-				aspiring TypeScript developer
-			</p>
-			<a href="#about" class="intro__arrow-wrapper">
-				<img src="/media/arrow.svg" alt="Arrow" class="intro__arrow" />
-			</a>
-		</section>
-		<section id="about" class="card about scroll scroll--appear scroll--earlier-65 scroll--length-50">
-			<div class="about__container">
-				<h2 class="about__title">
-					About Me
-				</h2>
-				<p class="about__paragraph">
-					Hey there! I’m Vojta, a developer by day, fighter by night. I’ve always
-					loved solving problems—whether debugging code, or figuring out the best way to land a kick.
-				</p>
-				<p class="about__paragraph">
-					I mostly work with TypeScript and Next.js, focusing on building smooth, efficient web apps.
-					For me, coding isn’t just about writing lines of code—it’s about truly understanding
-					how things work under the hood. I don’t just write code that works; I make sure I know why it works.
-				</p>
-				<p class="about__paragraph">
-					Beyond coding, I’m all about growth, challenges, and new experiences. If I’m not at my desk,
-					you’ll probably find me training Muay Thai or planning my next adventure.
-				</p>
-				<a class="about__link button" href="/achievements/index.html">My Achievements</a>
-				<object data="/media/office.svg" type="image/svg+xml" class="about__illustration" alt="Office"></object>
-			</div>
-		</section>
-		<section id="projects" class="card projects scroll scroll--appear scroll--earlier-65 scroll--length-50">
-			<div class="projects__container">
-				<object data="/media/desktop.svg" type="image/svg+xml" class="projects__illustration" alt="Desktop"></object>
-				<h2 class="projects__title">
-					My work
-				</h2>
-				<p class="projects__paragraph">
-					I specialize in TypeScript, building efficient web applications, scalable, and maintainable.
-					While I started in backend development, I recently shifted toward frontend, though
-					I still enjoy working on both sides of the stack.
-				</p>
-				<p class="projects__paragraph">
-					If you're curious about what I've built, check out the Projects page—you might find something
-					interesting.
-				</p>
-				<p class="projects__paragraph">
-					I also take on website projects. If you need one built, contact me through the contact form below.
-				</p>
-				<a class="projects__link button" href="/projects">My Projects</a>
-			</div>
-		</section>
-		<section id="contact" class="card contact scroll scroll--appear scroll--earlier-65 scroll--length-50">
-			<form class="contact__container" id="contact__form">
-				<h2 class="contact__title">Contact Me</h2>
-				<input class="contact__field contact__hl" type="text" name="name" placeholder="Name" maxlength="50" required />
-				<input class="contact__field contact__hr" type="email" name="email" placeholder="E-mail" maxlength="100" required />
-				<input class="contact__field" type="text" name="subject" placeholder="Subject" maxlength="75" required />
+			<a href="/services/" class="bento__link">View all services</a>
+		</div>
+
+		<!-- Custom apps teaser -->
+		<div class="bento__card bento__card--span-2 bento__card--accent scroll scroll--card-enter scroll--stagger-4 scroll--length-50">
+			<div class="bento__label">Custom Apps</div>
+			<h2 class="bento__heading">Still running on spreadsheets?</h2>
+			<p class="bento__text">I build custom tools that replace the chaos — internal dashboards, booking systems, simple CRMs, inventory trackers. No bloated software, just a clean app built around how <em>you</em> work.</p>
+			<a href="/services/" class="bento__link">Learn more</a>
+		</div>
+
+		<!-- Mindset / personal -->
+		<div class="bento__card scroll scroll--card-enter scroll--stagger-5 scroll--length-50">
+			<div class="bento__label">Beyond Code</div>
+			<h2 class="bento__heading">Show up. Repeat.</h2>
+			<p class="bento__text">I train Muay Thai and lift seriously. Same mindset as coding — put in the reps, figure out what's wrong, fix it, keep going.</p>
+		</div>
+
+	</section>
+
+	<!-- Contact -->
+	<section class="contact scroll scroll--card-enter scroll--stagger-6 scroll--length-50" id="contact">
+		<div class="contact__card">
+			<div class="bento__label">Contact</div>
+			<h2 class="bento__heading">Have a project in mind?</h2>
+			<p class="bento__text">Tell me about it. No sales pitch, no pressure — just an honest conversation about what makes sense.</p>
+			<form class="contact__form" id="contact__form">
+				<input class="contact__field" type="text" name="name" placeholder="Name" maxlength="50" required />
+				<input class="contact__field" type="email" name="email" placeholder="E-mail" maxlength="100" required />
+				<input class="contact__field contact__field--full" type="text" name="subject" placeholder="Subject" maxlength="75" required />
 				<textarea class="contact__field contact__field--area" name="message" placeholder="Hello..." maxlength="5000" required></textarea>
-				<button type="submit" class="contact__submit button">Send</button>
+				<button type="submit" class="contact__submit">Send message</button>
 			</form>
 			<div id="contact__message"></div>
 			<div class="contact__socials">
-				<a class="contact__link" href="https://www.facebook.com/VojtechLahuta/" target="_blank">
+				<a class="contact__social-link" href="https://www.facebook.com/VojtechLahuta/" target="_blank">
 					<img src="/media/facebook.svg" alt="Facebook" />
 				</a>
-				<a class="contact__link" href="https://github.com/adstrafe/" target="_blank">
+				<a class="contact__social-link" href="https://github.com/adstrafe/" target="_blank">
 					<img src="/media/github.svg" alt="GitHub" />
 				</a>
-				<a class="contact__link" href="https://www.linkedin.com/in/vojt%C4%9Bch-lahuta/" target="_blank">
+				<a class="contact__social-link" href="https://www.linkedin.com/in/vojt%C4%9Bch-lahuta/" target="_blank">
 					<img src="/media/linkedin.svg" alt="LinkedIn" />
 				</a>
 			</div>
-			<div class="icon-credits__container">
-				<p class="icon-credits__text">
-					Icons by
-					<a href="https://icons8.com" target="_blank" class="icon-credits__link">
-						Icons8.com
-					</a>
-				</p>
-			</div>
-		</section>
-	</main>
+		</div>
+	</section>
+
+	<footer class="footer">
+		Icons by <a href="https://icons8.com" target="_blank">Icons8.com</a>
+	</footer>
+
 	<script type="text/javascript" src="/app.js"></script>
 </body>
 </html>
