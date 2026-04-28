@@ -13,20 +13,21 @@
 	<meta property="og:url" content="https://vojtech.lahuta.cz/" />
 	<meta property="og:title" content="Vojtěch Lahuta — Full-Stack TypeScript" />
 	<meta property="og:description" content="Full-Stack TypeScript Developer based in Brno. MVP builds, product sprints, fractional engineering." />
-	<meta property="og:image" content="https://vojtech.lahuta.cz/media/og.png" />
 	<meta property="og:locale" content="en_US" />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Vojtěch Lahuta — Full-Stack TypeScript" />
 	<meta name="twitter:description" content="Full-Stack TypeScript Developer based in Brno. MVP builds, product sprints, fractional engineering." />
-	<meta name="twitter:image" content="https://vojtech.lahuta.cz/media/og.png" />
 
 	<meta name="theme-color" content="#0e0e0c" />
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
+	<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" /></noscript>
+	<link rel="preload" as="image" href="/media/portrait.webp" type="image/webp" />
 	<link rel="stylesheet" href="/global.css" />
 	<link rel="stylesheet" href="/index.css" />
 	<link rel="stylesheet" href="/anim.css" />
@@ -94,7 +95,10 @@
 
 		<aside class="hero__aside">
 			<figure class="portrait" aria-label="Portrait of Vojtěch Lahuta">
-				<img class="portrait__photo" src="/media/portrait.png" alt="Vojtěch Lahuta" />
+				<picture>
+					<source srcset="/media/portrait.webp" type="image/webp" />
+					<img class="portrait__photo" src="/media/portrait.png" alt="Vojtěch Lahuta" />
+				</picture>
 				<span class="portrait__crop portrait__crop--tl"></span>
 				<span class="portrait__crop portrait__crop--tr"></span>
 				<span class="portrait__crop portrait__crop--bl"></span>
