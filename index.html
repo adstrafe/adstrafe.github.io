@@ -3,128 +3,349 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="TypeScript developer, Muay Thai enthusiast. Explore my projects, blog, or get in contact." />
-	<title>Vojtěch Lahuta</title>
+	<meta name="description" content="Vojtěch Lahuta — Full-Stack TypeScript Developer based in Brno. MVP builds, product sprints, fractional engineering." />
+	<title>Vojtěch Lahuta — Full-Stack TypeScript</title>
+
+	<link rel="canonical" href="https://vojtech.lahuta.cz/" />
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://vojtech.lahuta.cz/" />
+	<meta property="og:title" content="Vojtěch Lahuta — Full-Stack TypeScript" />
+	<meta property="og:description" content="Full-Stack TypeScript Developer based in Brno. MVP builds, product sprints, fractional engineering." />
+	<meta property="og:image" content="https://vojtech.lahuta.cz/media/og.png" />
+	<meta property="og:locale" content="en_US" />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Vojtěch Lahuta — Full-Stack TypeScript" />
+	<meta name="twitter:description" content="Full-Stack TypeScript Developer based in Brno. MVP builds, product sprints, fractional engineering." />
+	<meta name="twitter:image" content="https://vojtech.lahuta.cz/media/og.png" />
+
+	<meta name="theme-color" content="#0e0e0c" />
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
 	<link rel="stylesheet" href="/global.css" />
 	<link rel="stylesheet" href="/index.css" />
-	<link rel="icon" href="/media/logo-cutout.svg" type="image/svg+xml" />
+	<link rel="stylesheet" href="/anim.css" />
+	<link rel="icon" href="/media/logo.svg" type="image/svg+xml" />
 
-	<link rel="prefetch" href="/blog/" />
-	<link rel="prefetch" href="/contact/" />
-	<link rel="prefetch" href="/projects/" />
-	<link rel="prefetch" href="/achievements/" />
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "ProfessionalService",
+		"name": "Vojtěch Lahuta",
+		"url": "https://vojtech.lahuta.cz",
+		"description": "Full-Stack TypeScript Developer based in Brno. MVP builds, product sprints, fractional engineering.",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Brno",
+			"addressCountry": "CZ"
+		},
+		"sameAs": [
+			"https://github.com/VojtechLahuta",
+			"https://www.linkedin.com/in/vojt%C4%9Bch-lahuta/"
+		],
+		"knowsAbout": ["TypeScript", "React", "Node.js", "Next.js", "Postgres", "Svelte"]
+	}
+	</script>
 </head>
 <body>
-	<canvas id="background-canvas" class="scroll scroll--fade scroll--later-50 scroll--length-50"></canvas>
-	<main>
-		<nav class="navigation">
-			<a href="/" class="navigation__link" id="navigation__logo__link">
-				<img src="/media/logo-flat.svg" alt="VL" class="navigation__logo" />
-			</a>
-			<div class="navigation__toggle">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-			<div class="navigation__links">
-				<a href="/" class="navigation__link--active navigation__home">Home</a> 
-				<a href="/achievements/" class="navigation__link">Achievements</a>
-				<a href="/projects/" class="navigation__link">Projects</a>
-				<a href="/contact/" class="navigation__link">Contact</a>
-				<a href="/blog/" class="navigation__link">Blog</a>
-			</div>
+
+	<header class="nav">
+		<a href="/" class="nav__brand">
+			<span class="nav__mark" aria-hidden="true">VL</span>
+			<span class="nav__meta">VOJTĚCH LAHUTA / FULL-STACK TS / BRNO, CZ</span>
+		</a>
+
+		<button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+			<span></span><span></span><span></span>
+		</button>
+
+		<nav class="nav__links">
+			<a class="nav__link" href="#work"><span class="nav__idx">01</span>WORK</a>
+			<a class="nav__link" href="#services"><span class="nav__idx">02</span>SERVICES</a>
+			<a class="nav__link" href="#stack"><span class="nav__idx">03</span>STACK</a>
+			<a class="nav__link" href="#process"><span class="nav__idx">04</span>PROCESS</a>
 		</nav>
-		
-		<section id="intro" class="card intro">
-			<object data="/media/logo.svg" type="image/svg+xml" class="intro__logo" alt="VL"></object>
-			<h1 class="intro__title">
-				Vojtěch Lahuta
+
+		<a class="nav__cta" href="#contact">Get in touch</a>
+	</header>
+
+	<main>
+
+	<section class="hero" id="hero">
+		<div class="hero__markers">
+			<span>§01 / INDEX</span>
+		</div>
+
+		<div class="hero__lead">
+			<div class="hero__kicker">
+				<span class="hero__dot" aria-hidden="true"></span>
+				FREELANCE FULL-STACK TYPESCRIPT DEVELOPER
+			</div>
+			<h1 class="hero__title">
+				I build<br />
+				<em>custom web <mark>tools</mark></em> for businesses <br />
 			</h1>
-			<p class="intro__subtitle">
-				aspiring TypeScript developer
+		</div>
+
+		<aside class="hero__aside">
+			<figure class="portrait" aria-label="Portrait of Vojtěch Lahuta">
+				<img class="portrait__photo" src="/media/portrait.png" alt="Vojtěch Lahuta" />
+				<span class="portrait__crop portrait__crop--tl"></span>
+				<span class="portrait__crop portrait__crop--tr"></span>
+				<span class="portrait__crop portrait__crop--bl"></span>
+				<span class="portrait__crop portrait__crop--br"></span>
+				<span class="portrait__badge">V.L.</span>
+				<figcaption class="portrait__strip">
+					<span>/ PORTRAIT</span>
+				</figcaption>
+			</figure>
+
+			<div class="about">
+				<div class="about__label">ABOUT / 001</div>
+				<p class="about__text">
+					I'm Vojta, a Brno-based full-stack developer with production experience in fintech and a freelance side building websites and the custom tools that grow out of them.
+				</p>
+				<dl class="about__stats">
+					<div><dt>3</dt><dd>YRS OF EXPERIENCE</dd></div>
+					<div><dt>6</dt><dd>PROJECTS</dd></div>
+				</dl>
+			</div>
+		</aside>
+	</section>
+
+	<section class="section" id="services">
+		<header class="section__head">
+			<span>§02 / SERVICES</span>
+			<span>WHAT I DO</span>
+		</header>
+
+		<div class="services">
+			<article class="service-primary">
+				<header class="service-primary__head">
+					<div class="service-primary__meta">
+						<span class="service-primary__num">01</span>
+						<span class="service-primary__dur">1–4 WEEKS</span>
+					</div>
+					<h3 class="service-primary__title">Websites &amp; Landing Pages</h3>
+					<p class="service-primary__desc">
+						A website that looks good, loads fast, and brings in customer engagement.
+						Pick the tier that fits you.
+					</p>
+				</header>
+
+				<div class="tiers">
+					<div class="tier">
+						<div class="tier__dur">1 WEEK</div>
+						<h4 class="tier__title">Quick Launch</h4>
+						<div class="tier__price">
+							<span class="tier__price-label">from</span>
+							<span class="tier__price-value">8 000 Kč</span>
+						</div>
+						<p class="tier__desc">Template-based, customized to your brand. Live and online in no time. Good fit if you just need a professional presence.</p>
+					</div>
+
+					<div class="tier">
+						<div class="tier__dur">2 WEEKS</div>
+						<h4 class="tier__title">Design-Ready</h4>
+						<div class="tier__price">
+							<span class="tier__price-label">from</span>
+							<span class="tier__price-value">15 000 Kč</span>
+						</div>
+						<p class="tier__desc">You bring the design (Figma, sketches, a clear vision), I bring the code. Pixel-perfect, responsive, fast.</p>
+					</div>
+
+					<div class="tier">
+						<div class="tier__dur">3–4 WEEKS</div>
+						<h4 class="tier__title">Full Custom</h4>
+						<div class="tier__price">
+							<span class="tier__price-label">from</span>
+							<span class="tier__price-value">35 000 Kč</span>
+						</div>
+						<p class="tier__desc">Design + development from scratch. You come with a rough idea and a few references, I handle everything — from look and feel to final product.</p>
+					</div>
+				</div>
+			</article>
+
+			<article class="service-secondary">
+				<div class="service-secondary__meta">
+					<span class="service-secondary__num">02</span>
+					<span class="service-secondary__dur">SCOPE-DEPENDENT</span>
+				</div>
+				<h3 class="service-secondary__title">Custom Web Tools</h3>
+				<div class="service-secondary__price">
+					<span class="service-secondary__price-label">pricing</span>
+					<span class="service-secondary__price-value">on request</span>
+				</div>
+				<p class="service-secondary__desc">
+					Outgrew your spreadsheets? I can build an internal tool tailored to how your
+					business works — dashboards, booking systems, simple CRMs,
+					inventory trackers, reporting apps.
+				</p>
+				<div class="service-secondary__fit-label">GOOD FIT IF YOU</div>
+				<ul class="service-secondary__fit">
+					<li><span class="service-secondary__arrow">→</span><span>Run your business on a mess of spreadsheets and emails</span></li>
+					<li><span class="service-secondary__arrow">→</span><span>Need something like a workflow automated but don't have time</span></li>
+					<li><span class="service-secondary__arrow">→</span><span>Want a developer who understands both the code and your business</span></li>
+				</ul>
+			</article>
+		</div>
+
+		<div class="addons">
+			<div class="addons__label">
+				<div class="addons__label-main">+ ADD-ONS</div>
+				<div class="addons__label-sub">tack onto any tier</div>
+			</div>
+			<div class="addons__list">
+				<span class="addon">Reservation system</span>
+				<span class="addon">Contact forms</span>
+				<span class="addon">CMS</span>
+				<span class="addon">Multilingual</span>
+				<span class="addon">SEO setup</span>
+				<span class="addon">Analytics</span>
+			</div>
+		</div>
+
+		<div class="discovery">
+			<div class="discovery__heading">
+				<span class="discovery__dot" aria-hidden="true"></span>
+				<span class="discovery__label">EVERY PROJECT STARTS WITH A FREE DISCOVERY MEETING</span>
+			</div>
+			<p class="discovery__desc">
+				I figure out what you actually need — sometimes it's an app, sometimes it's
+				just better automation — and go from there.
 			</p>
-			<a href="#about" class="intro__arrow-wrapper">
-				<img src="/media/arrow.svg" alt="Arrow" class="intro__arrow" />
-			</a>
-		</section>
-		<section id="about" class="card about scroll scroll--appear scroll--earlier-65 scroll--length-50">
-			<div class="about__container">
-				<h2 class="about__title">
-					About Me
-				</h2>
-				<p class="about__paragraph">
-					Hey there! I’m Vojta, a developer by day, fighter by night. I’ve always
-					loved solving problems—whether debugging code, or figuring out the best way to land a kick.
-				</p>
-				<p class="about__paragraph">
-					I mostly work with TypeScript and Next.js, focusing on building smooth, efficient web apps.
-					For me, coding isn’t just about writing lines of code—it’s about truly understanding
-					how things work under the hood. I don’t just write code that works; I make sure I know why it works.
-				</p>
-				<p class="about__paragraph">
-					Beyond coding, I’m all about growth, challenges, and new experiences. If I’m not at my desk,
-					you’ll probably find me training Muay Thai or planning my next adventure.
-				</p>
-				<a class="about__link button" href="/achievements/index.html">My Achievements</a>
-				<object data="/media/office.svg" type="image/svg+xml" class="about__illustration" alt="Office"></object>
-			</div>
-		</section>
-		<section id="projects" class="card projects scroll scroll--appear scroll--earlier-65 scroll--length-50">
-			<div class="projects__container">
-				<object data="/media/desktop.svg" type="image/svg+xml" class="projects__illustration" alt="Desktop"></object>
-				<h2 class="projects__title">
-					My work
-				</h2>
-				<p class="projects__paragraph">
-					I specialize in TypeScript, building efficient web applications, scalable, and maintainable.
-					While I started in backend development, I recently shifted toward frontend, though
-					I still enjoy working on both sides of the stack.
-				</p>
-				<p class="projects__paragraph">
-					If you're curious about what I've built, check out the Projects page—you might find something
-					interesting.
-				</p>
-				<p class="projects__paragraph">
-					I also take on website projects. If you need one built, contact me through the contact form below.
-				</p>
-				<a class="projects__link button" href="/projects">My Projects</a>
-			</div>
-		</section>
-		<section id="contact" class="card contact scroll scroll--appear scroll--earlier-65 scroll--length-50">
-			<form class="contact__container" id="contact__form">
-				<h2 class="contact__title">Contact Me</h2>
-				<input class="contact__field contact__hl" type="text" name="name" placeholder="Name" maxlength="50" required />
-				<input class="contact__field contact__hr" type="email" name="email" placeholder="E-mail" maxlength="100" required />
-				<input class="contact__field" type="text" name="subject" placeholder="Subject" maxlength="75" required />
-				<textarea class="contact__field contact__field--area" name="message" placeholder="Hello..." maxlength="5000" required></textarea>
-				<button type="submit" class="contact__submit button">Send</button>
-			</form>
-			<div id="contact__message"></div>
-			<div class="contact__socials">
-				<a class="contact__link" href="https://www.facebook.com/VojtechLahuta/" target="_blank">
-					<img src="/media/facebook.svg" alt="Facebook" />
+			<a class="discovery__cta" href="#contact">Get in touch</a>
+		</div>
+	</section>
+
+	<section class="section" id="work">
+		<header class="section__head">
+			<span>§03 / SELECTED WORK</span>
+			<span>2023 — 2026</span>
+		</header>
+
+		<ol class="work">
+			<li class="work__row">
+				<a class="work__link" href="/work/margin.html">
+					<span class="work__year">2026</span>
+					<span class="work__client">
+						<span class="work__type">WEB APP / MVP</span>
+						<span class="work__name">Margin</span>
+					</span>
+					<span class="work__title">A thesis-driven personal investment journal</span>
+					<span class="work__aside">
+						<span class="work__stack">Event sourcing · CQRS</span>
+					</span>
 				</a>
-				<a class="contact__link" href="https://github.com/adstrafe/" target="_blank">
-					<img src="/media/github.svg" alt="GitHub" />
+			</li>
+			<li class="work__row">
+				<a class="work__link" href="/work/gravitybarbers.html">
+					<span class="work__year">2025</span>
+					<span class="work__client">
+						<span class="work__type">Website for a client</span>
+						<span class="work__name">Gravitybarbers.cz</span>
+					</span>
+					<span class="work__title">Barber website + unsolicited redesign</span>
+					<span class="work__aside">
+						<span class="work__stack">HTML · CSS · JS</span>
+					</span>
 				</a>
-				<a class="contact__link" href="https://www.linkedin.com/in/vojt%C4%9Bch-lahuta/" target="_blank">
-					<img src="/media/linkedin.svg" alt="LinkedIn" />
-				</a>
+			</li>
+		</ol>
+	</section>
+
+	<section class="section" id="stack">
+		<header class="section__head">
+			<span>§04 / STACK</span>
+			<span>TOOLS I REACH FOR</span>
+		</header>
+
+		<div class="stack">
+			<div class="stack__col">
+				<div class="stack__cat">/ FRONTEND</div>
+				<ul>
+					<li>TypeScript</li><li>React / Preact</li><li>Svelte</li><li>Next.js</li>
+				</ul>
 			</div>
-			<div class="icon-credits__container">
-				<p class="icon-credits__text">
-					Icons by
-					<a href="https://icons8.com" target="_blank" class="icon-credits__link">
-						Icons8.com
-					</a>
-				</p>
+			<div class="stack__col">
+				<div class="stack__cat">/ BACKEND</div>
+				<ul>
+					<li>Node.js</li><li>tRPC</li>
+				</ul>
 			</div>
-		</section>
+			<div class="stack__col">
+				<div class="stack__cat">/ DATA</div>
+				<ul>
+					<li>Postgres</li><li>Mongo</li><li>Redis</li><li>SQLite</li><li>Supabase</li>
+				</ul>
+			</div>
+			<div class="stack__col">
+				<div class="stack__cat">/ INFRA</div>
+				<ul>
+					<li>Vercel</li><li>AWS</li><li>SST</li><li>Docker</li><li>GH Actions</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="section" id="process">
+		<header class="section__head">
+			<span>§05 / PROCESS</span>
+			<span>HOW IT GOES</span>
+		</header>
+
+		<ol class="process">
+			<li class="process__step">
+				<div class="process__num">01</div>
+				<h3 class="process__title">Onboarding</h3>
+				<p>30 min. We walk through your idea, constraints, timeline. Free.</p>
+			</li>
+			<li class="process__step">
+				<div class="process__num">02</div>
+				<h3 class="process__title">Scope</h3>
+				<p>Within 48h I send a fixed quote, milestones, and a start date.</p>
+			</li>
+			<li class="process__step">
+				<div class="process__num">03</div>
+				<h3 class="process__title">Build</h3>
+				<p>Regular updates. You see progress in a staging environment.</p>
+			</li>
+			<li class="process__step">
+				<div class="process__num">04</div>
+				<h3 class="process__title">Ship</h3>
+				<p>Deployed, documented, handoff meeting. 30 days of support included.</p>
+			</li>
+		</ol>
+	</section>
+
+	<section class="cta" id="contact">
+		<div class="cta__label">§06 / CONTACT</div>
+		<h2 class="cta__title">
+			Got a project?<br />
+			<span>Let's scope it.</span>
+		</h2>
+		<div class="cta__actions">
+			<a class="cta__button" href="mailto:vojtech@lahuta.cz">Get in touch</a>
+		</div>
+	</section>
+
 	</main>
-	<script type="text/javascript" src="/app.js"></script>
+
+	<footer class="footer">
+		<div class="footer__copy">© 2026 VOJTĚCH LAHUTA / BRNO, CZ</div>
+		<div class="footer__social">
+			<a href="https://github.com/VojtechLahuta" target="_blank" rel="noopener">GITHUB</a>
+			<a href="https://www.linkedin.com/in/vojt%C4%9Bch-lahuta/" target="_blank" rel="noopener">LINKEDIN</a>
+		</div>
+		<div class="footer__id">IČO 24085740</div>
+	</footer>
+
+	<script src="/app.js" defer></script>
+	<script src="/anim.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRAVITY Barbers — Vintage · Brno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="gravity-v2.css">
+</head>
+<body>
+
+<nav class="vnav" id="vnav">
+  <div class="vnav-left">
+    <a href="#services">Služby</a>
+    <a href="#about">O nás</a>
+  </div>
+  <div class="vnav-mark">
+    GRAVITY
+    <span class="vnav-mark-sub">barbers · brno</span>
+  </div>
+  <div class="vnav-right">
+    <a href="#booking">Rezervace</a>
+    <a href="#location">Kontakt</a>
+  </div>
+</nav>
+
+<section class="vhero" id="hero">
+  <div class="vhero-bg"></div>
+  <svg class="corner-orn tl" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="0.6">
+    <path d="M 5,5 L 5,30 M 5,5 L 30,5"/>
+    <path d="M 5,35 Q 12,28 18,35 Q 12,42 5,35 Z"/>
+    <circle cx="35" cy="5" r="2"/>
+  </svg>
+  <svg class="corner-orn tr" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="0.6">
+    <path d="M 5,5 L 5,30 M 5,5 L 30,5"/>
+    <path d="M 5,35 Q 12,28 18,35 Q 12,42 5,35 Z"/>
+    <circle cx="35" cy="5" r="2"/>
+  </svg>
+  <svg class="corner-orn bl" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="0.6">
+    <path d="M 5,5 L 5,30 M 5,5 L 30,5"/>
+    <path d="M 5,35 Q 12,28 18,35 Q 12,42 5,35 Z"/>
+    <circle cx="35" cy="5" r="2"/>
+  </svg>
+  <svg class="corner-orn br" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="0.6">
+    <path d="M 5,5 L 5,30 M 5,5 L 30,5"/>
+    <path d="M 5,35 Q 12,28 18,35 Q 12,42 5,35 Z"/>
+    <circle cx="35" cy="5" r="2"/>
+  </svg>
+  <div>
+    <div class="vhero-est">Est. MMXXIV · Brno</div>
+    <div class="vhero-crest">
+      </div>
+      <div>
+        <div class="vhero-mark">
+          <span class="vhero-mark-shadow" data-text="GRAVITY">GRAVITY</span>
+        </div>
+        <div class="ornament"><span class="ornament-glyph">◆</span></div>
+      </div>
+      </div>
+    </div>
+    <div class="vhero-underline">BARBERS · STUDIO</div>
+    <p class="vhero-tag">
+      Zažij nový level barber služeb &amp; odejdi s pocitem, že <strong>gravitace</strong> tu neplatí.
+    </p>
+    <div class="vhero-cta-row">
+      <a href="#booking" class="vbtn vbtn-filled">Rezervuj termín <span class="vbtn-glyph">→</span></a>
+      <a href="#services" class="vbtn">Prohlédni menu</a>
+    </div>
+  </div>
+  <div class="vhero-scroll">— scroll —</div>
+</section>
+
+<section class="about-strip" id="about-intro">
+  <div class="wrap-narrow">
+    <div class="ornament"><span class="ornament-glyph">◆ ◆ ◆</span></div>
+    <p class="about-lede">
+      Tady nejsi jen další zákazník. <em>Tady jsi součást příběhu.</em><br>
+      V Gravity Barber's studiu se neboj­íme dělat věci jinak.
+    </p>
+  </div>
+  <div class="wrap-wide">
+    <div class="quadrant">
+      <a href="tel:+420775965267" class="quadrant-cell">
+        <span class="quadrant-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </span>
+        <span class="quadrant-label">Telefon</span>
+        <span class="quadrant-value">+420 775 965 267</span>
+        <span class="quadrant-note">volej v otevírací době</span>
+      </a>
+      <a href="#location" class="quadrant-cell">
+        <span class="quadrant-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </span>
+        <span class="quadrant-label">Adresa</span>
+        <span class="quadrant-value">Lidická 1874/18</span>
+        <span class="quadrant-note">Brno · Modrá pasáž</span>
+      </a>
+      <a href="#" class="quadrant-cell">
+        <span class="quadrant-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
+          </svg>
+        </span>
+        <span class="quadrant-label">Instagram</span>
+        <span class="quadrant-value">@gravitybarbers</span>
+        <span class="quadrant-note">střihy &amp; okamžiky</span>
+      </a>
+      <div class="quadrant-cell">
+        <span class="quadrant-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <rect x="3" y="4" width="18" height="18" rx="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </span>
+        <span class="quadrant-label">Otevřeno</span>
+        <span class="quadrant-value">Po–Pá · 9–19</span>
+        <span class="quadrant-note">so · po dohodě</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section" id="services">
+  <div class="chapter menu-chapter">
+    <div class="chapter-roman">— Menu —</div>
+    <h2 class="chapter-title">Najdi si svůj styl</h2>
+    <div class="ornament"><span class="ornament-glyph">◆</span></div>
+    <p class="chapter-sub">Každá služba je vedena s péčí &amp; precizností. Vyber, co dnes potřebuješ.</p>
+  </div>
+  <div class="wrap-wide">
+    <div class="menu-filters" id="menuFilters">
+      <button class="menu-filter active" data-filter="all">Vše</button>
+      <button class="menu-filter" data-filter="strih">Střihy</button>
+      <button class="menu-filter" data-filter="vousy">Vousy</button>
+      <button class="menu-filter" data-filter="ostatni">Péče</button>
+    </div>
+    <div class="menu-list" id="menuList"></div>
+  </div>
+</section>
+
+<section class="vignette" id="about">
+  <div class="vignette-g">G</div>
+  <div class="wrap-narrow">
+    <div class="chapter-roman" style="margin-bottom:12px">— Studio —</div>
+    <h2>O nás</h2>
+    <div class="ornament"><span class="ornament-glyph">◆</span></div>
+    <div class="vignette-body">
+      <p>Jsme dva mladí společníci, kteří se rozhodli vdechnout novou energii do světa barberingu.</p>
+      <p>Zakládáme si na tom, aby každá návštěva znamenala špičkový a bezpečný střih, který bude vynikat kvalitou a precizností.</p>
+      <p>Naším cílem je poskytnout víc než jen skvělý střih — chceme, aby každá návštěva byla nezapomenutelným zážitkem plným pohody a osobního přístupu. Vytváříme prostor, kde klient není jen zákazníkem, ale stává se součástí naší komunity.</p>
+    </div>
+    <div class="vignette-stats">
+      <div class="vignette-stat">
+        <div class="vignette-stat-n">III</div>
+        <div class="vignette-stat-l">barbeři</div>
+      </div>
+      <div class="vignette-stat">
+        <div class="vignette-stat-n">XVIII</div>
+        <div class="vignette-stat-l">služeb</div>
+      </div>
+      <div class="vignette-stat">
+        <div class="vignette-stat-n">1:1</div>
+        <div class="vignette-stat-l">přístup</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="book-section" id="booking">
+  <div class="chapter">
+    <div class="chapter-roman">— Rezervace —</div>
+    <h2 class="chapter-title">Zasedni do křesla</h2>
+    <div class="ornament"><span class="ornament-glyph">◆</span></div>
+    <p class="chapter-sub">Vyber svého barbera &amp; službu, kterou dnes potřebuješ.</p>
+  </div>
+  <div class="book-inner">
+    <div>
+      <div class="barbers-heading">Vyber barbera</div>
+      <div class="barber-portraits" id="barberList"></div>
+    </div>
+    <div>
+      <div class="book-cats" id="bookCats">
+        <button class="book-cat active" data-cat="strih">Střihy</button>
+        <button class="book-cat" data-cat="vousy">Vousy</button>
+        <button class="book-cat" data-cat="ostatni">Péče</button>
+      </div>
+      <div class="book-list" id="bookList"></div>
+    </div>
+  </div>
+</section>
+
+<section class="vlocation" id="location">
+  <div class="chapter">
+    <div class="chapter-roman">— Adresa —</div>
+    <h2 class="chapter-title">Najdeš nás tady</h2>
+    <div class="ornament"><span class="ornament-glyph">◆</span></div>
+  </div>
+  <div class="vlocation-grid">
+    <div class="vlocation-photo">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2607.5!2d16.6068!3d49.1951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4712943ac03f21ad%3A0x6e1e5e5d8b1c5a8a!2sLidick%C3%A1%201874%2F18%2C%20602%2000%20Brno!5e0!3m2!1scs!2scz!4v1700000000000!5m2!1scs!2scz"
+        style="position:absolute;inset:0;width:100%;height:100%;border:none;filter:grayscale(0.8) contrast(1.1);"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Gravity Barbers — mapa"
+      ></iframe>
+    </div>
+    <div class="vlocation-info">
+      <div class="vloc-title">Gravity Barbers</div>
+      <div class="vloc-row">
+        <div class="vloc-label">adresa</div>
+        <div class="vloc-value">Lidická 1874/18<br>Brno · 602 00</div>
+        <div class="vloc-sub">V Modré pasáži, v průjezdu po levé straně.</div>
+      </div>
+      <div class="vloc-row">
+        <div class="vloc-label">šalina</div>
+        <div class="vloc-value">1 · 6 · 10</div>
+        <div class="vloc-sub">zastávka Antonínská</div>
+      </div>
+      <div class="vloc-row">
+        <div class="vloc-label">parkování</div>
+        <div class="vloc-value">Modré zóny</div>
+        <div class="vloc-sub">placené zóny v okolí provozovny</div>
+      </div>
+      <div class="vloc-row">
+        <div class="vloc-label">otevřeno</div>
+        <div class="vloc-value">Po–Pá · 9:00–19:00</div>
+        <div class="vloc-sub">so · po dohodě / ne · zavřeno</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="vfooter">
+  <div class="vfooter-mark">GRAVITY</div>
+  <div class="vfooter-tag">— barbers studio · brno —</div>
+  <div class="vfooter-links">
+    <a href="#">Instagram</a>
+    <a href="#">Google Maps</a>
+    <a href="tel:+420775965267">Telefon</a>
+  </div>
+  <div class="vfooter-legal">© MMXXVI · Gravity Barbers Studio · Všechna práva vyhrazena</div>
+</footer>
+
+<div class="vmodal-back" id="vmodalBack">
+  <div class="vmodal">
+    <button class="vmodal-close" id="vmodalClose">×</button>
+    <div class="vmodal-eyebrow">— Rezervace —</div>
+    <h3 id="vmodalTitle">Klasický střih</h3>
+    <div class="vmodal-orn">◆ ◆ ◆</div>
+    <div class="vmodal-meta">
+      <div class="vmodal-meta-cell">
+        <div class="vmodal-meta-label">barber</div>
+        <div class="vmodal-meta-val" id="vmodalBarber">Lucie</div>
+      </div>
+      <div class="vmodal-meta-cell">
+        <div class="vmodal-meta-label">cena</div>
+        <div class="vmodal-meta-val" id="vmodalPrice">670 Kč</div>
+      </div>
+    </div>
+    <div class="vmodal-slots-label">Vyber čas · čtvrtek 23. dubna</div>
+    <div class="vmodal-slots" id="vmodalSlots"></div>
+    <div class="vmodal-actions">
+      <button class="vbtn" id="vmodalCancel">Zrušit</button>
+      <button class="vbtn vbtn-filled" id="vmodalConfirm">Potvrdit <span class="vbtn-glyph">→</span></button>
+    </div>
+  </div>
+</div>
+
+<script>
+const services = [
+  { id:1, title:"Klasický střih", desc:"Servis, střih nůžkami/strojkem, mytí, styling.", price:"670 Kč", cat:"strih" },
+  { id:2, title:"Klasický střih — dlouhé vlasy", desc:"Servis, střih nůžkami/strojkem, mytí, styling.", price:"670 Kč", cat:"strih" },
+  { id:3, title:"Gravity Servis", desc:"Servis, střih, holení vousů, hot towel, péče po holení, čištění pleti, masáž, depilace, úprava obočí a uší, styling.", price:"1 570 Kč", cat:"strih" },
+  { id:4, title:"Holení hlavy — Basic", desc:"Holení hlavy strojkem o 1–3 velikostech.", price:"300 Kč", cat:"strih" },
+  { id:5, title:"Holení hlavy — Fade", desc:"Servis, propracovaný fade strojkem, styling.", price:"450 Kč", cat:"strih" },
+  { id:6, title:"Dětský střih", desc:"Věk 6–12 let.", price:"450 Kč", cat:"strih" },
+  { id:7, title:"Holení hlavy břitvou", desc:"Servis, hot towel, holení, péče po holení.", price:"420 Kč", cat:"vousy" },
+  { id:8, title:"Úprava vousů strojkem", desc:"Servis, úprava vousů strojkem.", price:"270 Kč", cat:"vousy" },
+  { id:9, title:"Klasický střih & Beardtrim", desc:"Servis, střih, hot towel, holení, péče po holení, mytí, styling.", price:"970 Kč", cat:"vousy" },
+  { id:10, title:"Beardtrim", desc:"Servis, úprava vousů, hot towel, holení, péče po holení.", price:"520 Kč", cat:"vousy" },
+  { id:11, title:"Čištění pleti", desc:"Servis, mytí, peeling, masáž, zklidňující krém.", price:"220 Kč", cat:"ostatni" },
+  { id:12, title:"Depilace", desc:"Uši / nos.", price:"50 Kč", cat:"ostatni" },
+  { id:13, title:"Masáž hlavy", desc:"Relaxační masáž vlasové pokožky.", price:"320 Kč", cat:"ostatni" },
+  { id:14, title:"Úprava obočí", desc:"Precizní úprava obočí.", price:"120 Kč", cat:"ostatni" }
+];
+const barbers = [
+  { id:"lucie", name:"Lucie", role:"Senior Barber" },
+  { id:"david", name:"David", role:"Barber" },
+  { id:"stepan", name:"Štěpán", role:"Junior Barber" }
+];
+
+let currentFilter = 'all';
+let selectedBarber = barbers[0];
+let currentCat = 'strih';
+
+function renderMenu() {
+  const list = document.getElementById('menuList');
+  const filtered = currentFilter === 'all' ? services : services.filter(s => s.cat === currentFilter);
+  const mid = Math.ceil(filtered.length / 2);
+  const left = filtered.slice(0, mid);
+  const right = filtered.slice(mid);
+  const col = arr => arr.map(s => `
+    <div class="menu-item">
+      <div class="mi-top">
+        <span class="mi-title">${s.title}</span>
+        <span class="mi-price">${s.price}</span>
+      </div>
+      <div class="mi-desc">${s.desc}</div>
+    </div>
+  `).join('');
+  list.innerHTML = `<div>${col(left)}</div><div class="menu-spread-divider"></div><div>${col(right)}</div>`;
+}
+renderMenu();
+
+document.querySelectorAll('.menu-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.menu-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    renderMenu();
+  });
+});
+
+function renderBarbers() {
+  const el = document.getElementById('barberList');
+  el.innerHTML = barbers.map(b => `
+    <button class="barber-opt ${b.id === selectedBarber.id ? 'selected' : ''}" data-id="${b.id}">
+      <div class="barber-name">${b.name}</div>
+      <div class="barber-role">${b.role}</div>
+    </button>
+  `).join('');
+  el.querySelectorAll('.barber-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      selectedBarber = barbers.find(b => b.id === btn.dataset.id);
+      renderBarbers();
+    });
+  });
+}
+renderBarbers();
+
+function renderBookList() {
+  const el = document.getElementById('bookList');
+  const filtered = services.filter(s => s.cat === currentCat);
+  el.innerHTML = filtered.map(s => `
+    <div class="menu-item" data-id="${s.id}">
+      <div class="mi-main">
+        <div class="mi-title">${s.title}</div>
+        <div class="mi-desc">${s.desc}</div>
+      </div>
+      <div class="mi-price">${s.price}</div>
+      <div class="mi-go">→</div>
+    </div>
+  `).join('');
+  el.querySelectorAll('.menu-item').forEach(item => {
+    item.addEventListener('click', () => openModal(parseInt(item.dataset.id)));
+  });
+}
+renderBookList();
+
+document.querySelectorAll('.book-cat').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.book-cat').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentCat = btn.dataset.cat;
+    renderBookList();
+  });
+});
+
+const backdrop = document.getElementById('vmodalBack');
+const slots = ['09:00','09:45','10:30','11:15','12:00','13:30','14:15','15:00','15:45','16:30','17:15','18:00'];
+const disabled = [2, 6, 9];
+let selSlot = null;
+
+function openModal(id) {
+  const s = services.find(x => x.id === id);
+  document.getElementById('vmodalTitle').textContent = s.title;
+  document.getElementById('vmodalBarber').textContent = selectedBarber.name;
+  document.getElementById('vmodalPrice').textContent = s.price;
+  const wrap = document.getElementById('vmodalSlots');
+  wrap.innerHTML = slots.map((t, i) => `
+    <button class="vslot ${disabled.includes(i) ? 'disabled' : ''}" data-idx="${i}" ${disabled.includes(i) ? 'disabled' : ''}>${t}</button>
+  `).join('');
+  wrap.querySelectorAll('.vslot:not(.disabled)').forEach(b => {
+    b.addEventListener('click', () => {
+      wrap.querySelectorAll('.vslot').forEach(x => x.classList.remove('selected'));
+      b.classList.add('selected');
+      selSlot = b.dataset.idx;
+    });
+  });
+  selSlot = null;
+  backdrop.classList.add('open');
+}
+function closeModal() { backdrop.classList.remove('open'); }
+document.getElementById('vmodalClose').addEventListener('click', closeModal);
+document.getElementById('vmodalCancel').addEventListener('click', closeModal);
+backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
+document.getElementById('vmodalConfirm').addEventListener('click', () => {
+  if (!selSlot) return;
+  closeModal();
+});
+
+let lastY = 0;
+const nav = document.getElementById('vnav');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y > 80 && y > lastY) nav.classList.add('hidden');
+  else nav.classList.remove('hidden');
+  lastY = y;
+});
+</script>
+</body>
+</html>

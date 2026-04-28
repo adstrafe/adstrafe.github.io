@@ -1,0 +1,323 @@
+/* ==========================================================================
+   Subtle motion layer — finishing touches
+   Respects prefers-reduced-motion automatically.
+   ========================================================================== */
+
+/* ----- Page-load: brand mark draws in, nav fades down ----- */
+@keyframes vl-fade-down {
+	from { opacity: 0; transform: translateY(-6px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes vl-fade-in {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+@keyframes vl-fade-up {
+	from { opacity: 0; transform: translateY(14px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes vl-mark-pop {
+	0%   { transform: scale(0.4) rotate(-8deg); opacity: 0; }
+	60%  { transform: scale(1.08) rotate(2deg); opacity: 1; }
+	100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+@keyframes vl-rec-pulse {
+	0%, 100% { opacity: 1; }
+	50%      { opacity: 0.25; }
+}
+@keyframes vl-dot-pulse {
+	0%, 100% { transform: scale(1); }
+	50%      { transform: scale(1.35); }
+}
+
+/* Initial entrance — runs once on load */
+.nav            { animation: vl-fade-down 600ms ease-out both; }
+.nav__mark      { animation: vl-mark-pop 700ms cubic-bezier(.2,.8,.2,1) 100ms both; }
+.hero__kicker   { animation: vl-fade-up 700ms ease-out 150ms both; }
+.hero__title    { animation: vl-fade-up 800ms ease-out 250ms both; }
+.hero__aside    { animation: vl-fade-up 800ms ease-out 400ms both; }
+.hero__markers  { animation: vl-fade-in 800ms ease-out 600ms both; }
+
+/* Hero kicker dot + REC + discovery dot — gentle pulse */
+.hero__dot,
+.discovery__dot {
+	animation: vl-dot-pulse 2.4s ease-in-out infinite;
+}
+.portrait__rec {
+	animation: vl-rec-pulse 1.6s ease-in-out infinite;
+}
+
+/* ----- Scroll-reveal — sections rise + fade as they enter ----- */
+.reveal {
+	opacity: 0;
+	transform: translateY(24px);
+	transition:
+		opacity 700ms cubic-bezier(.2,.8,.2,1),
+		transform 700ms cubic-bezier(.2,.8,.2,1);
+	will-change: opacity, transform;
+}
+.reveal.is-visible {
+	opacity: 1;
+	transform: none;
+}
+
+/* Stagger children inside revealed containers */
+.reveal-stagger > * {
+	opacity: 0;
+	transform: translateY(16px);
+	transition:
+		opacity 600ms cubic-bezier(.2,.8,.2,1),
+		transform 600ms cubic-bezier(.2,.8,.2,1);
+}
+.reveal-stagger.is-visible > * {
+	opacity: 1;
+	transform: none;
+}
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay:  60ms; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 140ms; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 220ms; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 300ms; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 380ms; }
+.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 460ms; }
+.reveal-stagger.is-visible > *:nth-child(7) { transition-delay: 540ms; }
+
+/* ----- Hover micro-interactions ----- */
+
+/* Nav link — accent underline slides in */
+.nav__link {
+	overflow: hidden;
+}
+.nav__link::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	background: var(--color-accent);
+	transform: translateX(-101%);
+	transition: transform 240ms cubic-bezier(.4,0,.2,1);
+}
+.nav__link:hover::after { transform: translateX(0); }
+
+/* Nav CTA & buttons — gentle 1px lift, matched timing across all three book-a-call entry points */
+.nav__cta,
+.cta__button,
+.discovery__cta {
+	transition:
+		filter 160ms ease,
+		transform 160ms cubic-bezier(.2,.8,.2,1),
+		background 160ms ease,
+		color 160ms ease;
+}
+
+/* Hero title <mark> — subtle highlight sweep on first paint */
+.hero__title mark {
+	background-image: linear-gradient(
+		90deg,
+		var(--color-accent) 0%,
+		var(--color-accent) 50%,
+		oklch(94% 0.18 130) 50%,
+		oklch(94% 0.18 130) 100%
+	);
+	background-size: 200% 100%;
+	background-position: 0 0;
+	animation: vl-mark-sweep 1200ms cubic-bezier(.2,.8,.2,1) 800ms both;
+}
+@keyframes vl-mark-sweep {
+	from { background-position: 100% 0; }
+	to   { background-position: 0 0; }
+}
+
+/* Portrait — soft scale + crop-mark glow on hover */
+.portrait {
+	transition: transform 400ms cubic-bezier(.2,.8,.2,1);
+}
+.portrait:hover { transform: translateY(-2px); }
+
+.portrait__crop {
+	transition: width 220ms ease, height 220ms ease, border-color 220ms ease;
+}
+.portrait:hover .portrait__crop {
+	width: 18px;
+	height: 18px;
+}
+
+/* Tier cards — accent left-bar slides in on hover */
+.tier {
+	position: relative;
+	transition: background 220ms ease;
+}
+.tier::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background: var(--color-accent);
+	transform: scaleY(0);
+	transform-origin: top;
+	transition: transform 280ms cubic-bezier(.2,.8,.2,1);
+}
+.tier:hover { background: var(--color-bg-soft); }
+.tier:hover::before { transform: scaleY(1); }
+.tier:hover .tier__price-value {
+	transform: translateX(-2px);
+}
+.tier__price-value {
+	transition: transform 220ms cubic-bezier(.2,.8,.2,1);
+}
+
+/* Service-secondary — same accent bar treatment */
+.service-secondary {
+	position: relative;
+	transition: background 220ms ease;
+}
+.service-secondary::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background: var(--color-accent);
+	transform: scaleY(0);
+	transform-origin: top;
+	transition: transform 320ms cubic-bezier(.2,.8,.2,1);
+}
+.service-secondary:hover { background: var(--color-bg-soft); }
+.service-secondary:hover::before { transform: scaleY(1); }
+
+/* Add-on chips — gentle lift + accent border */
+.addon {
+	transition:
+		border-color 180ms ease,
+		color 180ms ease,
+		transform 180ms cubic-bezier(.2,.8,.2,1),
+		background 180ms ease;
+}
+.addon:hover {
+	border-color: var(--color-accent);
+	color: var(--color-accent);
+	transform: translateY(-1px);
+	background: var(--color-bg-soft);
+}
+
+/* Stack list items — accent dot creeps in on hover */
+.stack__col li {
+	position: relative;
+	padding-left: 0;
+	transition: padding-left 220ms cubic-bezier(.2,.8,.2,1), color 180ms ease;
+}
+.stack__col li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 6px;
+	height: 6px;
+	margin-top: -3px;
+	background: var(--color-accent);
+	opacity: 0;
+	transform: translateX(-8px);
+	transition: opacity 200ms ease, transform 220ms cubic-bezier(.2,.8,.2,1);
+}
+.stack__col li:hover { padding-left: 16px; color: var(--color-accent); }
+.stack__col li:hover::before { opacity: 1; transform: translateX(0); }
+
+/* Process steps — top bar grows from left to full on reveal */
+.process__step {
+	border-top-color: transparent;
+	background-image: linear-gradient(var(--color-accent), var(--color-accent));
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: 0% 2px;
+	transition: background-size 700ms cubic-bezier(.2,.8,.2,1);
+}
+.reveal.is-visible .process__step,
+.process.is-visible .process__step {
+	background-size: 100% 2px;
+}
+.process.is-visible .process__step:nth-child(2) { transition-delay: 120ms; }
+.process.is-visible .process__step:nth-child(3) { transition-delay: 240ms; }
+.process.is-visible .process__step:nth-child(4) { transition-delay: 360ms; }
+
+/* Work rows — accent strip slides in from left on hover */
+.work__row {
+	position: relative;
+}
+.work__row::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 3px;
+	background: var(--color-accent);
+	transform: translateX(-100%);
+	transition: transform 320ms cubic-bezier(.2,.8,.2,1);
+}
+.work__row:hover::before { transform: translateX(0); }
+.work__link {
+	transition: padding-left 320ms cubic-bezier(.2,.8,.2,1);
+}
+.work__row:hover .work__link { padding-left: 16px; }
+
+/* Featured — subtle parallax on stripes */
+.work__featured {
+	transition: transform 600ms cubic-bezier(.2,.8,.2,1);
+}
+.work__featured:hover { transform: scale(1.005); }
+.work__featured-art {
+	transition: transform 8s linear;
+}
+.work__featured:hover .work__featured-art {
+	transform: scale(1.04) rotate(0.4deg);
+}
+
+/* CTA email — animated underline */
+.cta__email {
+	background-image: linear-gradient(var(--color-accent), var(--color-accent));
+	background-repeat: no-repeat;
+	background-position: 0 100%;
+	background-size: 0% 1px;
+	text-decoration: none !important;
+	transition: background-size 320ms cubic-bezier(.2,.8,.2,1), color 200ms ease;
+	padding-bottom: 4px;
+}
+.cta__email:hover {
+	background-size: 100% 1px;
+	color: var(--color-accent);
+}
+
+/* Footer links — same animated underline pattern */
+.footer__social a,
+.footer__cv a {
+	background-image: linear-gradient(currentColor, currentColor);
+	background-repeat: no-repeat;
+	background-position: 0 100%;
+	background-size: 0% 1px;
+	transition: background-size 280ms cubic-bezier(.2,.8,.2,1), color 180ms ease;
+	padding-bottom: 2px;
+}
+.footer__social a:hover,
+.footer__cv a:hover { background-size: 100% 1px; }
+
+/* ----- Reduced motion: cancel everything decorative ----- */
+@media (prefers-reduced-motion: reduce) {
+	.nav, .nav__mark, .hero__kicker, .hero__title,
+	.hero__aside, .hero__markers,
+	.hero__dot, .discovery__dot, .portrait__rec,
+	.hero__title mark {
+		animation: none !important;
+	}
+	.reveal, .reveal-stagger > * {
+		opacity: 1 !important;
+		transform: none !important;
+	}
+	.process__step { background-size: 100% 2px !important; }
+	* {
+		transition-duration: 0.01ms !important;
+	}
+}
