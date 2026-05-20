@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2d7a3e">
+<title>Shopping List · Week of 25 May 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f4f5f3; color: #1f2421; line-height: 1.4; }
+  body { padding-bottom: 90px; min-height: 100vh; }
+
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: linear-gradient(135deg, #2d7a3e 0%, #1f5a2c 100%);
+    color: white; padding: 18px 18px 16px; padding-top: max(18px, env(safe-area-inset-top));
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+  }
+  header h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.3px; }
+  header .meta { font-size: 13px; opacity: 0.85; margin-bottom: 10px; }
+  .progress-bar { background: rgba(255,255,255,0.2); height: 6px; border-radius: 3px; overflow: hidden; }
+  .progress-fill { background: white; height: 100%; width: 0%; transition: width 0.3s ease; border-radius: 3px; }
+  .progress-text { font-size: 12px; margin-top: 6px; opacity: 0.9; }
+
+  section { background: white; margin: 14px 12px; border-radius: 14px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+  .section-header {
+    background: #eef3eb; padding: 12px 18px; font-weight: 600; font-size: 14px;
+    color: #2d7a3e; border-bottom: 1px solid #dde3d9;
+    display: flex; justify-content: space-between; align-items: center;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .section-header .count { font-size: 12px; color: #6a7568; font-weight: 500; letter-spacing: normal; text-transform: none; }
+
+  .item {
+    display: flex; align-items: flex-start; padding: 14px 18px;
+    border-bottom: 1px solid #f0f1ee; cursor: pointer; user-select: none;
+    min-height: 56px; transition: background 0.1s;
+  }
+  .item:last-child { border-bottom: none; }
+  .item:active { background: #f7f8f6; }
+
+  .checkbox {
+    width: 26px; height: 26px; border: 2px solid #c4ccc1; border-radius: 7px;
+    margin-right: 14px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease; margin-top: 1px;
+  }
+  .item.checked .checkbox { background: #2d7a3e; border-color: #2d7a3e; }
+  .item.checked .checkbox::after { content: ""; width: 7px; height: 12px; border: solid white; border-width: 0 2.5px 2.5px 0; transform: rotate(45deg) translate(-1px, -1px); }
+
+  .label-wrap { flex: 1; min-width: 0; }
+  .label { font-size: 16px; font-weight: 500; }
+  .note { font-size: 12px; color: #7a8478; margin-top: 3px; }
+  .pivot { display: inline-block; background: #fff5dc; color: #8a6a00; font-size: 11px; padding: 2px 7px; border-radius: 4px; margin-left: 6px; font-weight: 500; }
+
+  .item.checked .label { text-decoration: line-through; color: #aab2a7; }
+  .item.checked .note { color: #c0c7bc; }
+
+  .have-section .section-header { background: #f5f0e3; color: #8a6a00; border-bottom-color: #e5dfc8; }
+  .have-list { padding: 12px 18px; font-size: 13px; color: #6a6a5e; }
+
+  .reset-btn {
+    position: fixed; bottom: max(16px, env(safe-area-inset-bottom)); right: 16px;
+    background: #2d7a3e; color: white; border: none;
+    padding: 12px 20px; border-radius: 24px; font-size: 14px; font-weight: 500;
+    box-shadow: 0 4px 14px rgba(45,122,62,0.4); cursor: pointer;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .reset-btn:active { transform: scale(0.97); }
+
+  .footer-note { text-align: center; font-size: 12px; color: #8a8f86; padding: 20px 30px 10px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🛒 Weekly Shop</h1>
+  <div class="meta">Week of 25 May 2026 · Clean bulk · 1 serving</div>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="progress-text" id="progressText">0 / 0 items</div>
+</header>
+
+<section>
+  <div class="section-header">🥬 Produce <span class="count" data-section="produce"></span></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Red bell peppers × 3</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Yellow bell pepper × 1</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Zucchini × 2</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Cucumber × 2</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Tomatoes (vine) × 6</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Lemons × 2</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Lime × 1</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Yellow onions × 4</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Red onion × 1</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Garlic — 1 bulb</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Ginger — 1 thumb</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Sweet potatoes × 3 large</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">New / baby potatoes — 500 g</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Fresh spinach — 1 bag</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Parsley — 1 bunch</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Coriander — 1 bunch</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Dill or mint — 1 small bunch</div><div class="note">For tzatziki</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Avocados × 2</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Blueberries — 1 punnet</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Bananas × 5</div></div></div>
+  <div class="item" data-section="produce"><div class="checkbox"></div><div class="label-wrap"><div class="label">Apples × 4</div></div></div>
+</section>
+
+<section>
+  <div class="section-header">🥩 Meat & Fish <span class="count" data-section="meat"></span></div>
+  <div class="item" data-section="meat"><div class="checkbox"></div><div class="label-wrap"><div class="label">Chicken thighs — 600 g</div><div class="note">Boneless, skinless · Lunch prep A</div></div></div>
+  <div class="item" data-section="meat"><div class="checkbox"></div><div class="label-wrap"><div class="label">Chicken breasts — 400 g</div><div class="note">Wed dinner</div></div></div>
+  <div class="item" data-section="meat"><div class="checkbox"></div><div class="label-wrap"><div class="label">Salmon fillets × 2 (~150 g)</div><div class="note">Lunch prep B<span class="pivot">Pivot: mackerel</span></div></div></div>
+  <div class="item" data-section="meat"><div class="checkbox"></div><div class="label-wrap"><div class="label">Cod fillets × 2 (~150 g)</div><div class="note">Fri dinner</div></div></div>
+  <div class="item" data-section="meat"><div class="checkbox"></div><div class="label-wrap"><div class="label">Lean beef or turkey mince — 500 g</div><div class="note">Mon meatballs</div></div></div>
+  <div class="item" data-section="meat"><div class="checkbox"></div><div class="label-wrap"><div class="label">Beef strips or ribeye — 300 g</div><div class="note">Tue stir-fry</div></div></div>
+  <div class="item" data-section="meat"><div class="checkbox"></div><div class="label-wrap"><div class="label">Sirloin steak — 250 g</div><div class="note">Sat dinner<span class="pivot">Pivot: flat-iron</span></div></div></div>
+  <div class="item" data-section="meat"><div class="checkbox"></div><div class="label-wrap"><div class="label">Eggs — 12</div></div></div>
+</section>
+
+<section>
+  <div class="section-header">🥛 Dairy & Refrigerated <span class="count" data-section="dairy"></span></div>
+  <div class="item" data-section="dairy"><div class="checkbox"></div><div class="label-wrap"><div class="label">Greek yogurt — 500 g tub</div><div class="note">Plain, full-fat</div></div></div>
+  <div class="item" data-section="dairy"><div class="checkbox"></div><div class="label-wrap"><div class="label">Feta cheese — 200 g</div><div class="note"><span class="pivot">Pivot: halloumi</span></div></div></div>
+  <div class="item" data-section="dairy"><div class="checkbox"></div><div class="label-wrap"><div class="label">Kefir OR kimchi OR sauerkraut</div><div class="note">For gut health — pick one</div></div></div>
+  <div class="item" data-section="dairy"><div class="checkbox"></div><div class="label-wrap"><div class="label">Parmesan — small block</div></div></div>
+</section>
+
+<section>
+  <div class="section-header">🌾 Grains & Bakery <span class="count" data-section="grains"></span></div>
+  <div class="item" data-section="grains"><div class="checkbox"></div><div class="label-wrap"><div class="label">Quinoa — 250 g</div><div class="note"><span class="pivot">Pivot: bulgur / barley</span></div></div></div>
+  <div class="item" data-section="grains"><div class="checkbox"></div><div class="label-wrap"><div class="label">Brown rice — 500 g</div></div></div>
+  <div class="item" data-section="grains"><div class="checkbox"></div><div class="label-wrap"><div class="label">Jasmine or basmati rice — 500 g</div></div></div>
+  <div class="item" data-section="grains"><div class="checkbox"></div><div class="label-wrap"><div class="label">Whole-grain spaghetti — 500 g</div></div></div>
+  <div class="item" data-section="grains"><div class="checkbox"></div><div class="label-wrap"><div class="label">Red lentils — 250 g</div></div></div>
+  <div class="item" data-section="grains"><div class="checkbox"></div><div class="label-wrap"><div class="label">Rolled oats — 500 g</div></div></div>
+  <div class="item" data-section="grains"><div class="checkbox"></div><div class="label-wrap"><div class="label">Sourdough loaf × 1</div></div></div>
+</section>
+
+<section>
+  <div class="section-header">🫒 Pantry & Condiments <span class="count" data-section="pantry"></span></div>
+  <div class="item" data-section="pantry"><div class="checkbox"></div><div class="label-wrap"><div class="label">Extra-virgin olive oil — 500 ml</div><div class="note">Main cooking fat — avoid seed oils</div></div></div>
+  <div class="item" data-section="pantry"><div class="checkbox"></div><div class="label-wrap"><div class="label">Soy sauce or tamari</div></div></div>
+  <div class="item" data-section="pantry"><div class="checkbox"></div><div class="label-wrap"><div class="label">Apple cider vinegar</div></div></div>
+  <div class="item" data-section="pantry"><div class="checkbox"></div><div class="label-wrap"><div class="label">Tomato paste — 1 tube</div></div></div>
+  <div class="item" data-section="pantry"><div class="checkbox"></div><div class="label-wrap"><div class="label">Raw honey — small jar</div></div></div>
+  <div class="item" data-section="pantry"><div class="checkbox"></div><div class="label-wrap"><div class="label">Dijon mustard</div></div></div>
+  <div class="item" data-section="pantry"><div class="checkbox"></div><div class="label-wrap"><div class="label">Low-sodium stock cubes</div></div></div>
+  <div class="item" data-section="pantry"><div class="checkbox"></div><div class="label-wrap"><div class="label">Spice check</div><div class="note">Cumin, smoked paprika, turmeric, garam masala, oregano</div></div></div>
+</section>
+
+<section>
+  <div class="section-header">🥜 Nuts & Seeds <span class="count" data-section="nuts"></span></div>
+  <div class="item" data-section="nuts"><div class="checkbox"></div><div class="label-wrap"><div class="label">Mixed nuts — 200 g</div><div class="note">Almond + walnut</div></div></div>
+  <div class="item" data-section="nuts"><div class="checkbox"></div><div class="label-wrap"><div class="label">Pumpkin seeds — 100 g</div><div class="note">Zinc!</div></div></div>
+  <div class="item" data-section="nuts"><div class="checkbox"></div><div class="label-wrap"><div class="label">Chia seeds — small bag</div></div></div>
+</section>
+
+<section>
+  <div class="section-header">❄️ Frozen <span class="count" data-section="frozen"></span></div>
+  <div class="item" data-section="frozen"><div class="checkbox"></div><div class="label-wrap"><div class="label">Mixed berries — 1 bag</div><div class="note">Breakfast / yogurt topper</div></div></div>
+  <div class="item" data-section="frozen"><div class="checkbox"></div><div class="label-wrap"><div class="label">Edamame — 1 bag</div></div></div>
+</section>
+
+<section>
+  <div class="section-header">💊 Supplements <span class="count" data-section="supps"></span></div>
+  <div class="item" data-section="supps"><div class="checkbox"></div><div class="label-wrap"><div class="label">Vitamin D3 (1000–2000 IU)</div><div class="note">Only if running low</div></div></div>
+  <div class="item" data-section="supps"><div class="checkbox"></div><div class="label-wrap"><div class="label">Omega-3 fish oil</div></div></div>
+  <div class="item" data-section="supps"><div class="checkbox"></div><div class="label-wrap"><div class="label">Magnesium glycinate</div></div></div>
+  <div class="item" data-section="supps"><div class="checkbox"></div><div class="label-wrap"><div class="label">Greens powder</div></div></div>
+</section>
+
+<section class="have-section">
+  <div class="section-header">✓ Already have — skip</div>
+  <div class="have-list">Butter · Tinned tomatoes · Cream cheese · Greek yogurt (small) · Frozen broccoli · Frozen spinach</div>
+</section>
+
+<div class="footer-note">Tap items to check off · Progress is saved automatically</div>
+
+<button class="reset-btn" onclick="resetAll()">↺ Reset</button>
+
+<script>
+(function() {
+  const STORAGE_KEY = 'kitchen_commander_shop_2026_05_20';
+  const items = document.querySelectorAll('.item:not(.have-section .item)');
+  const progressFill = document.getElementById('progressFill');
+  const progressText = document.getElementById('progressText');
+  let state = {};
+
+  try { state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch(e) { state = {}; }
+
+  function updateProgress() {
+    const total = items.length;
+    const checked = Array.from(items).filter(i => i.classList.contains('checked')).length;
+    progressFill.style.width = total ? (checked / total * 100) + '%' : '0%';
+    progressText.textContent = checked + ' / ' + total + ' items';
+
+    // per-section counts
+    const sections = {};
+    items.forEach(i => {
+      const s = i.dataset.section;
+      if (!sections[s]) sections[s] = { total: 0, checked: 0 };
+      sections[s].total++;
+      if (i.classList.contains('checked')) sections[s].checked++;
+    });
+    document.querySelectorAll('.count').forEach(el => {
+      const s = el.dataset.section;
+      if (sections[s]) el.textContent = sections[s].checked + ' / ' + sections[s].total;
+    });
+  }
+
+  items.forEach((item, idx) => {
+    item.dataset.id = 'item_' + idx;
+    if (state[item.dataset.id]) item.classList.add('checked');
+    item.addEventListener('click', () => {
+      item.classList.toggle('checked');
+      state[item.dataset.id] = item.classList.contains('checked');
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+      updateProgress();
+    });
+  });
+
+  window.resetAll = function() {
+    if (!confirm('Uncheck everything and start fresh?')) return;
+    items.forEach(i => i.classList.remove('checked'));
+    state = {};
+    try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+    updateProgress();
+  };
+
+  updateProgress();
+})();
+</script>
+
+</body>
+</html>
