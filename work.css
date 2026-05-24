@@ -327,6 +327,10 @@
 	color: var(--color-muted);
 }
 
+.shots--2col {
+	grid-template-columns: repeat(2, 1fr);
+}
+
 /* --- Body: description + sidecar ----------------------------------------- */
 
 .project-body {
