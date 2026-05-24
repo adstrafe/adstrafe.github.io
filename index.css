@@ -39,13 +39,6 @@
 	color: var(--color-accent);
 }
 
-.hero__dot {
-	display: inline-block;
-	width: 8px;
-	height: 8px;
-	background: var(--color-accent);
-}
-
 .hero__title {
 	margin: 0;
 	font-size: clamp(56px, 11vw, 156px);
@@ -165,35 +158,20 @@
 	line-height: 1.5;
 }
 
-.about__stats {
-	display: flex;
-	gap: 16px;
-	margin: 24px 0 0;
-	font-family: var(--font-mono);
-	font-size: 11px;
-	color: var(--color-muted);
-}
-
-.about__stats > div { min-width: 0; }
-
-.about__stats dt {
-	display: block;
-	margin-bottom: 2px;
-	font-size: 22px;
-	color: var(--color-fg);
-}
-.about__stats dd { margin: 0; }
 
 /* ==========================================================================
-   §02 SERVICES — two-column (2fr Websites & Tiers | 1fr Custom Tools)
-                  + Add-ons strip + Discovery-call strip
+   §02 SERVICES — two equal columns + Add-ons strip + Discovery-call strip
    ========================================================================== */
 
 .services {
 	display: grid;
-	grid-template-columns: 2fr 1fr;
+	grid-template-columns: 1fr 1fr;
 	align-items: stretch;
 	border: 1px solid var(--color-line);
+}
+
+.service-secondary--bordered {
+	border-right: 1px solid var(--color-line);
 }
 
 /* --- LEFT: Websites & Landing Pages --------------------------------------- */
@@ -373,6 +351,15 @@
 	margin-bottom: 28px;
 }
 
+.service-secondary__price-intl {
+	margin-top: -16px;
+	margin-bottom: 24px;
+	font-family: var(--font-mono);
+	font-size: 11px;
+	letter-spacing: 0.04em;
+	color: var(--color-muted);
+}
+
 .service-secondary__fit-label {
 	margin-top: auto;
 	margin-bottom: 14px;
@@ -462,13 +449,6 @@
 	display: flex;
 	align-items: center;
 	gap: 16px;
-}
-
-.discovery__dot {
-	display: inline-block;
-	width: 8px;
-	height: 8px;
-	background: var(--color-accent);
 }
 
 .discovery__label {
@@ -818,13 +798,12 @@
 	}
 	.hero__title { letter-spacing: -0.03em; }
 
-	/* Services: collapse 2fr/1fr split to single column */
+	/* Services: collapse to single column */
 	.services { grid-template-columns: 1fr; }
-	.service-primary {
+	.service-secondary--bordered {
 		border-right: 0;
 		border-bottom: 1px solid var(--color-line);
 	}
-	.service-primary__title,
 	.service-secondary__title { font-size: 32px; }
 
 	/* Addons label stacks above chips */
