@@ -368,9 +368,12 @@ html.js [data-variant] footer > div.rv-in{opacity:1;transform:none}
     if(gal){
       gal.querySelectorAll('img').forEach(function(im){if(im.parentElement)im.parentElement.classList.add('mb-tap');});
       gal.addEventListener('click',function(e){
+        /* stay INSIDE the gallery while walking up — clicking the section's own
+           padding would otherwise escape to the page wrapper, whose first <img>
+           is the hero, and wrongly open it in the lightbox */
         var node=e.target.closest('div'),img=null;
-        while(node&&node!==gal){var im=node.querySelector('img');if(im){img=im;break;}node=node.parentElement;}
-        if(img){var s=img.getAttribute('src');if(s&&s.indexOf('img/')===0){e.preventDefault();openShowcaseBySrc(s);}}
+        while(node&&node!==gal&&gal.contains(node)){var im=node.querySelector('img');if(im){img=im;break;}node=node.parentElement;}
+        if(img&&gal.contains(img)){var s=img.getAttribute('src');if(s&&s.indexOf('img/')===0){e.preventDefault();openShowcaseBySrc(s);}}
       });
     }
   }
