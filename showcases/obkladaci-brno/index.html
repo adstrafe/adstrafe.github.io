@@ -22,6 +22,11 @@ section[data-mbsec="hero"] nav .mb-tap::after{content:"";position:absolute;left:
 section[data-mbsec="hero"] nav .mb-tap:hover::after{transform:scaleX(1)}
 #mb-menu a:hover{color:#E10600}
 
+/* ---- full-viewport hero; svh tracks the visible area on phones (no address-bar jump);
+   min-height keeps short/landscape viewports from crushing the centered content ---- */
+[data-variant] section[data-mbsec="hero"]{min-height:560px}
+@supports (height:100svh){[data-variant] section[data-mbsec="hero"]{height:100svh !important}}
+
 /* ---- hero wordmark: entrance rise + animated gold/red sheen over the photo ---- */
 .mb-wordmark{animation:mb-rise .9s cubic-bezier(.22,.61,.36,1) both;text-shadow:none !important}
 @supports ((-webkit-background-clip:text) or (background-clip:text)){
@@ -126,7 +131,6 @@ html.js [data-variant] footer > div.rv-in{opacity:1;transform:none}
   [data-variant] [style*="display:flex"][style*="height:240px"]{height:auto !important}
   /* Lookbook bands: keep stacked image cells from collapsing (absolute imgs) */
   [data-variant] [style*="min-height:452px"] > [style*="position:relative"]{min-height:300px !important}
-  [data-variant] [style*="height:792px"],[data-variant] [style*="height:824px"]{height:auto !important;min-height:760px !important;padding-top:96px !important;padding-bottom:60px !important}
   [data-variant] [style*="display:flex"][style*="gap:9px"]{flex-wrap:wrap}
   /* footer: centered stack under the centered wordmark (was a ragged left-aligned wrap) */
   [data-variant] footer [style*="justify-content:space-between"]{flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;margin-top:20px !important}
@@ -168,7 +172,7 @@ html.js [data-variant] footer > div.rv-in{opacity:1;transform:none}
 <div style="background:#0C0C0E;overflow:hidden;font-family:'Hanken Grotesk',sans-serif;color:#F2F2F4">
 
     <!-- HERO full-bleed centered -->
-    <section data-mbsec="hero" style="position:relative;height:824px">
+    <section data-mbsec="hero" style="position:relative;height:100vh">
       <img src="img/DSCF0245.webp" alt="Interiérový bazén s kamenným obkladem — realizace Martins Building" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;filter:saturate(1.22) contrast(1.03)">
       <div style="position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 42%,rgba(8,8,10,.14) 0%,rgba(8,8,10,.54) 60%,rgba(8,8,10,.9) 100%)"></div>
       <nav style="position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:center;padding:30px 56px">
