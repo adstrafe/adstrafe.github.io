@@ -32,6 +32,8 @@ section[data-mbsec="hero"] nav .mb-tap:hover::after{transform:scaleX(1)}
 @supports ((-webkit-background-clip:text) or (background-clip:text)){
   .mb-wordmark{background:linear-gradient(105deg,#F8F8F9 0%,#F8F8F9 38%,#FFC96B 47%,#E10600 53%,#F8F8F9 62%,#F8F8F9 100%);background-size:230% 100%;background-position:115% 0;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:mb-rise .9s cubic-bezier(.22,.61,.36,1) both,mb-sheen 2s ease-in-out .5s 1 both}
 }
+/* subtitle sits over bright areas of the photo — dark glow keeps it legible without dimming the image */
+section[data-mbsec="hero"] p{text-shadow:0 1px 3px rgba(8,8,10,.75),0 3px 24px rgba(8,8,10,.7)}
 .mb-hero-bar{width:86px;height:2px;background:#E10600;margin:30px auto 0;transform:scaleX(0);animation:mb-bar .7s cubic-bezier(.22,.61,.36,1) .65s forwards}
 .mb-hero-bar+p{animation:mb-rise .9s cubic-bezier(.22,.61,.36,1) .22s both}
 @keyframes mb-rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
@@ -122,8 +124,6 @@ html.js [data-variant] footer > div.rv-in{opacity:1;transform:none}
   [data-variant] section[data-mbsec="hero"] h1{font-size:34px !important;letter-spacing:.06em !important;line-height:1.2 !important}
   [data-variant] h2{font-size:32px !important}
   [data-variant] h3{font-size:26px !important}
-  /* hero legibility over the photo: subtle scrim + text-shadow so red/white pop */
-  [data-variant="L"] section[data-mbsec="hero"] p{text-shadow:0 1px 2px rgba(8,8,10,.55),0 4px 28px rgba(8,8,10,.6)}
   [data-variant="L"] section[data-mbsec="hero"] > [style*="radial-gradient"]{background:radial-gradient(130% 90% at 50% 45%,rgba(8,8,10,.32) 0%,rgba(8,8,10,.7) 64%,rgba(8,8,10,.94) 100%) !important}
   /* big background wordmark is desktop-only decoration; on phones just the © line */
   [data-variant] footer > div:first-child{display:none !important}
@@ -176,12 +176,12 @@ html.js [data-variant] footer > div.rv-in{opacity:1;transform:none}
       <img src="img/DSCF0245.webp" alt="Interiérový bazén s kamenným obkladem — realizace Martins Building" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;filter:saturate(1.22) contrast(1.03)">
       <div style="position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 42%,rgba(8,8,10,.14) 0%,rgba(8,8,10,.54) 60%,rgba(8,8,10,.9) 100%)"></div>
       <nav style="position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:center;padding:30px 56px">
-        <div style="display:flex;gap:38px;font:400 12px/1 'Saira';letter-spacing:.2em;color:#B8BBC0"><span style="color:#fff">PRÁCE</span><span>GALERIE</span><span>O NÁS</span><span>KONTAKT</span></div>
+        <div style="display:flex;gap:38px;font:400 12px/1 'Saira';letter-spacing:.2em;color:#B8BBC0"><span>O NÁS</span><span>GALERIE</span><span>KONTAKT</span></div>
       <button class="mb-burger" type="button" aria-label="Otevřít menu" aria-expanded="false"><span></span><span></span><span></span></button></nav>
       <div style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;padding:0 40px">
         <h1 class="mb-wordmark" style="margin:0 auto;max-width:1050px;font:600 92px/1.05 'Saira';letter-spacing:.05em;color:#F8F8F9">MARTINS<span style="font-weight:200;color:#D6D8DB"> BUILDING</span></h1>
         <div class="mb-hero-bar"></div>
-        <p style="margin:30px auto 0;max-width:560px;font:300 18px/1.65 'Hanken Grotesk';color:#C7C9CC">Profesionální obkladačské a dlaždičské práce, montáže hydroizolací a atypické stavební práce</p>
+        <p style="margin:30px auto 0;max-width:560px;font:400 18px/1.65 'Hanken Grotesk';color:#EDEEF0">Profesionální montáže velkoformátových obkladů a dlažeb</p>
         
       </div>
     </section>
@@ -191,12 +191,12 @@ html.js [data-variant] footer > div.rv-in{opacity:1;transform:none}
       <div style="text-align:center;margin-bottom:48px"><div style="font:600 16px/1 'Saira';letter-spacing:.42em;color:#E10600;margin-bottom:20px">GALERIE</div><h2 style="margin:0;font:200 56px/1.0 'Saira';letter-spacing:-.02em;color:#F2F2F4">Vybrané realizace</h2></div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
         <div style="position:relative;height:340px;overflow:hidden"><img src="img/DSCF0136.webp" alt="Kuchyně s mramorovou deskou Calacatta a dubovým nábytkem" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
-        <div style="position:relative;height:340px;overflow:hidden"><img src="img/LHS_2511h.webp" alt="Obývací prostor s velkoformátovou onyxovou stěnou" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
-        <div style="position:relative;height:340px;overflow:hidden"><img src="img/LHS_2529h.webp" alt="Obývací pokoj s onyxovou stěnou a koženými sedačkami" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
-        <div style="position:relative;height:340px;overflow:hidden"><img src="img/LHS_2534h.webp" alt="Otevřený obytný prostor s onyxovým obkladem" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
-        <div style="position:relative;height:340px;overflow:hidden"><img src="img/LHS_2551h.webp" alt="Kuchyně s onyxovou stěnou a velkoformátovou dlažbou" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
         <div style="position:relative;height:340px;overflow:hidden"><img src="img/LHS_2727h.webp" alt="Koupelna s velkoformátovým kamenným obkladem a volně stojící vanou" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
+        <div style="position:relative;height:340px;overflow:hidden"><img src="img/LHZ_9754h.webp" alt="Prostorná koupelna s vanou, mramorem a panoramatickým oknem" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
         <div style="position:relative;height:340px;overflow:hidden"><img src="img/LHS_7291h.webp" alt="Wellness koupelna se saunou a kamenným obkladem" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
+        <div style="position:relative;height:340px;overflow:hidden"><img src="img/LHS_7295h.webp" alt="Volně stojící vana u kamenné stěny s mosaznými bateriemi" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
+        <div style="position:relative;height:340px;overflow:hidden"><img src="img/LHZ_9769h.webp" alt="Koupelna s mramorovým obkladem a ořechovou umyvadlovou skříňkou" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
+        <div style="position:relative;height:340px;overflow:hidden"><img src="img/LHS_2721h.webp" alt="Koupelna s dubovou dvojumyvadlovou skříňkou a kamenným obkladem" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
         <div style="position:relative;height:340px;overflow:hidden"><img src="img/LHZ_9728h.webp" alt="Sprchový kout s velkoformátovým kamenným obkladem" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
       </div>
     </section>
@@ -212,7 +212,7 @@ html.js [data-variant] footer > div.rv-in{opacity:1;transform:none}
 
     <!-- KONTAKT full-bleed -->
     <section data-mbsec="contact" style="position:relative;padding:104px 40px;text-align:center">
-      <img src="img/LHS_2543h.webp" alt="" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3">
+      <img src="img/LHS_2727h.webp" alt="" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3">
       <div style="position:absolute;inset:0;background:rgba(12,12,14,.89)"></div>
       <div style="position:relative;font:600 16px/1 'Saira';letter-spacing:.42em;color:#E10600;margin-bottom:24px">KONTAKT</div>
       <h2 style="position:relative;margin:0 0 18px;font:200 56px/1.0 'Saira';letter-spacing:-.02em;color:#F6F6F7">Napište nám.</h2>
@@ -247,10 +247,9 @@ html.js [data-variant] footer > div.rv-in{opacity:1;transform:none}
 
 <nav id="mb-menu" aria-hidden="true" aria-label="Hlavní menu">
   <button class="mb-menu-close" type="button" aria-label="Zavřít">×</button>
-  <a href="#" data-go="hero"><small>01</small>PRÁCE</a>
+  <a href="#" data-go="about"><small>01</small>O NÁS</a>
   <a href="#" data-go="gallery"><small>02</small>GALERIE</a>
-  <a href="#" data-go="about"><small>03</small>O NÁS</a>
-  <a href="#" data-go="contact"><small>04</small>KONTAKT</a>
+  <a href="#" data-go="contact"><small>03</small>KONTAKT</a>
   <a href="#" data-go="contact" class="mb-menu-cta">NEZÁVAZNÁ POPTÁVKA</a>
   <div class="mb-menu-foot">MARTINS BUILDING</div>
 </nav>
@@ -300,22 +299,21 @@ html.js [data-variant] footer > div.rv-in{opacity:1;transform:none}
 
   /* ---- gallery lightbox showcase (extend SHOW with more img/ files anytime) ---- */
   var SHOW=[
-    {src:'img/LHS_2511h.webp', t:'Onyxová stěna', c:'Obývací prostor'},
-    {src:'img/LHS_2543h.webp', t:'Onyxová stěna', c:'Jídelní prostor'},
-    {src:'img/LHS_2534h.webp', t:'Onyx & travertin', c:'Obývací prostor'},
-    {src:'img/LHS_2551h.webp', t:'Onyxový celek', c:'Kuchyně'},
     {src:'img/DSCF0136.webp',  t:'Mramor Calacatta', c:'Kuchyně'},
     {src:'img/DSCF0245.webp',  t:'Kámen & bazén', c:'Wellness'},
     {src:'img/LHS_7291h.webp', t:'Sauna', c:'Wellness'},
     {src:'img/LHS_7327h.webp', t:'Koupelna se saunou', c:'Wellness'},
+    {src:'img/DSCF0266.webp',  t:'Vstup do wellness & bambus', c:'Wellness'},
     {src:'img/LHS_2727h.webp', t:'Velkoformátový kámen', c:'Koupelna'},
+    {src:'img/LHS_2721h.webp', t:'Kámen & dubová skříňka', c:'Koupelna'},
     {src:'img/LHZ_9728h.webp', t:'Sprchový kout', c:'Koupelna'},
-    {src:'img/LHZ_9758h.webp', t:'Bílý mramor', c:'Koupelna'},
+    {src:'img/LHZ_9754h.webp', t:'Mramor & panoramatické okno', c:'Koupelna'},
+    {src:'img/LHZ_9769h.webp', t:'Mramor & ořech', c:'Koupelna'},
+    {src:'img/LHS_7295h.webp', t:'Vana & mosazné baterie', c:'Koupelna'},
     {src:'img/LHS_7401h.webp', t:'Výhled do údolí', c:'Koupelna'},
     {src:'img/LHS_7354h.webp', t:'Prosklená stěna', c:'Koupelna'},
     {src:'img/LHZ_9507h.webp', t:'Tmavý mramor', c:'Toaleta'},
-    {src:'img/LHS_7373h.webp', t:'Panoramatická koupelna', c:'Koupelna'},
-    {src:'img/LHS_2529h.webp', t:'Onyx & kožená sedačka', c:'Obývací prostor'}
+    {src:'img/LHS_7373h.webp', t:'Panoramatická koupelna', c:'Koupelna'}
   ];
   var lb=document.getElementById('mb-lb');
   var lbImg=lb.querySelector('img'),lbT=lb.querySelector('.lb-t'),lbC=lb.querySelector('.lb-c'),lbN=lb.querySelector('.lb-n');
