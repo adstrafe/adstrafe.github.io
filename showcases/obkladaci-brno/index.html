@@ -8,398 +8,93 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira:wght@200;300;400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box}
-img{display:block;max-width:100%}
-html,body{margin:0}
-.mb-tap{cursor:pointer}
-.mb-link:hover{color:#F2F2F4 !important}
-
-/* ---- nav links: color lift + red underline draws in on hover ---- */
-section[data-mbsec="hero"] nav .mb-tap{position:relative;padding-bottom:7px;transition:color .25s}
-section[data-mbsec="hero"] nav .mb-tap:hover{color:#fff}
-section[data-mbsec="hero"] nav .mb-tap::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:#E10600;transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.22,.61,.36,1)}
-section[data-mbsec="hero"] nav .mb-tap:hover::after{transform:scaleX(1)}
-#mb-menu a:hover{color:#E10600}
-
-/* ---- full-viewport hero; svh tracks the visible area on phones (no address-bar jump);
-   min-height keeps short/landscape viewports from crushing the centered content ---- */
-[data-variant] section[data-mbsec="hero"]{min-height:560px}
-@supports (height:100svh){[data-variant] section[data-mbsec="hero"]{height:100svh !important}}
-
-/* ---- hero wordmark: entrance rise + animated gold/red sheen over the photo ---- */
-.mb-wordmark{animation:mb-rise .9s cubic-bezier(.22,.61,.36,1) both;text-shadow:none !important}
-@supports ((-webkit-background-clip:text) or (background-clip:text)){
-  .mb-wordmark{background:linear-gradient(105deg,#F8F8F9 0%,#F8F8F9 38%,#FFC96B 47%,#E10600 53%,#F8F8F9 62%,#F8F8F9 100%);background-size:230% 100%;background-position:115% 0;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:mb-rise .9s cubic-bezier(.22,.61,.36,1) both,mb-sheen 2s ease-in-out .5s 1 both}
-}
-/* subtitle sits over bright areas of the photo — dark glow keeps it legible without dimming the image */
-section[data-mbsec="hero"] p{text-shadow:0 1px 3px rgba(8,8,10,.75),0 3px 24px rgba(8,8,10,.7)}
-.mb-hero-bar{width:86px;height:2px;background:#E10600;margin:30px auto 0;transform:scaleX(0);animation:mb-bar .7s cubic-bezier(.22,.61,.36,1) .65s forwards}
-.mb-hero-bar+p{animation:mb-rise .9s cubic-bezier(.22,.61,.36,1) .22s both}
-@keyframes mb-rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
-@keyframes mb-sheen{from{background-position:115% 0}to{background-position:-45% 0}}
-@keyframes mb-bar{to{transform:scaleX(1)}}
-@media (prefers-reduced-motion:reduce){
-  .mb-wordmark,.mb-hero-bar+p{animation:none !important}
-  .mb-hero-bar{animation:none !important;transform:none}
-}
-body{background:#0C0C0E;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-@keyframes mb-cue{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(8px);opacity:1}}
-
-
-/* ---- Scroll reveal (js-gated so no-JS / reduced-motion shows everything).
-   Absolutely-positioned direct children are always decorative background/overlay
-   layers (never real content) — excluded so a hero-style overlay doesn't fade from
-   invisible and flash the raw photo underneath before it's revealed. ---- */
-html.js [data-variant] section:not(:first-of-type) > div:not([style*="position:absolute"]),
-html.js [data-variant] section:not(:first-of-type) > h2,
-html.js [data-variant] section:not(:first-of-type) > p,
-html.js [data-variant] footer > div{
-  opacity:0;transform:translateY(24px);
-  transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);
-  will-change:opacity,transform;
-}
-html.js [data-variant] section:not(:first-of-type) > div.rv-in,
-html.js [data-variant] section:not(:first-of-type) > h2.rv-in,
-html.js [data-variant] section:not(:first-of-type) > p.rv-in,
-html.js [data-variant] footer > div.rv-in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  html.js [data-variant] section:not(:first-of-type) > div,
-  html.js [data-variant] section:not(:first-of-type) > h2,
-  html.js [data-variant] section:not(:first-of-type) > p,
-  html.js [data-variant] footer > div{opacity:1 !important;transform:none !important;transition:none !important}
-}
-
-/* ---- Gallery lightbox showcase ---- */
-#mb-lb{position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;background:rgba(8,8,10,.95);padding:54px;font-family:'Saira',sans-serif}
-#mb-lb.open{display:flex;animation:mb-fade .25s ease}
-@keyframes mb-fade{from{opacity:0}to{opacity:1}}
-#mb-lb figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:18px;max-width:100%}
-#mb-lb img{max-width:86vw;max-height:78vh;object-fit:contain;box-shadow:0 36px 90px rgba(0,0,0,.6)}
-#mb-lb figcaption{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;justify-content:center}
-#mb-lb .lb-t{font:300 19px/1 'Saira';letter-spacing:.01em;color:#F2F2F4}
-#mb-lb .lb-c{font:400 11px/1 'Saira';letter-spacing:.22em;color:#9a9c9f}
-#mb-lb .lb-n{font:400 11px/1 'Saira';letter-spacing:.18em;color:#5a5c60}
-#mb-lb button{position:absolute;appearance:none;border:0;background:rgba(255,255,255,.07);color:#fff;cursor:pointer;font-family:'Saira';line-height:1;transition:background .2s}
-#mb-lb button:hover{background:#E10600}
-#mb-lb .lb-close{top:24px;right:28px;width:46px;height:46px;font-size:22px}
-#mb-lb .lb-prev,#mb-lb .lb-next{top:50%;transform:translateY(-50%);width:54px;height:66px;font-size:30px}
-#mb-lb .lb-prev{left:26px}
-#mb-lb .lb-next{right:26px}
-@media (max-width:760px){#mb-lb{padding:14px}#mb-lb img{max-height:66vh}#mb-lb .lb-prev,#mb-lb .lb-next{width:40px;height:52px;font-size:24px}#mb-lb .lb-prev{left:10px}#mb-lb .lb-next{right:10px}#mb-lb .lb-close{top:12px;right:12px}}
-
-/* ---- Toast ---- */
-#mb-toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%) translateY(22px);z-index:10001;background:#0C0C0E;border:1px solid rgba(255,255,255,.16);border-left:3px solid #E10600;color:#F2F2F4;padding:16px 22px;font:400 13px/1.45 'Hanken Grotesk',sans-serif;opacity:0;transition:opacity .3s,transform .3s;pointer-events:none;max-width:90vw;box-shadow:0 16px 40px rgba(0,0,0,.5)}
-#mb-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
-/* ---- Mobile hamburger + slide-in menu (hidden on desktop) ---- */
-.mb-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;padding:0;border:0;background:transparent;cursor:pointer}
-.mb-burger span{display:block;width:24px;height:2px;background:#fff}
-#mb-menu{position:fixed;inset:0;z-index:10002;display:none;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:rgba(10,10,12,.975);font-family:'Saira',sans-serif}
-#mb-menu.open{display:flex}
-#mb-menu a{color:#EDEDEF;text-decoration:none;font:300 32px/1.25 'Saira',sans-serif;letter-spacing:.01em;padding:8px 22px}
-#mb-menu a small{display:block;font:500 10px/1 'Saira';letter-spacing:.3em;color:#E10600;margin-bottom:7px}
-#mb-menu .mb-menu-cta{margin-top:22px;font:500 13px/1 'Saira';letter-spacing:.2em;color:#fff;background:#E10600;padding:17px 32px}
-#mb-menu .mb-menu-close{position:absolute;top:16px;right:18px;width:46px;height:46px;border:0;background:rgba(255,255,255,.08);color:#fff;font-size:24px;line-height:1;cursor:pointer}
-#mb-menu .mb-menu-foot{position:absolute;bottom:34px;font:400 11px/1 'Saira';letter-spacing:.22em;color:#5a5c60}
-
-/* ---- Responsive layer: only engages on narrow viewports; desktop look untouched ---- */
-@media (max-width:1024px){
-  [data-variant] [style*="grid-template-columns"]{grid-template-columns:1fr !important}
-  /* Lookbook bands once single-column: keep image from collapsing AND always put it
-     on top of its own heading (desktop alternates left/right; stacked that clumps two
-     images together and looks "connected"). */
-  [data-variant] [style*="min-height:452px"] > [style*="position:relative"]{min-height:300px !important;order:-1}
-}
-@media (max-width:760px){
-  [data-variant] section{padding-left:22px !important;padding-right:22px !important;padding-top:60px !important;padding-bottom:60px !important}
-  [data-variant] nav{padding-left:22px !important;padding-right:22px !important}
-  [data-variant] footer{padding-left:22px !important;padding-right:22px !important}
-  [data-variant] nav > div{display:none !important}
-  [data-variant] .mb-burger{display:flex !important;margin-left:auto}
-  /* menu ✕ sits exactly where the burger is, same size, no box — no icon "jump" on open */
-  #mb-menu .mb-menu-close{top:30px;right:22px;width:42px;height:42px;background:transparent;font-size:28px;font-weight:300}
-  [data-variant] h1{font-size:38px !important;line-height:1.03 !important;letter-spacing:-.02em !important}
-  /* hero wordmark: caps need positive tracking; stacks as MARTINS / BUILDING on phones */
-  [data-variant] section[data-mbsec="hero"] h1{font-size:34px !important;letter-spacing:.06em !important;line-height:1.2 !important}
-  [data-variant] h2{font-size:32px !important}
-  [data-variant] h3{font-size:26px !important}
-  [data-variant="L"] section[data-mbsec="hero"] > [style*="radial-gradient"]{background:radial-gradient(130% 90% at 50% 45%,rgba(8,8,10,.32) 0%,rgba(8,8,10,.7) 64%,rgba(8,8,10,.94) 100%) !important}
-  /* big background wordmark is desktop-only decoration; on phones just the © line */
-  [data-variant] footer > div:first-child{display:none !important}
-  [data-variant] [style*="display:flex"][style*="height:512px"]{height:auto !important}
-  [data-variant] [style*="display:flex"][style*="height:240px"]{height:auto !important}
-  /* Lookbook bands: keep stacked image cells from collapsing (absolute imgs) */
-  [data-variant] [style*="min-height:452px"] > [style*="position:relative"]{min-height:300px !important}
-  [data-variant] [style*="display:flex"][style*="gap:9px"]{flex-wrap:wrap}
-  /* footer: centered stack under the centered wordmark (was a ragged left-aligned wrap) */
-  [data-variant] footer [style*="justify-content:space-between"]{flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;margin-top:20px !important}
-  [data-variant] footer{padding-top:44px !important;padding-bottom:34px !important}
-  [data-variant] [style*="display:flex"][style*="gap:30px"]{flex-wrap:wrap;gap:10px 18px !important}
-  [data-variant] [style*="display:flex"][style*="gap:30px"] [style*="margin-left:auto"]{margin-left:0 !important}
-  [data-variant] [style*="justify-content:space-between"][style*="align-items:flex-end"]{flex-direction:column;align-items:flex-start !important;gap:16px}
-  /* tame wide letter-spacing on eyebrows so they don't wrap raggedly */
-  [data-variant] [style*="letter-spacing:.36em"],[data-variant] [style*="letter-spacing:.42em"],[data-variant] [style*="letter-spacing:.34em"]{letter-spacing:.16em !important}
-  /* shrink oversized inner paddings (B hero column, Lookbook bands, contact info bar) */
-  [data-variant] [style*="padding:84px 56px 76px"]{padding:44px 22px 36px !important}
-  [data-variant] [style*="padding:72px 64px"]{padding:44px 24px !important}
-  [data-variant] [style*="display:flex"][style*="gap:54px"]{flex-wrap:wrap;gap:22px 30px !important}
-  /* ---- galleries become horizontal swipe carousels (snap, peek next card) ---- */
-  [data-variant] section[data-mbsec="gallery"]{padding-left:0 !important;padding-right:0 !important}
-  [data-variant] section[data-mbsec="gallery"] > div:first-child{padding-left:22px !important;padding-right:22px !important}
-  /* B & L gallery grids -> flex swipe row */
-  [data-mbsec="gallery"] [style*="grid-template-columns"]{display:flex !important;flex-wrap:nowrap !important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:10px !important;padding:0 16px 12px !important;scroll-padding-left:16px}
-  [data-mbsec="gallery"] [style*="grid-template-columns"] > *{flex:0 0 80vw !important;scroll-snap-align:center}
-  /* A flex rows -> swipe strips; dissolve the nested column so its tiles join the strip */
-  [data-mbsec="gallery"] [style*="display:flex"][style*="gap:14px"]{flex-direction:row !important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:10px !important;height:auto !important;padding:0 16px 12px !important;scroll-padding-left:16px}
-  [data-mbsec="gallery"] [style*="flex-direction:column"][style*="gap:14px"]{display:contents !important}
-  /* every tile: fixed swipe width + height */
-  [data-mbsec="gallery"] [style*="position:relative"][style*="overflow:hidden"]{height:52vh !important;flex:0 0 80vw !important;scroll-snap-align:center}
-  [data-mbsec="gallery"] [style*="height:270px"]{height:44vh !important}
-  [data-mbsec="gallery"] [style*="padding:14px 2px 0"]{padding:12px 14px 4px !important}
-  [data-mbsec="gallery"] [style*="grid-template-columns"]::-webkit-scrollbar,[data-mbsec="gallery"] [style*="display:flex"][style*="gap:14px"]::-webkit-scrollbar{display:none}
-  /* Lookbook "O nás" value props: stack vertically with a centered RED dot between items */
-  [data-variant="L"] section[data-mbsec="about"] [style*="gap:40px"]{flex-direction:column;gap:13px !important}
-  [data-variant="L"] section[data-mbsec="about"] [style*="gap:40px"] > [style*="color:#E10600"]{font-size:0 !important}
-  [data-variant="L"] section[data-mbsec="about"] [style*="gap:40px"] > [style*="color:#E10600"]::after{content:"\00B7";font-size:22px;color:#E10600;line-height:1}
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-<div data-variant="L" style="display:block">
-<div style="background:#0C0C0E;overflow:hidden;font-family:'Hanken Grotesk',sans-serif;color:#F2F2F4">
+<div data-variant="L">
+<div class="mb-page">
 
-    <!-- HERO full-bleed centered -->
-    <section data-mbsec="hero" style="position:relative;height:100vh">
-      <img src="img/DSCF0245.webp" alt="Interiérový bazén s kamenným obkladem — realizace Martins Building" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;filter:saturate(1.22) contrast(1.03)">
-      <div style="position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 42%,rgba(8,8,10,.14) 0%,rgba(8,8,10,.54) 60%,rgba(8,8,10,.9) 100%)"></div>
-      <nav style="position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:center;padding:30px 56px">
-        <div style="display:flex;gap:38px;font:400 12px/1 'Saira';letter-spacing:.2em;color:#B8BBC0"><span>O NÁS</span><span>GALERIE</span><span>KONTAKT</span></div>
-      <button class="mb-burger" type="button" aria-label="Otevřít menu" aria-expanded="false"><span></span><span></span><span></span></button></nav>
-      <div style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;padding:0 40px">
-        <h1 class="mb-wordmark" style="margin:0 auto;max-width:1050px;font:600 92px/1.05 'Saira';letter-spacing:.05em;color:#F8F8F9">MARTINS<span style="font-weight:200;color:#D6D8DB"> BUILDING</span></h1>
-        <div class="mb-hero-bar"></div>
-        <p style="margin:30px auto 0;max-width:560px;font:400 18px/1.65 'Hanken Grotesk';color:#EDEEF0">Profesionální montáže velkoformátových obkladů a dlažeb</p>
-        
-      </div>
-    </section>
+	<section data-mbsec="hero">
+		<img class="mb-hero-img" src="img/DSCF0245.webp" alt="Interiérový bazén s kamenným obkladem — realizace Martins Building" fetchpriority="high">
+		<div class="mb-hero-shade"></div>
+		<div class="mb-hero-fade"></div>
+		<nav class="mb-hero-nav">
+			<div class="mb-hero-links"><span>O NÁS</span><span>GALERIE</span><span>KONTAKT</span></div>
+			<button class="mb-burger" type="button" aria-label="Otevřít menu" aria-expanded="false"><span></span><span></span><span></span></button>
+		</nav>
+		<div class="mb-hero-copy">
+			<h1 class="mb-wordmark">MARTINS<span class="mb-wordmark-light"> BUILDING</span></h1>
+			<p class="mb-hero-sub">Profesionální montáže velkoformátových obkladů a dlažeb</p>
+		</div>
+	</section>
 
-<!-- GALERIE edge-to-edge -->
-    <section data-mbsec="gallery" style="background:#0C0C0E;padding:96px 0 30px">
-      <div style="text-align:center;margin-bottom:48px"><div style="font:600 16px/1 'Saira';letter-spacing:.42em;color:#E10600;margin-bottom:20px">GALERIE</div><h2 style="margin:0;font:200 56px/1.0 'Saira';letter-spacing:-.02em;color:#F2F2F4">Vybrané realizace</h2></div>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
-        <div style="position:relative;height:340px;overflow:hidden"><img src="img/DSCF0136.webp" alt="Kuchyně s mramorovou deskou Calacatta a dubovým nábytkem" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
-        <div style="position:relative;height:340px;overflow:hidden"><img src="img/LHS_2727h.webp" alt="Koupelna s velkoformátovým kamenným obkladem a volně stojící vanou" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
-        <div style="position:relative;height:340px;overflow:hidden"><img src="img/LHZ_9754h.webp" alt="Prostorná koupelna s vanou, mramorem a panoramatickým oknem" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
-        <div style="position:relative;height:340px;overflow:hidden"><img src="img/LHS_7291h.webp" alt="Wellness koupelna se saunou a kamenným obkladem" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
-        <div style="position:relative;height:340px;overflow:hidden"><img src="img/LHS_7295h.webp" alt="Volně stojící vana u kamenné stěny s mosaznými bateriemi" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
-        <div style="position:relative;height:340px;overflow:hidden"><img src="img/LHZ_9769h.webp" alt="Koupelna s mramorovým obkladem a ořechovou umyvadlovou skříňkou" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
-        <div style="position:relative;height:340px;overflow:hidden"><img src="img/LHS_2721h.webp" alt="Koupelna s dubovou dvojumyvadlovou skříňkou a kamenným obkladem" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
-        <div style="position:relative;height:340px;overflow:hidden"><img src="img/LHZ_9728h.webp" alt="Sprchový kout s velkoformátovým kamenným obkladem" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform .9s" style-hover="transform:scale(1.05)"></div>
-      </div>
-    </section>
+	<section data-mbsec="gallery">
+		<div class="mb-gallery-head"><div class="mb-eyebrow">GALERIE</div><h2 class="mb-gallery-title">Vybrané realizace</h2></div>
+		<div class="mb-grid">
+			<div class="mb-tile mb-span2"><img class="mb-pos-45" src="img/DSCF0136.webp" alt="Kuchyně s mramorovou deskou Calacatta a dubovým nábytkem" loading="lazy" decoding="async"></div>
+			<div class="mb-tile"><img src="img/LHS_2727h.webp" alt="Koupelna s velkoformátovým kamenným obkladem a volně stojící vanou" loading="lazy" decoding="async"></div>
+			<div class="mb-tile mb-tall"><img src="img/LHS_7401h.webp" alt="Volně stojící vana s panoramatickým výhledem do údolí" loading="lazy" decoding="async"></div>
+			<div class="mb-tile"><img class="mb-pos-15" src="img/LHZ_9754h.webp" alt="Prostorná koupelna s vanou, mramorem a panoramatickým oknem" loading="lazy" decoding="async"></div>
+			<div class="mb-tile"><img class="mb-pos-25" src="img/LHS_7291h.webp" alt="Wellness koupelna se saunou a kamenným obkladem" loading="lazy" decoding="async"></div>
+			<div class="mb-tile"><img class="mb-pos-72" src="img/LHZ_9769h.webp" alt="Koupelna s mramorovým obkladem a ořechovou umyvadlovou skříňkou" loading="lazy" decoding="async"></div>
+			<div class="mb-tile"><img class="mb-pos-35" src="img/LHS_2721h.webp" alt="Koupelna s dubovou dvojumyvadlovou skříňkou a kamenným obkladem" loading="lazy" decoding="async"></div>
+			<div class="mb-tile"><img src="img/LHZ_9728h.webp" alt="Sprchový kout s velkoformátovým kamenným obkladem" loading="lazy" decoding="async"></div>
+		</div>
+	</section>
 
-    <!-- O NAS centered -->
-    <section data-mbsec="about" style="background:#0C0C0E;padding:104px 56px;text-align:center">
-      <div style="font:600 16px/1 'Saira';letter-spacing:.42em;color:#E10600;margin-bottom:26px">O NÁS</div>
-      <h2 style="margin:0 auto 26px;max-width:880px;font:200 42px/1.18 'Saira';letter-spacing:-.01em;color:#F2F2F4">Řemeslo, na které se spolehnete.</h2>
-      <p style="margin:0 auto 20px;max-width:720px;font:300 17px/1.75 'Hanken Grotesk';color:#9a9c9f">Naše společnost se specializuje na pokládku velkoformátových obkladů a dlažeb s důrazem na precizní zpracování, kvalitu a každý detail. Díky zkušenostem, odbornému přístupu a moderním pracovním postupům vytváříme elegantní a nadčasová řešení pro koupelny, interiéry i komerční prostory. Vaši představu proměníme v dokonale provedenou realizaci.</p>
-      <p style="margin:0 auto 36px;max-width:720px;font:300 17px/1.75 'Hanken Grotesk';color:#9a9c9f">Jsme realizačním partnerem studia <a class="mb-link" href="https://www.dara-design.cz/" target="_blank" rel="noopener" style="color:#E10600;text-decoration:none;transition:color .2s;white-space:nowrap">Dara Design</a>, se kterým vytváříme jedinečné interiéry na míru.</p>
-      <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;font:400 12px/1 'Saira';letter-spacing:.2em;color:#B8BBC0"><span>PRÁCE DLE ČSN</span><span style="color:#E10600">/</span><span>MATERIÁL &amp; CHEMIE V CENĚ</span><span style="color:#E10600">/</span><span>PRAVIDELNÁ ŠKOLENÍ</span><span style="color:#E10600">/</span><span>ATYPICKÉ STAVEBNÍ PRÁCE</span></div>
-    </section>
+	<section data-mbsec="about">
+		<div class="mb-eyebrow">O NÁS</div>
+		<h2 class="mb-about-title">Řemeslo, na které se spolehnete.</h2>
+		<p class="mb-about-lead">Naše společnost se specializuje na pokládku velkoformátových obkladů a dlažeb s důrazem na precizní zpracování, kvalitu a každý detail. Díky zkušenostem, odbornému přístupu a moderním pracovním postupům vytváříme elegantní a nadčasová řešení pro koupelny, interiéry i komerční prostory. Vaši představu proměníme v dokonale provedenou realizaci.</p>
+		<p class="mb-about-note">Jsme realizačním partnerem studia <a class="mb-link" href="https://www.dara-design.cz/" target="_blank" rel="noopener">Dara Design</a>, se kterým vytváříme jedinečné interiéry na míru.</p>
+		<div class="mb-chips"><span>PRÁCE DLE ČSN</span> <span class="mb-sep">/</span> <span>MATERIÁL &amp; CHEMIE V CENĚ</span> <span class="mb-sep">/</span> <span>PRAVIDELNÁ ŠKOLENÍ</span> <span class="mb-sep">/</span> <span>ATYPICKÉ STAVEBNÍ PRÁCE</span></div>
+	</section>
 
-    <!-- KONTAKT full-bleed -->
-    <section data-mbsec="contact" style="position:relative;padding:104px 40px;text-align:center">
-      <img src="img/LHS_2727h.webp" alt="" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3">
-      <div style="position:absolute;inset:0;background:rgba(12,12,14,.89)"></div>
-      <div style="position:relative;font:600 16px/1 'Saira';letter-spacing:.42em;color:#E10600;margin-bottom:24px">KONTAKT</div>
-      <h2 style="position:relative;margin:0 0 18px;font:200 56px/1.0 'Saira';letter-spacing:-.02em;color:#F6F6F7">Napište nám.</h2>
-      <p style="position:relative;margin:0 auto 40px;max-width:480px;font:300 16px/1.65 'Hanken Grotesk';color:#C7C9CC">Napište nám o svém projektu nebo zavolejte — ozveme se s návrhem řešení a nezávaznou cenovou nabídkou.</p>
-      <div style="position:relative;display:flex;justify-content:center">
-        <a href="mailto:info@martinsbuilding.cz" style="display:inline-block;background:#E10600;color:#fff;font:500 12px/1 'Saira';letter-spacing:.2em;padding:17px 38px;text-decoration:none;transition:all .25s" style-hover="background:#fff;color:#0C0C0E">NAPSAT E-MAIL →</a>
-      </div>
-    </section>
-    <div style="background:#0C0C0E;padding:36px 56px;display:flex;justify-content:center;gap:54px;align-items:center;border-top:1px solid rgba(255,255,255,.1)">
-      <div style="text-align:center"><div style="font:400 11px/1 'Saira';letter-spacing:.22em;color:#5a5c60;margin-bottom:7px">E-MAIL</div><a href="mailto:info@martinsbuilding.cz" style="display:block;font:300 17px/1 'Saira';color:#F2F2F4;text-decoration:none;transition:color .2s" style-hover="color:#E10600">info@martinsbuilding.cz</a></div>
-      <div style="text-align:center"><div style="font:400 11px/1 'Saira';letter-spacing:.22em;color:#5a5c60;margin-bottom:7px">TELEFON</div><div style="font:300 17px/1 'Saira';color:#F2F2F4">+420 777 849 910</div></div>
-      <div style="text-align:center"><div style="font:400 11px/1 'Saira';letter-spacing:.22em;color:#5a5c60;margin-bottom:7px">PŮSOBNOST</div><div style="font:300 17px/1 'Saira';color:#F2F2F4">Brno &amp; Jihomoravský kraj</div></div>
-    </div>
+	<section data-mbsec="contact">
+		<img class="mb-contact-bg" src="img/LHS_2727h.webp" alt="" loading="lazy" decoding="async">
+		<div class="mb-contact-overlay"></div>
+		<div class="mb-eyebrow">KONTAKT</div>
+		<h2 class="mb-contact-title">Napište nám.</h2>
+		<p class="mb-contact-text">Napište nám o svém projektu nebo zavolejte — ozveme se s návrhem řešení a nezávaznou cenovou nabídkou.</p>
+		<div class="mb-contact-actions">
+			<a href="mailto:info@martinsbuilding.cz" class="mb-btn">NAPSAT E-MAIL →</a>
+		</div>
+	</section>
+	<div class="mb-info">
+		<div class="mb-info-item"><div class="mb-info-label">E-MAIL</div><a href="mailto:info@martinsbuilding.cz" class="mb-cl">info@martinsbuilding.cz</a></div>
+		<div class="mb-info-item"><div class="mb-info-label">TELEFON</div><a href="tel:+420777849910" class="mb-cl">+420 777 849 910</a></div>
+		<div class="mb-info-item"><div class="mb-info-label">PŮSOBNOST</div><div class="mb-info-value">Brno &amp; Jihomoravský kraj</div></div>
+	</div>
 
-    <footer style="padding:54px 56px 40px;background:#0C0C0E;border-top:1px solid rgba(255,255,255,.1)">
-      <div style="font:200 92px/1 'Saira';letter-spacing:-.01em;color:#1c1c20;text-align:center;white-space:nowrap;overflow:hidden">MARTINS BUILDING</div>
-      <div style="margin-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 28px"><span style="font:400 12px/1 'Saira';letter-spacing:.18em;color:#87898F">© 2026 MARTINS BUILDING S.R.O.</span><div style="font:400 12px/1 'Saira';letter-spacing:.14em;color:#5a5c60">IČ: 29304440 · DIČ: CZ29304440</div><div style="font:400 12px/1 'Saira';letter-spacing:.18em;color:#5a5c60">OBKLADY · DLAŽBY · VELKOFORMÁT · BRNO</div></div>
-    </footer>
+	<footer class="mb-footer">
+		<div class="mb-foot-mark">MARTINS BUILDING</div>
+		<div class="mb-foot-row"><span class="mb-foot-copy">© 2026 MARTINS BUILDING S.R.O.</span><div class="mb-foot-legal">IČ: 29304440 · DIČ: CZ29304440</div><div class="mb-foot-tags">OBKLADY · DLAŽBY · VELKOFORMÁT · BRNO</div></div>
+	</footer>
 
-  </div>
+	</div>
 </div>
 
 <div id="mb-lb" aria-hidden="true" role="dialog" aria-label="Galerie realizací">
-  <button class="lb-close" type="button" aria-label="Zavřít">×</button>
-  <button class="lb-prev" type="button" aria-label="Předchozí">‹</button>
-  <button class="lb-next" type="button" aria-label="Další">›</button>
-  <figure>
-    <img alt="">
-    <figcaption><span class="lb-t"></span><span class="lb-c"></span><span class="lb-n"></span></figcaption>
-  </figure>
+	<button class="lb-close" type="button" aria-label="Zavřít">×</button>
+	<button class="lb-prev" type="button" aria-label="Předchozí">‹</button>
+	<button class="lb-next" type="button" aria-label="Další">›</button>
+	<figure>
+		<img alt="">
+		<figcaption><span class="lb-t"></span><span class="lb-c"></span><span class="lb-n"></span></figcaption>
+	</figure>
 </div>
 
 <nav id="mb-menu" aria-hidden="true" aria-label="Hlavní menu">
-  <button class="mb-menu-close" type="button" aria-label="Zavřít">×</button>
-  <a href="#" data-go="about"><small>01</small>O NÁS</a>
-  <a href="#" data-go="gallery"><small>02</small>GALERIE</a>
-  <a href="#" data-go="contact"><small>03</small>KONTAKT</a>
-  <a href="#" data-go="contact" class="mb-menu-cta">NEZÁVAZNÁ POPTÁVKA</a>
-  <div class="mb-menu-foot">MARTINS BUILDING</div>
+	<button class="mb-menu-close" type="button" aria-label="Zavřít">×</button>
+	<a href="#" data-go="about"><small>01</small>O NÁS</a>
+	<a href="#" data-go="gallery"><small>02</small>GALERIE</a>
+	<a href="#" data-go="contact"><small>03</small>KONTAKT</a>
+	<a href="#" data-go="contact" class="mb-menu-cta">NEZÁVAZNÁ POPTÁVKA</a>
+	<div class="mb-menu-foot">MARTINS BUILDING</div>
 </nav>
 
-<script>
-(function(){
-  /* ---- style-hover -> real :hover rules (replicates the x-dc runtime) ---- */
-  var sheet=document.createElement('style');document.head.appendChild(sheet);var n=0;
-  document.querySelectorAll('[style-hover]').forEach(function(el){
-    var raw=el.getAttribute('style-hover')||'';
-    var css=raw.split(';').map(function(d){d=d.trim();if(!d)return '';return d.replace(/\s*!important\s*$/i,'')+' !important';}).filter(Boolean).join(';');
-    var cls='mbh'+(n++);el.classList.add(cls);
-    try{sheet.sheet.insertRule('.'+cls+':hover{'+css+'}',sheet.sheet.cssRules.length);}catch(e){}
-    el.removeAttribute('style-hover');
-  });
-
-  /* ---- scroll reveal: IntersectionObserver (primary) + direct scan (fallback) ---- */
-  var RV_SEL='[data-variant] section:not(:first-of-type) > div:not([style*="position:absolute"]),[data-variant] section:not(:first-of-type) > h2,[data-variant] section:not(:first-of-type) > p,[data-variant] footer > div';
-  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es,o){
-    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('rv-in');o.unobserve(e.target);}});
-  },{rootMargin:'0px 0px -8% 0px',threshold:0.05}):null;
-  function revealCheck(){
-    var vh=window.innerHeight||document.documentElement.clientHeight;
-    /* at page bottom nothing more can scroll into view — drop the 60px guard,
-       or elements living in the last strip of the page (footer row) never reveal */
-    var atEnd=(window.pageYOffset+vh)>=((document.documentElement.scrollHeight||document.body.scrollHeight)-40);
-    var guard=atEnd?0:60;
-    var els=document.querySelectorAll(RV_SEL);
-    for(var i=0;i<els.length;i++){var el=els[i];
-      if(el.classList.contains('rv-in'))continue;
-      var r=el.getBoundingClientRect();
-      if(r.height===0&&r.width===0)continue;            /* hidden variant */
-      if(io)io.observe(el);                              /* fires on scroll into view */
-      if(r.top<vh-guard&&r.bottom>0)el.classList.add('rv-in'); /* immediate for in-view */
-    }
-  }
-  window.addEventListener('scroll',revealCheck,{passive:true});
-  window.addEventListener('resize',revealCheck);
-  document.addEventListener('visibilitychange',function(){if(!document.hidden)revealCheck();});
-
-  /* ---- smooth scroll to a section by its data-mbsec label ---- */
-  function scrollToSection(label){
-    var el=document.querySelector('section[data-mbsec="'+label+'"]');if(!el)return;
-    var y=label==='hero'?0:(el.getBoundingClientRect().top+window.pageYOffset-62);
-    window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
-  }
-
-  /* ---- gallery lightbox showcase (extend SHOW with more img/ files anytime) ---- */
-  var SHOW=[
-    {src:'img/DSCF0136.webp',  t:'Mramor Calacatta', c:'Kuchyně'},
-    {src:'img/DSCF0245.webp',  t:'Kámen & bazén', c:'Wellness'},
-    {src:'img/LHS_7291h.webp', t:'Sauna', c:'Wellness'},
-    {src:'img/LHS_7327h.webp', t:'Koupelna se saunou', c:'Wellness'},
-    {src:'img/DSCF0266.webp',  t:'Vstup do wellness & bambus', c:'Wellness'},
-    {src:'img/LHS_2727h.webp', t:'Velkoformátový kámen', c:'Koupelna'},
-    {src:'img/LHS_2721h.webp', t:'Kámen & dubová skříňka', c:'Koupelna'},
-    {src:'img/LHZ_9728h.webp', t:'Sprchový kout', c:'Koupelna'},
-    {src:'img/LHZ_9754h.webp', t:'Mramor & panoramatické okno', c:'Koupelna'},
-    {src:'img/LHZ_9769h.webp', t:'Mramor & ořech', c:'Koupelna'},
-    {src:'img/LHS_7295h.webp', t:'Vana & mosazné baterie', c:'Koupelna'},
-    {src:'img/LHS_7401h.webp', t:'Výhled do údolí', c:'Koupelna'},
-    {src:'img/LHS_7354h.webp', t:'Prosklená stěna', c:'Koupelna'},
-    {src:'img/LHZ_9507h.webp', t:'Tmavý mramor', c:'Toaleta'},
-    {src:'img/LHS_7373h.webp', t:'Panoramatická koupelna', c:'Koupelna'}
-  ];
-  var lb=document.getElementById('mb-lb');
-  var lbImg=lb.querySelector('img'),lbT=lb.querySelector('.lb-t'),lbC=lb.querySelector('.lb-c'),lbN=lb.querySelector('.lb-n');
-  var lbI=0;
-  function lbRender(){var it=SHOW[lbI];lbImg.src=it.src;lbImg.alt=(it.t||'')+' — '+(it.c||'');lbT.textContent=it.t||'';lbC.textContent=it.c||'';lbN.textContent=(lbI+1)+' / '+SHOW.length;
-    [(lbI+1)%SHOW.length,(lbI-1+SHOW.length)%SHOW.length].forEach(function(j){var im=new Image();im.src=SHOW[j].src;});}
-  function openShowcase(i){lbI=((i||0)%SHOW.length+SHOW.length)%SHOW.length;lbRender();lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
-  function openShowcaseBySrc(src){var idx=0;for(var i=0;i<SHOW.length;i++){if(SHOW[i].src===src){idx=i;break;}}openShowcase(idx);}
-  function lbClose(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');document.body.style.overflow='';}
-  function lbStep(d){lbI=(lbI+d+SHOW.length)%SHOW.length;lbRender();}
-  lb.querySelector('.lb-close').addEventListener('click',lbClose);
-  lb.querySelector('.lb-prev').addEventListener('click',function(){lbStep(-1);});
-  lb.querySelector('.lb-next').addEventListener('click',function(){lbStep(1);});
-  lb.addEventListener('click',function(e){if(e.target===lb)lbClose();});
-  document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')lbClose();else if(e.key==='ArrowRight')lbStep(1);else if(e.key==='ArrowLeft')lbStep(-1);});
-
-  /* ---- toast ---- */
-  function showToast(msg){var t=document.getElementById('mb-toast');if(!t){t=document.createElement('div');t.id='mb-toast';document.body.appendChild(t);}t.textContent=msg;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(function(){t.classList.remove('show');},4200);}
-
-  /* ---- contact form submit (no backend — confirms inline) ---- */
-  function submitForm(btn){
-    var sec=btn.closest('section');if(!sec)return;
-    var fields=sec.querySelectorAll('.mb-field');var ok=true;
-    fields.forEach(function(f){if(!f.value.trim()){ok=false;f.style.borderColor='#E10600';}else{f.style.borderColor='';}});
-    if(!ok){showToast('Vyplňte prosím všechna pole.');return;}
-    fields.forEach(function(f){f.value='';});
-    showToast('Děkujeme! Vaši poptávku jsme přijali — brzy se ozveme.');
-  }
-
-  /* ---- wire nav links, CTAs and gallery tiles ---- */
-  function wire(){
-    document.querySelectorAll('div,span').forEach(function(el){
-      if(el.children.length)return;
-      var t=(el.textContent||'').replace(/\s+/g,' ').trim();
-      var label=null,act=null;
-      if(t==='PRÁCE')label='hero';else if(t==='GALERIE')label='gallery';else if(t==='O NÁS')label='about';else if(t==='KONTAKT')label='contact';
-      else if(t.indexOf('PROCHÁZET')===0||t.indexOf('NAŠE REALIZACE')===0)label='gallery';
-      else if(t.indexOf('ZOBRAZIT')===0)act='show';
-      else if(t.indexOf('ZJISTIT')===0)label='gallery';
-      else if(t.indexOf('NEZÁVAZNÁ POPTÁVKA')===0||t==='POPTÁVKA')label='contact';
-      else if(t==='ODESLAT POPTÁVKU')act='submit';
-      if(label!==null){
-        if(!document.querySelector('section[data-mbsec="'+label+'"]'))return;
-        el.classList.add('mb-tap');
-        el.addEventListener('click',function(){
-          scrollToSection(label);
-          if(label==='contact'){var cs=document.querySelector('section[data-mbsec="contact"]');var f=cs&&cs.querySelector('.mb-field');if(f)setTimeout(function(){f.focus({preventScroll:true});},650);}
-        });
-      }
-      else if(act==='show'){el.classList.add('mb-tap');el.addEventListener('click',function(){openShowcase(0);});}
-      else if(act==='submit'){el.classList.add('mb-tap');el.addEventListener('click',function(){submitForm(el);});}
-    });
-    var gal=document.querySelector('section[data-mbsec="gallery"]');
-    if(gal){
-      gal.querySelectorAll('img').forEach(function(im){if(im.parentElement)im.parentElement.classList.add('mb-tap');});
-      gal.addEventListener('click',function(e){
-        /* stay INSIDE the gallery while walking up — clicking the section's own
-           padding would otherwise escape to the page wrapper, whose first <img>
-           is the hero, and wrongly open it in the lightbox */
-        var node=e.target.closest('div'),img=null;
-        while(node&&node!==gal&&gal.contains(node)){var im=node.querySelector('img');if(im){img=im;break;}node=node.parentElement;}
-        if(img&&gal.contains(img)){var s=img.getAttribute('src');if(s&&s.indexOf('img/')===0){e.preventDefault();openShowcaseBySrc(s);}}
-      });
-    }
-  }
-
-  /* ---- mobile hamburger menu ---- */
-  var menu=document.getElementById('mb-menu');
-  if(menu){
-    var burgers=document.querySelectorAll('.mb-burger');
-    function setBurger(exp){burgers.forEach(function(b){b.setAttribute('aria-expanded',exp?'true':'false');});}
-    function openMenu(){menu.classList.add('open');menu.setAttribute('aria-hidden','false');setBurger(true);document.body.style.overflow='hidden';}
-    function closeMenu(){menu.classList.remove('open');menu.setAttribute('aria-hidden','true');setBurger(false);document.body.style.overflow='';}
-    burgers.forEach(function(b){b.addEventListener('click',function(){menu.classList.contains('open')?closeMenu():openMenu();});});
-    menu.querySelector('.mb-menu-close').addEventListener('click',closeMenu);
-    menu.querySelectorAll('a[data-go]').forEach(function(a){a.addEventListener('click',function(e){
-      e.preventDefault();
-      closeMenu();
-      setTimeout(function(){scrollToSection(a.getAttribute('data-go'));},20);
-    });});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open'))closeMenu();});
-  }
-
-  revealCheck();
-  try{wire();}catch(e){}
-})();
-</script>
+<script src="main.js"></script>
 </body>
 </html>
