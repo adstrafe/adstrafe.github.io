@@ -55,18 +55,20 @@ html, body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-body { min-width: 320px; overflow-x: clip; }
+body { min-width: 0; overflow-x: clip; }
 img { display: block; max-width: 100%; }
 a { color: inherit; }
 button { font: inherit; color: inherit; }
 
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+[tabindex="0"]:focus-visible {
 	outline: 2px solid var(--color-accent);
 	outline-offset: 3px;
 }
 
 section[id] { scroll-margin-top: var(--nav-height); }
+main[id] { scroll-margin-top: var(--nav-height); }
 
 .skip-link {
 	position: absolute;

@@ -6,7 +6,7 @@
 	<title data-draft>Evidence hodin a výplat pro Martins Building — Vojtěch Lahuta</title>
 	<meta name="description" content="Obkladačská firma vedla docházku a výplaty v papírovém sešitu. Postavil jsem aplikaci, která funguje stejně, jen počítá sama." data-draft />
 	<link rel="canonical" href="https://vojtech.lahuta.cz/work/evidence-hodin.html" />
-	<meta property="og:type" content="article" /><meta property="og:url" content="https://vojtech.lahuta.cz/work/evidence-hodin.html" /><meta property="og:title" content="Evidence hodin místo papírového sešitu" data-draft /><meta property="og:description" content="Aplikace na docházku a výplaty pro obkladačskou firmu z Brna." data-draft /><meta property="og:image" content="https://vojtech.lahuta.cz/media/og.png" /><meta property="og:locale" content="cs_CZ" /><meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:type" content="article" /><meta property="og:url" content="https://vojtech.lahuta.cz/work/evidence-hodin.html" /><meta property="og:title" content="Hodiny a výplaty bez kalkulačky" data-draft /><meta property="og:description" content="Aplikace na docházku a výplaty pro obkladačskou firmu z Brna." data-draft /><meta property="og:image" content="https://vojtech.lahuta.cz/media/og.png" /><meta property="og:locale" content="cs_CZ" /><meta name="twitter:card" content="summary_large_image" />
 	<meta name="theme-color" content="#0e0e0c" /><link rel="icon" href="/media/logo.svg" type="image/svg+xml" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400..700&family=JetBrains+Mono:wght@400;600;700&display=swap" />
@@ -17,7 +17,7 @@
 	<!-- chrome:header -->
 	<a class="skip-link" href="#obsah">Přeskočit na obsah</a>
 	<header class="nav">
-		<a class="nav__brand" href="/">
+		<a class="nav__brand" href="/" aria-label="Vojtěch Lahuta — úvod">
 			<span class="nav__mark" aria-hidden="true">VL</span>
 			<span class="nav__meta" data-draft>Vojtěch Lahuta / programátor / Brno</span>
 		</a>
@@ -33,23 +33,26 @@
 			<a class="nav__link" href="/#o-mne">O mně</a>
 		</nav>
 
-		<a class="button button--primary button--small nav__cta" href="mailto:vojtech@lahuta.cz?subject=Hovor%20zdarma" data-draft>Domluvit hovor</a>
+		<a class="button button--primary button--small nav__cta" href="mailto:vojtech@lahuta.cz?subject=Spolupr%C3%A1ce" data-draft>Napište mi</a>
 	</header>
 	<!-- /chrome:header -->
 
-	<main id="obsah">
+	<main id="obsah" tabindex="-1">
 		<div class="back"><a class="back__link" href="/#prace">← Zpět na práci</a></div>
 		<section class="project-hero">
 			<dl class="project-hero__meta"><div><dt>Klient</dt><dd>Martins Building, Brno</dd></div><div><dt>Rok</dt><dd>2026</dd></div><div><dt>Typ</dt><dd>Aplikace na míru</dd></div><div><dt>Stav</dt><dd data-draft>V provozu od srpna 2026</dd></div></dl>
-			<div class="project-hero__lead"><p class="project-hero__kicker">Aplikace na míru</p><h1 class="project-hero__title" data-draft>Evidence hodin místo papírového sešitu</h1><p class="project-hero__sub" data-draft>Obkladačská firma z Brna vedla docházku, stavby a výplaty v sešitu. Teď má aplikaci, která vypadá a funguje jako ten sešit, jen počítá sama.</p></div>
+			<div class="project-hero__lead">
+				<p class="project-hero__kicker">Aplikace na míru</p>
+				<h1 class="project-hero__title" data-draft>Hodiny a výplaty bez kalkulačky</h1>
+				<p class="project-hero__sub" data-draft>Martin potřeboval převést docházku své obkladačské firmy ze sešitu do aplikace. Zapisování mělo zůstat jednoduché, ale součty a výplaty už měl počítat počítač.</p>
+			</div>
 		</section>
-		<section class="showcase" aria-label="Ukázka aplikace"><div class="frame frame--placeholder" data-draft>Screenshot: měsíční tabulka dnů × pracovníků (demo data)</div></section>
+		<section class="showcase" aria-label="Ukázka aplikace"><div class="frame frame--placeholder" data-draft>Ukázka aplikace · připravuje se s demo daty</div></section>
 		<div class="project-body"><div class="project-body__main">
 			<section class="project-section"><p class="project-section__label">Problém</p><h2 class="project-section__title" data-draft>Sešit, zvýrazňovač a kalkulačka</h2><p class="project-section__text" data-draft>Každý den se do sešitu psalo, kdo byl na které stavbě a kolik času odpracoval. Stavby se barevně zvýrazňovaly. Na konci měsíce se všechno sčítalo a počítaly se výplaty podle sazby každého člověka.</p><p class="project-section__text" data-draft>Zadání bylo jasné: musí to být rychlejší než papír a nesmí to potřebovat žádné školení.</p></section>
 			<section class="project-section"><p class="project-section__label">Co jsem postavil</p><h2 class="project-section__title" data-draft>Měsíční tabulka, která se chová jako sešit</h2><ul class="project-section__list" data-draft><li>Měsíc jako tabulka dnů × pracovníků, stavby odlišené barvou jako zvýrazňovačem</li><li>Den jde přetáhnout, zkopírovat nebo roztáhnout na další dny, stejně jako v Excelu</li><li>Jeden pracovník může mít v jednom dni dvě stavby</li><li>Čas se může doplnit později a chybějící zápisy aplikace sama označí</li><li>Nová sazba platí od zvoleného data a minulé výplaty nikdy nepřepíše</li><li>Státní svátky včetně Velikonoc se počítají samy</li><li>Výplatní přehled jde rovnou vytisknout nebo uložit jako PDF</li></ul></section>
-			<section class="project-section"><p class="project-section__label">Pod kapotou</p><h2 class="project-section__title" data-draft>Malá aplikace, postavená jako velká</h2><p class="project-section__text" data-draft>React a TypeScript nad Supabase (Postgres). Data chrání Row Level Security, takže není potřeba vlastní server. Peníze se počítají v haléřích, ne v desetinných číslech. Logiku výplat, sazeb v čase a kalendáře hlídají automatické testy a data se pravidelně zálohují.</p></section>
-			<section class="project-section"><p class="project-section__label">Výsledek</p><h2 class="project-section__title" data-draft>Sešit je v šuplíku</h2><p class="project-section__text" data-draft>Zápisy jsou v aplikaci. Výplaty a součty za jednotlivé stavby jsou na jedno kliknutí, bez kalkulačky.</p></section>
-			<section class="project-section"><p class="project-section__label">Reference</p><figure class="quote"><blockquote class="quote__text" data-draft>Sem přijde pár vět od Martina o tom, jak se mu s aplikací pracuje.</blockquote><figcaption class="quote__cite" data-draft>— <cite>Martin</cite>, Martins Building</figcaption></figure></section>
+			<section class="project-section"><p class="project-section__label">Pod kapotou</p><h2 class="project-section__title" data-draft>Co hlídá správné výpočty</h2><p class="project-section__text" data-draft>React a TypeScript nad Supabase (Postgres). Data chrání Row Level Security, takže není potřeba vlastní server. Peníze se počítají v haléřích, ne v desetinných číslech. Logiku výplat, sazeb v čase a kalendáře hlídají automatické testy a data se pravidelně zálohují.</p></section>
+			<section class="project-section"><p class="project-section__label">Výsledek</p><h2 class="project-section__title" data-draft>Přehled bez ručního sčítání</h2><p class="project-section__text" data-draft>Zápisy jsou v aplikaci. Výplaty a součty za jednotlivé stavby jsou na jedno kliknutí, bez kalkulačky.</p></section>
 		</div><aside class="project-side"><div class="project-side__block"><p class="project-side__label">Technologie</p><ul class="chips"><li class="chip">React</li><li class="chip">TypeScript</li><li class="chip">Supabase</li><li class="chip">Postgres</li><li class="chip">Vite</li><li class="chip">GitHub Actions</li></ul></div><div class="project-side__block"><p class="project-side__label">Související</p><p class="project-side__text" data-draft>Pro stejnou firmu jsem dělal i <a href="/work/martins-building.html">web</a>. Tam celá spolupráce začala.</p></div></aside></div>
 		<nav class="pager" aria-label="Další projekty"><a class="pager__item" href="/#prace"><span class="pager__label">← Zpět</span><span class="pager__name">Všechna práce</span></a><a class="pager__item pager__item--next" href="/work/360tours.html"><span class="pager__label">Další projekt →</span><span class="pager__name">360 Tours</span></a></nav>
 	</main>
@@ -61,7 +64,7 @@
 			<a href="https://github.com/VojtechLahuta" target="_blank" rel="noopener">GitHub</a>
 			<a href="https://www.linkedin.com/in/vojt%C4%9Bch-lahuta/" target="_blank" rel="noopener">LinkedIn</a>
 		</div>
-		<div class="footer__id" data-draft>Vojtěch Lahuta · IČO 24085740 · [adresa místa podnikání] · fyzická osoba zapsaná v živnostenském rejstříku</div>
+		<div class="footer__id" data-draft>Vojtěch Lahuta · IČO 24085740</div>
 	</footer>
 	<!-- /chrome:footer -->
 	<script src="/app.js" defer></script>

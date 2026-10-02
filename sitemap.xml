@@ -2,17 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://vojtech.lahuta.cz/</loc>
-		<lastmod>2026-04-29</lastmod>
+		<lastmod>2026-10-02</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://vojtech.lahuta.cz/work/gravitybarbers.html</loc>
-		<lastmod>2026-04-29</lastmod>
+		<loc>https://vojtech.lahuta.cz/work/evidence-hodin.html</loc>
+		<lastmod>2026-10-02</lastmod>
 		<priority>0.8</priority>
 	</url>
 	<url>
 		<loc>https://vojtech.lahuta.cz/work/360tours.html</loc>
-		<lastmod>2026-05-24</lastmod>
+		<lastmod>2026-10-02</lastmod>
 		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://vojtech.lahuta.cz/work/martins-building.html</loc>
+		<lastmod>2026-10-02</lastmod>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://vojtech.lahuta.cz/work/gravitybarbers.html</loc>
+		<lastmod>2026-10-02</lastmod>
+		<priority>0.6</priority>
 	</url>
 </urlset>

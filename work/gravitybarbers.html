@@ -1,191 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="Gravitybarbers.cz — a new barbershop needed to be online and bookable before opening day. I built the site in two weeks." />
-	<title>Gravitybarbers.cz — Vojtěch Lahuta</title>
-
+	<title data-draft>Web pro Gravity Barbers — Vojtěch Lahuta</title>
+	<meta name="description" content="Web pro nový barbershop v Brně. Služby, otevírací doba a rezervace termínu na jednom místě." data-draft />
 	<link rel="canonical" href="https://vojtech.lahuta.cz/work/gravitybarbers.html" />
-
-	<!-- Open Graph -->
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content="https://vojtech.lahuta.cz/work/gravitybarbers.html" />
-	<meta property="og:title" content="Gravitybarbers.cz — Vojtěch Lahuta" />
-	<meta property="og:description" content="A new barbershop needed to be online and bookable before opening day. I built the site in two weeks." />
+	<meta property="og:title" content="Web pro Gravity Barbers" data-draft />
+	<meta property="og:description" content="Web pro nový barbershop v Brně. Služby, otevírací doba a rezervace termínu na jednom místě." data-draft />
 	<meta property="og:image" content="https://vojtech.lahuta.cz/media/og.png" />
-
-	<!-- Twitter -->
+	<meta property="og:locale" content="cs_CZ" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Gravitybarbers.cz — Vojtěch Lahuta" />
-	<meta name="twitter:description" content="A new barbershop needed to be online and bookable before opening day. I built the site in two weeks." />
-	<meta name="twitter:image" content="https://vojtech.lahuta.cz/media/og.png" />
-
 	<meta name="theme-color" content="#0e0e0c" />
-
+	<link rel="icon" href="/media/logo.svg" type="image/svg+xml" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400..700&family=JetBrains+Mono:wght@400;600;700&display=swap" />
 	<link rel="stylesheet" href="/global.css" />
 	<link rel="stylesheet" href="/work.css" />
-	<link rel="icon" href="/media/logo.svg" type="image/svg+xml" />
 </head>
 <body>
 
+	<!-- chrome:header -->
+	<a class="skip-link" href="#obsah">Přeskočit na obsah</a>
 	<header class="nav">
-		<a href="/" class="nav__brand">
+		<a class="nav__brand" href="/" aria-label="Vojtěch Lahuta — úvod">
 			<span class="nav__mark" aria-hidden="true">VL</span>
-			<span class="nav__meta">VOJTĚCH LAHUTA / FULL-STACK TS / BRNO, CZ</span>
+			<span class="nav__meta" data-draft>Vojtěch Lahuta / programátor / Brno</span>
 		</a>
 
-		<button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+		<button class="nav__toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
 			<span></span><span></span><span></span>
 		</button>
 
-		<nav class="nav__links">
-			<a class="nav__link" href="/#work"><span class="nav__idx">01</span>WORK</a>
-			<a class="nav__link" href="/#services"><span class="nav__idx">02</span>SERVICES</a>
-			<a class="nav__link" href="/#stack"><span class="nav__idx">03</span>STACK</a>
-			<a class="nav__link" href="/#process"><span class="nav__idx">04</span>PROCESS</a>
+		<nav class="nav__links" id="nav-links" aria-label="Hlavní navigace">
+			<a class="nav__link" href="/#prace">Práce</a>
+			<a class="nav__link" href="/#nabidka">Nabídka</a>
+			<a class="nav__link" href="/#jak-pracuju">Jak pracuju</a>
+			<a class="nav__link" href="/#o-mne">O mně</a>
+		</nav>
 
-		<a class="nav__cta" href="/#contact">Get in touch</a>
+		<a class="button button--primary button--small nav__cta" href="mailto:vojtech@lahuta.cz?subject=Spolupr%C3%A1ce" data-draft>Napište mi</a>
 	</header>
+	<!-- /chrome:header -->
 
-	<main>
-
-	<div class="crumb">
-		<a class="crumb__back" href="/#work">
-			<span class="crumb__back-arrow">←</span> BACK TO WORK
-		</a>
-		<div class="crumb__path">
-			§03 / SELECTED WORK / <em>GRAVITYBARBERS</em>
-		</div>
-	</div>
-
-	<section class="project-hero">
-		<aside class="project-hero__meta">
-			<dl>
-				<div>
-					<dt>CLIENT</dt>
-					<dd>Gravity Barbers, Brno</dd>
-				</div>
-				<div>
-					<dt>DELIVERED</dt>
-					<dd>2025</dd>
-				</div>
+	<main id="obsah" tabindex="-1">
+		<div class="back"><a class="back__link" href="/#prace">← Zpět na práci</a></div>
+		<section class="project-hero">
+			<dl class="project-hero__meta">
+				<div><dt>Klient</dt><dd>Gravity Barbers, Brno</dd></div>
+				<div><dt>Rok</dt><dd>2025</dd></div>
+				<div><dt>Typ</dt><dd>Web</dd></div>
+				<div><dt>Web</dt><dd><a href="https://gravitybarbers.cz/" target="_blank" rel="noopener">gravitybarbers.cz ↗</a></dd></div>
 			</dl>
-		</aside>
-
-		<div class="project-hero__lead">
-			<div class="project-hero__kicker">
-				<span class="project-hero__dot" aria-hidden="true"></span>
-				CLIENT WORK
+			<div class="project-hero__lead">
+				<p class="project-hero__kicker">Web</p>
+				<h1 class="project-hero__title" data-draft>Rezervace ještě před prvním střihem</h1>
+				<p class="project-hero__sub" data-draft>Gravity Barbers se chystali otevřít v Brně a web ještě nebyl hotový. Potřebovali ukázat služby, dát lidem vědět, kde je najdou, a umožnit rezervaci termínu. Převzal jsem vývoj a stihl spuštění před otevřením.</p>
 			</div>
-			<h1 class="project-hero__title">
-				Gravitybarbers.cz —<br />
-				<em>opening in weeks,</em> no website, previous dev gone
-			</h1>
-			<p class="project-hero__sub">
-				A brand-new barbershop in Brno needed to be findable and bookable before doors opened.
-				Their previous developer had disappeared. I stepped in and got them live.
-			</p>
-		</div>
-	</section>
+		</section>
 
-	<section class="project-body">
-		<div class="project-body__main">
+		<section class="showcase" aria-label="Ukázka webu"><div class="frame frame--placeholder" data-draft>Ukázka webu gravitybarbers.cz · připravuje se</div></section>
 
-			<div class="project-body__section">
-				<span class="project-body__label">/ THE PROBLEM</span>
-				<h2>No web presence, opening day closing in</h2>
-				<p>
-					The owners had just founded the shop and their previous developer had bailed.
-					They needed a site that showed hours, listed services, and made booking obvious — fast.
-					The mission was simple: get online so clients can start booking before the doors open.
-				</p>
+		<div class="project-body">
+			<div class="project-body__main">
+				<section class="project-section">
+					<p class="project-section__label">Zadání</p>
+					<h2 class="project-section__title" data-draft>Otevření se blížilo</h2>
+					<p class="project-section__text" data-draft>Majitelé měli jasnou představu o podniku, ale po předchozím vývojáři jim chyběl funkční web. Nejdůležitější bylo zpřístupnit informace a rezervace včas.</p>
+
+				</section>
+
+				<section class="project-section">
+					<p class="project-section__label">Řešení</p>
+					<h2 class="project-section__title" data-draft>Od služeb rovnou k rezervaci</h2>
+					<p class="project-section__text" data-draft>Společně jsme prošli, jak má web vypadat a co na něm zákazníci potřebují najít. Postavil jsem ho v Symfony s PHP, na frontendu jsem použil Stimulus a Turbo. Rezervace navazují na systém, který už barbeři používali.</p>
+					<ul class="project-section__list" data-draft>
+						<li>Služby, otevírací doba a adresa na jednom místě</li>
+						<li>Objednání přes stávající rezervační systém</li>
+					</ul>
+				</section>
+
+				<section class="project-section">
+					<p class="project-section__label">Výsledek</p>
+					<h2 class="project-section__title" data-draft>Web byl připravený před otevřením</h2>
+					<p class="project-section__text" data-draft>Zákazníci si mohli prohlédnout služby a zarezervovat termín ještě před prvním dnem provozu. K objednání nemuseli čekat na otevírací dobu ani telefonovat.</p>
+
+				</section>
+
+				<section class="project-section">
+					<p class="project-section__label">Od klienta</p>
+					<figure class="quote"><blockquote class="quote__text" data-draft>Je to dokonalý 😳</blockquote><figcaption class="quote__cite">— <cite>Gravity Barbers</cite></figcaption></figure>
+				</section>
 			</div>
-
-			<div class="project-body__section">
-				<span class="project-body__label">/ WHAT I BUILT</span>
-				<h2>A lean site that does what it needs to</h2>
-				<p class="muted">
-					Sat with the owners, discussed the vibe, and built. Symfony on the backend,
-					Stimulus and Turbo on the front — lightweight, fast, easy to maintain.
-					Booking integrated with their existing scheduling tool.
-				</p>
-				<ul class="project-body__list">
-					<li><span class="project-body__arrow">→</span><span>Hours, services, location — all immediately visible</span></li>
-					<li><span class="project-body__arrow">→</span><span>Booking tied directly to the barbers' scheduling tool</span></li>
-				</ul>
-			</div>
-
-			<div class="project-body__section">
-				<span class="project-body__label">/ THE RESULT</span>
-				<h2>From zero web presence to Google-indexed and bookable</h2>
-				<p class="muted">
-					The shop went from having nothing online to a live, Google-indexed site with booking built in.
-					Clients find them, see the services, and book — no phone calls needed outside of hours.
-					Live since mid-2025 and still running as-is.
-				</p>
-			</div>
-
-			<div class="project-body__section">
-				<span class="project-body__label">/ CLIENT</span>
-				<img src="/media/gravity-review.webp" alt="Client review from Gravity Barbers" style="max-width:100%;border:1px solid var(--color-line);" loading="lazy" />
-			</div>
-
+			<aside class="project-side">
+				<a class="button button--primary" href="https://gravitybarbers.cz/" target="_blank" rel="noopener">Otevřít web ↗</a>
+				<div class="project-side__block">
+					<p class="project-side__label">Technologie</p>
+					<ul class="chips">
+						<li class="chip">Symfony</li>
+						<li class="chip">PHP</li>
+						<li class="chip">Stimulus</li>
+						<li class="chip">Turbo</li>
+					</ul>
+				</div>
+			</aside>
 		</div>
 
-		<aside class="project-side">
-			<a class="project-side__cta" href="https://gravitybarbers.cz" target="_blank" rel="noopener">
-				<span>VISIT LIVE SITE</span>
-				<span class="project-side__cta-arrow" aria-hidden="true">↗</span>
-			</a>
-
-			<div class="project-side__block">
-				<span class="project-side__label">/ LIVE AT</span>
-				<div class="project-side__value">
-					<a href="https://gravitybarbers.cz" target="_blank" rel="noopener" class="project-side__url">gravitybarbers.cz</a>
-				</div>
-			</div>
-
-			<div class="project-side__block">
-				<span class="project-side__label">/ STACK</span>
-				<div class="tech">
-					<span class="tech__chip">Symfony</span>
-					<span class="tech__chip">PHP</span>
-					<span class="tech__chip">Stimulus</span>
-					<span class="tech__chip">Turbo</span>
-				</div>
-			</div>
-		</aside>
-	</section>
-
-	<nav class="pager" aria-label="Project pager">
-		<a class="pager__item pager__item--prev" href="/#work">
-			<span class="pager__label">← ALL WORK</span>
-			<span class="pager__name">Back to index</span>
-			<span class="pager__hint">§03 / SELECTED WORK</span>
-		</a>
-		<a class="pager__item pager__item--next" href="/work/360tours.html">
-			<span class="pager__label">NEXT PROJECT →</span>
-			<span class="pager__name">360 Tours</span>
-			<span class="pager__hint">2025 / WORDPRESS PLUGIN</span>
-		</a>
-	</nav>
-
+		<nav class="pager" aria-label="Další projekty">
+			<a class="pager__item" href="/work/martins-building.html"><span class="pager__label">← Předchozí projekt</span><span class="pager__name">Martins Building</span></a>
+			<a class="pager__item pager__item--next" href="/#prace"><span class="pager__label">Zpět na přehled</span><span class="pager__name">Všechny projekty</span></a>
+		</nav>
 	</main>
 
+	<!-- chrome:footer -->
 	<footer class="footer">
-		<div class="footer__copy">© 2026 VOJTĚCH LAHUTA / BRNO, CZ</div>
+		<div class="footer__copy">© 2026 Vojtěch Lahuta</div>
 		<div class="footer__social">
-			<a href="https://github.com/VojtechLahuta" target="_blank" rel="noopener">GITHUB</a>
-			<a href="https://www.linkedin.com/in/vojt%C4%9Bch-lahuta/" target="_blank" rel="noopener">LINKEDIN</a>
+			<a href="https://github.com/VojtechLahuta" target="_blank" rel="noopener">GitHub</a>
+			<a href="https://www.linkedin.com/in/vojt%C4%9Bch-lahuta/" target="_blank" rel="noopener">LinkedIn</a>
 		</div>
-		<div class="footer__id">IČO 24085740</div>
+		<div class="footer__id" data-draft>Vojtěch Lahuta · IČO 24085740</div>
 	</footer>
+	<!-- /chrome:footer -->
 
 	<script src="/app.js" defer></script>
-	<script src="/work.js" defer></script>
 </body>
 </html>
