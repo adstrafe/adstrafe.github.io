@@ -94,6 +94,25 @@
 	padding-block:var(--space-5)
 }
 
+.showcase__figure {
+	margin:0
+}
+
+.showcase__caption {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	gap:var(--space-1) var(--space-3);
+	margin-top:var(--space-2);
+	font-size:var(--fs-small);
+	color:var(--color-muted)
+}
+
+.showcase__caption a {
+	color:var(--color-accent);
+	text-underline-offset:4px
+}
+
 .project-body {
 	display:grid;
 	grid-template-columns:2fr 1fr;

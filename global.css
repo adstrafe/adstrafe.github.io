@@ -19,6 +19,7 @@
 	--fs-lead: 18px;
 	--fs-h3: 24px;
 	--fs-h2: 36px;
+	--fs-section: clamp(32px, 4vw, 56px);
 	--fs-display: clamp(44px, 11vw, 156px);
 	--fs-display-2: clamp(40px, 8vw, 112px);
 	--tracking-display: -0.035em;
