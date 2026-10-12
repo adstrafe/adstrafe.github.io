@@ -1,34 +1,48 @@
-/* Slideshow: cycle .showcase__slide, sync .shots__item.is-active */
-(function () {
+(() => {
 	const root = document.querySelector('[data-slideshow]');
 	if (!root) return;
-
+	const gallery = root.closest('.showcase');
 	const slides = [...root.querySelectorAll('.showcase__slide')];
-	const thumbs = [...document.querySelectorAll('[data-shot]')];
-	const counterEl = document.querySelector('[data-slide-counter]');
-	const prevBtn = document.querySelector('[data-slide-prev]');
-	const nextBtn = document.querySelector('[data-slide-next]');
+	if (!gallery || !slides.length) return;
 
-	if (!slides.length) return;
-
-	let idx = 0;
-	const total = slides.length;
+	const thumbs = [...gallery.querySelectorAll('[data-shot]')];
+	const counters = [...gallery.querySelectorAll('[data-slide-counter]')];
+	const prev = gallery.querySelector('[data-slide-prev]');
+	const next = gallery.querySelector('[data-slide-next]');
+	let index = 0;
+	const pad = value => String(value).padStart(2, '0');
 
 	function render() {
-		slides.forEach((s, i) => s.classList.toggle('is-active', i === idx));
-		thumbs.forEach((t, i) => t.classList.toggle('is-active', i === idx));
-		if (counterEl) {
-			counterEl.textContent = String(idx + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
-		}
+		slides.forEach((slide, i) => {
+			slide.classList.toggle('is-active', i === index);
+			slide.setAttribute('aria-hidden', String(i !== index));
+		});
+		thumbs.forEach((thumb, i) => {
+			thumb.classList.toggle('is-active', i === index);
+			thumb.setAttribute('aria-pressed', String(i === index));
+		});
+		counters.forEach(counter => {
+			counter.textContent = pad(index + 1) + ' / ' + pad(slides.length);
+		});
 	}
 
-	prevBtn && prevBtn.addEventListener('click', () => { idx = (idx - 1 + total) % total; render(); });
-	nextBtn && nextBtn.addEventListener('click', () => { idx = (idx + 1) % total; render(); });
-	thumbs.forEach((t, i) => t.addEventListener('click', () => { idx = i; render(); }));
+	function move(step) {
+		index = (index + step + slides.length) % slides.length;
+		render();
+	}
 
-	document.addEventListener('keydown', (e) => {
-		if (e.key === 'ArrowLeft')  { idx = (idx - 1 + total) % total; render(); }
-		if (e.key === 'ArrowRight') { idx = (idx + 1) % total; render(); }
+	prev?.addEventListener('click', () => move(-1));
+	next?.addEventListener('click', () => move(1));
+	thumbs.forEach((thumb, i) => thumb.addEventListener('click', () => {
+		if (i >= slides.length) return;
+		index = i;
+		render();
+	}));
+
+	gallery.addEventListener('keydown', event => {
+		if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+		event.preventDefault();
+		move(event.key === 'ArrowLeft' ? -1 : 1);
 	});
 
 	render();

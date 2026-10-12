@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title data-draft>Evidence hodin a výplat pro Martins Building — Vojtěch Lahuta</title>
+	<meta name="description" content="Obkladačská firma vedla docházku a výplaty v papírovém sešitu. Postavil jsem aplikaci, která funguje stejně, jen počítá sama." data-draft />
+	<link rel="canonical" href="https://vojtech.lahuta.cz/work/evidence-hodin.html" />
+	<meta property="og:type" content="article" /><meta property="og:url" content="https://vojtech.lahuta.cz/work/evidence-hodin.html" /><meta property="og:title" content="Hodiny a výplaty bez kalkulačky" data-draft /><meta property="og:description" content="Aplikace na docházku a výplaty pro obkladačskou firmu z Brna." data-draft /><meta property="og:image" content="https://vojtech.lahuta.cz/media/og.png" /><meta property="og:locale" content="cs_CZ" /><meta name="twitter:card" content="summary_large_image" />
+	<meta name="theme-color" content="#0e0e0c" /><link rel="icon" href="/media/logo.svg" type="image/svg+xml" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400..700&family=JetBrains+Mono:wght@400;600;700&display=swap" />
+	<link rel="stylesheet" href="/global.css?v=f7fb9a7c1585" /><link rel="stylesheet" href="/work.css?v=ae0f291ce2a7" />
+	<link rel="stylesheet" href="/page-transition.css?v=e99298f51559" />
+</head>
+<body>
+
+	<a class="skip-link" href="#obsah">Přeskočit na obsah</a>
+	<header class="nav">
+		<a class="nav__brand" href="/" aria-label="Vojtěch Lahuta — úvod">
+			<span class="nav__mark" aria-hidden="true">VL</span>
+			<span class="nav__meta" data-draft>Vojtěch Lahuta / programátor / Brno</span>
+		</a>
+
+		<button class="nav__toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+			<span></span><span></span><span></span>
+		</button>
+
+		<nav class="nav__links" id="nav-links" aria-label="Hlavní navigace">
+			<a class="nav__link" href="/#nabidka">Nabídka a ceny</a>
+			<a class="nav__link" href="/#prace">Projekty</a>
+			<a class="nav__link" href="/#jak-pracuju">Jak pracuju</a>
+			<a class="nav__link" href="/about.html">O mně</a>
+		</nav>
+
+		<a class="button button--primary button--small nav__cta" href="/#kontakt" data-draft>Ozvěte se</a>
+	</header>
+
+	<main id="obsah" tabindex="-1">
+		<div class="back"><a class="back__link" href="/#prace">← Zpět na práci</a></div>
+		<section class="project-hero">
+			<dl class="project-hero__meta"><div><dt>Klient</dt><dd>Martins Building, Brno</dd></div><div><dt>Rok</dt><dd>2026</dd></div><div><dt>Typ</dt><dd>Aplikace na míru</dd></div><div><dt>Stav</dt><dd data-draft>V provozu od srpna 2026</dd></div></dl>
+			<div class="project-hero__lead">
+				<p class="project-hero__kicker">Aplikace na míru</p>
+				<h1 class="project-hero__title" data-draft>Evidence docházky a přehled financí</h1>
+				<p class="project-hero__sub" data-draft>Martin potřeboval převést docházku své obkladačské firmy ze sešitu do aplikace. Zapisování zůstalo stejně jednoduché jako původní sešit, ale výpočty už řeší aplikace sama.</p>
+			</div>
+		</section>
+		<section class="showcase" aria-label="Ukázka aplikace SalaryCounter">
+			<figure class="showcase__figure">
+				<div class="frame"><img src="/media/obkladaci_showcase.webp" alt="SalaryCounter: barevně rozlišené stavby v měsíční docházce, editor vybraných dní a součty výplat" loading="lazy" decoding="async" width="2560" height="1392" /></div>
+				<figcaption class="showcase__caption"><a href="/media/obkladaci_showcase.webp" target="_blank" rel="noopener">Zvětšit ukázku <span aria-hidden="true">↗</span></a></figcaption>
+			</figure>
+		</section>
+		<div class="project-body"><div class="project-body__main">
+			<section class="project-section"><p class="project-section__label">Problém</p><h2 class="project-section__title" data-draft>Opakovaná manuální práce</h2><p class="project-section__text" data-draft>Každý den se do sešitu psalo, kdo byl na které stavbě a kolik času odpracoval. Stavby se barevně zvýrazňovaly. Na konci měsíce se všechno sčítalo a počítaly se výplaty podle sazby každého člověka.</p></section>
+			<section class="project-section"><p class="project-section__label">Co jsem odevzdal</p><h2 class="project-section__title" data-draft>Měsíční tabulka, která se chová jako sešit</h2><ul class="project-section__list" data-draft><li>Měsíc jako tabulka dnů × pracovníků, stavby odlišené barvou jako zvýrazňovačem</li><li>Den jde přetáhnout, zkopírovat nebo roztáhnout na další dny, stejně jako v Excelu</li><li>Jeden pracovník může mít v jednom dni více staveb</li><li>Čas se může doplnit později a chybějící zápisy aplikace sama označí</li><li>Nová sazba platí od zvoleného data a minulé výplaty nikdy nepřepíše</li><li>Státní svátky včetně Velikonoc se počítají samy</li><li>Výplatní přehled jde rovnou vytisknout nebo uložit jako PDF</li></ul></section>
+			<section class="project-section"><p class="project-section__label">Technologie</p><p class="project-section__text" data-draft>React, TypeScript + Supabase postgres. Data chrání RLS, takže není potřeba vlastní server (kvůli jednoduchosti). Logiku výplat, sazeb v čase a kalendáře hlídají automatické testy a data se pravidelně zálohují.</p></section>
+		</div><aside class="project-side"><div class="project-side__block"><p class="project-side__label">Technologie</p><ul class="chips"><li class="chip">React</li><li class="chip">TypeScript</li><li class="chip">Supabase</li><li class="chip">Postgres</li><li class="chip">Vite</li><li class="chip">GitHub Actions</li></ul></div><div class="project-side__block"><p class="project-side__label">Související</p><p class="project-side__text" data-draft>Pro stejnou firmu jsem dělal i <a href="/work/martins-building.html">web</a>. Tam celá spolupráce začala.</p></div></aside></div>
+		<nav class="pager" aria-label="Další projekty"><a class="pager__item" href="/#prace"><span class="pager__label">← Zpět</span><span class="pager__name">Všechna práce</span></a><a class="pager__item pager__item--next" href="/work/360tours.html"><span class="pager__label">Další projekt →</span><span class="pager__name">360 Tours</span></a></nav>
+	</main>
+
+	<footer class="footer">
+		<div class="footer__copy">© 2026 Vojtěch Lahuta</div>
+		<div class="footer__social">
+			<a href="https://github.com/VojtechLahuta" target="_blank" rel="noopener">GitHub</a>
+			<a href="https://www.linkedin.com/in/vojt%C4%9Bch-lahuta/" target="_blank" rel="noopener">LinkedIn</a>
+		</div>
+		<div class="footer__id" data-draft>Vojtěch Lahuta · IČO 24085740</div>
+	</footer>
+	<script src="/app.js?v=2ce51d5cd3ee" defer></script>
+</body>
+</html>
