@@ -1,4 +1,3 @@
-/* Gallery controls: buttons, thumbnails and local arrow-key navigation. */
 (() => {
 	const root = document.querySelector('[data-slideshow]');
 	if (!root) return;

@@ -57,6 +57,21 @@ html, body {
 }
 
 body { min-width: 0; overflow-x: clip; }
+
+@media (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; }
+
+	.reveal-pending { opacity: 0; }
+
+	.reveal-in {
+		animation: reveal-in 320ms ease-out var(--reveal-delay, 0ms) both;
+	}
+
+	@keyframes reveal-in {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+}
 img { display: block; max-width: 100%; }
 a { color: inherit; }
 button { font: inherit; color: inherit; }
