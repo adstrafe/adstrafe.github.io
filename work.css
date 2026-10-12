@@ -113,6 +113,12 @@
 	text-underline-offset:4px
 }
 
+.showcase__arrow {
+	width:1.25em;
+	height:1.25em;
+	flex:0 0 auto
+}
+
 .project-body {
 	display:grid;
 	grid-template-columns:2fr 1fr;
