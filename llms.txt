@@ -1,0 +1,20 @@
+# Vojtěch Lahuta
+
+> Freelancer vývojář z Brna. Věnuje se webovým aplikacím, automatizacím v n8n a firemním webům.
+
+Nabídka zahrnuje aplikace na míru, propojení služeb přes API, automatizaci manuálních procesů a vývoj webů od návrhu po nasazení. Po spuštění je možné domluvit správu a další úpravy.
+
+Zkušenosti: AWS, React, TypeScript, Node.js, n8n a PostgreSQL. Spolupráce je možná online.
+
+Rozsah, cenu a termín zakázky si klient s vývojářem potvrdí před zahájením. Aktuální nabídka je na hlavní stránce a v cenovém přehledu níže.
+
+Kontakt: vojtech@lahuta.cz, telefon +420 725 828 119. Kontaktní sekce je součástí hlavní stránky.
+
+## Hlavní stránky
+
+- [Služby, nabídka a kontakt](https://vojtech.lahuta.cz/): Přehled služeb, orientační ceny, průběh spolupráce a kontaktní údaje.
+- [O mně](https://vojtech.lahuta.cz/about.html): Profesní zkušenosti, používané technologie a přístup k vývoji.
+
+## Optional
+
+- [Nabídka a orientační ceny (PDF)](https://vojtech.lahuta.cz/output/pdf/nabidka-a-ceny.pdf): Podrobnější přehled služeb, cenových rozmezí a volitelné správy po spuštění.

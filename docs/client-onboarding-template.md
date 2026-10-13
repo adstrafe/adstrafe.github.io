@@ -43,7 +43,7 @@ Níže je seznam toho, co potřebuji. Pokud něco zatím nemáte, napište to pr
 - Jaké služby nebo nástroje dnes používáte?
 - Je termín navázaný na konkrétní událost?
 - Kdo bude schvalovat návrh a dodané řešení?
-- Jaký název firmy, IČO a kontaktní údaje mají být v nabídce a na webu?
+- Jaký název firmy, IČ a kontaktní údaje mají být v nabídce a na webu?
 
 ### Logo a návrh
 
